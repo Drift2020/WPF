@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace Math
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -27,21 +27,7 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Button t = sender as Button;
-            Pole.Text += t.Content;
-        }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Pole.Text = "";
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            if (Pole.Text != "")
-                MessageBox.Show("Отлично! Держи пирожок с содержанием яблок:" + Pole.Text + " кг.");
-            else
-                MessageBox.Show("ТУТ ПУСТО!!!");
         }
     }
 }

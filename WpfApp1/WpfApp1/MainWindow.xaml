@@ -7,10 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="271.51" Width="525">
     <Grid Margin="0,0,2,0">
-        <DockPanel  LastChildFill="True" Margin="0,0,150,0" >
-            <TextBox  Background="#FFAE2626">
-
-            </TextBox>
+        <DockPanel  LastChildFill="True" Margin="0,0,155,0" >
+            
+            <TextBox  Background="#FFC9C9C9" Name="Pole"/>
         </DockPanel>
         <Grid HorizontalAlignment="Right"  ShowGridLines="False">
 
@@ -27,18 +26,18 @@
                 <ColumnDefinition Width="50"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Button Margin="5.377,6.099,5.027,4.776" Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="0" Content="7" />
-            <Button Margin="5.216,6.099,5.189,4.776" Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="1" Content="8"/>
-            <Button Margin="4.593,6.099,5.811,4.776" Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="2" Content="9"/>
-            <Button Margin="5.377,4.873,5.027,5.005" Width="Auto" Height="Auto"  Grid.Row="2" Grid.Column="0" Content="4"/>
-            <Button Margin="5.216,4.873,5.189,5.005" Width="Auto" Height="Auto"  Grid.Row="2" Grid.Column="1" Content="5"/>
-            <Button Margin="4.593,4.873,5.811,5.005" Width="Auto" Height="Auto" Grid.Row="2" Grid.Column="2" Content="6"/>
-            <Button Margin="5.377,4.746,5.027,5.132" Width="Auto" Height="Auto"  Grid.Row="3" Grid.Column="0" Content="1"/>
-            <Button Margin="5.216,4.746,5.189,5.132" Width="Auto" Height="Auto"  Grid.Row="3" Grid.Column="1" Content="2"/>
-            <Button Margin="4.593,4.746,5.811,5.132" Width="Auto" Height="Auto"  Grid.Row="3" Grid.Column="2" Content="3"/>
-            <Button Margin="5.377,1.242,5.027,8.636" Width="Auto" Height="Auto"  Grid.Row="4" Grid.Column="0" Content="*"/>
-            <Button Margin="5.216,1.242,5.189,8.636" Width="Auto" Height="Auto"  Grid.Row="4" Grid.Column="1" Content="0"/>
-            <Button Margin="4.593,1.242,5.811,8.636" Width="Auto" Height="Auto"  Grid.Row="4" Grid.Column="2"/>
+            <Button Margin="5.377,6.099,5.027,4.776" Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="0" Content="7" Click="Button_Click" />
+            <Button Margin="5.216,6.099,5.189,4.776" Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="1" Content="8" Click="Button_Click"/>
+            <Button Margin="4.593,6.099,5.811,4.776" Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="2" Content="9" Click="Button_Click"/>
+            <Button Margin="5.377,4.873,5.027,5.005" Width="Auto" Height="Auto"  Grid.Row="2" Grid.Column="0" Content="4" Click="Button_Click"/>
+            <Button Margin="5.216,4.873,5.189,5.005" Width="Auto" Height="Auto"  Grid.Row="2" Grid.Column="1" Content="5" Click="Button_Click"/>
+            <Button Margin="4.593,4.873,5.811,5.005" Width="Auto" Height="Auto" Grid.Row="2" Grid.Column="2" Content="6" Click="Button_Click"/>
+            <Button Margin="5.377,4.746,5.027,5.132" Width="Auto" Height="Auto"  Grid.Row="3" Grid.Column="0" Content="1" Click="Button_Click"/>
+            <Button Margin="5.216,4.746,5.189,5.132" Width="Auto" Height="Auto"  Grid.Row="3" Grid.Column="1" Content="2" Click="Button_Click"/>
+            <Button Margin="4.593,4.746,5.811,5.132" Width="Auto" Height="Auto"  Grid.Row="3" Grid.Column="2" Content="3" Click="Button_Click"/>
+            <Button Margin="5.377,1.242,5.027,8.636" Width="Auto" Height="Auto"  Grid.Row="4" Grid.Column="0" Content="C" Click="Button_Click_1"/>
+            <Button Margin="5.216,1.242,5.189,8.636" Width="Auto" Height="Auto"  Grid.Row="4" Grid.Column="1" Content="0" Click="Button_Click"/>
+            <Button Margin="4.593,1.242,5.811,8.636" Width="Auto" Height="Auto"  Grid.Row="4" Grid.Column="2" Content="OK" Click="Button_Click_2"/>
 
 
 
