@@ -5,6 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid/>
+        Title="MainWindow" Height="271.51" Width="525">
+    <Grid HorizontalAlignment="Left" Width="515">
+        <DockPanel  LastChildFill="True" Margin="0,0,181.216,0">
+            <TextBox Width="Auto" Height="Auto">
+
+            </TextBox>
+        </DockPanel>
+        <Grid  Margin="333.784,0,0,0">
+            <Button Height="50" Width="50" Margin="10,10,133.364,192.872"/>
+            
+            
+
+        </Grid>
+
+
+    </Grid>
 </Window>
