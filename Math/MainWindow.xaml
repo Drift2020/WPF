@@ -32,7 +32,7 @@
         </Grid>
         <Grid HorizontalAlignment="Right" Margin="0,88.101,6.797,80.091" Width="100">
             <Button HorizontalAlignment="Left"    Content="=" Width="37.233" Click="Button_Click"   />
-            <TextBlock HorizontalAlignment="Right" Width="62.767" Foreground="Black" Background="#FFF7F7F7" RenderTransformOrigin="0.5,0.5" />
+            <TextBlock Name="result"  HorizontalAlignment="Right" Width="62.767" Foreground="Black" Background="#FFF7F7F7" RenderTransformOrigin="0.5,0.5" />
 
 
         </Grid>
