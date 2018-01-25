@@ -40,18 +40,18 @@
                     <Button Content="C" Margin="2.0"  Grid.Row="0" Grid.Column="1" />
                     <Button Content="&lt;" Margin="2.0"   Grid.Row="0" Grid.Column="2"/>
                     <Button Content="/" Margin="2.0"  Grid.Row="0" Grid.Column="3" />
-                    <Button Content="" Margin="2.0"   Grid.Row="1" Grid.Column="0"/>
-                    <Button Content="" Margin="2.0"   Grid.Row="1" Grid.Column="1"/>
-                    <Button Content="" Margin="2.0"  Grid.Row="1" Grid.Column="2" />
-                    <Button Content="" Margin="2.0"   Grid.Row="1" Grid.Column="3"/>
-                    <Button Content="" Margin="2.0"   Grid.Row="2" Grid.Column="0"/>
-                    <Button Content="" Margin="2.0"    Grid.Row="2" Grid.Column="1"/>
-                    <Button Content="" Margin="2.0"   Grid.Row="2" Grid.Column="2"/>
-                    <Button Content="" Margin="2.0"   Grid.Row="2" Grid.Column="3"/>
-                    <Button Content="" Margin="2.0"   Grid.Row="3" Grid.Column="0"/>
-                    <Button Content="" Margin="2.0"  Grid.Row="3" Grid.Column="1"/>
-                    <Button Content="" Margin="2.0"  Grid.Row="3" Grid.Column="2"/>
-                    <Button Content="" Margin="2.0"  Grid.Row="3" Grid.Column="3"/>
+                    <Button Content="7" Margin="2.0"   Grid.Row="1" Grid.Column="0"/>
+                    <Button Content="8" Margin="2.0"   Grid.Row="1" Grid.Column="1"/>
+                    <Button Content="9" Margin="2.0"  Grid.Row="1" Grid.Column="2" />
+                    <Button Content="*" Margin="2.0"   Grid.Row="1" Grid.Column="3"/>
+                    <Button Content="4" Margin="2.0"   Grid.Row="2" Grid.Column="0"/>
+                    <Button Content="5" Margin="2.0"    Grid.Row="2" Grid.Column="1"/>
+                    <Button Content="6" Margin="2.0"   Grid.Row="2" Grid.Column="2"/>
+                    <Button Content="-" Margin="2.0"   Grid.Row="2" Grid.Column="3"/>
+                    <Button Content="1" Margin="2.0"   Grid.Row="3" Grid.Column="0"/>
+                    <Button Content="2" Margin="2.0"  Grid.Row="3" Grid.Column="1"/>
+                    <Button Content="3" Margin="2.0"  Grid.Row="3" Grid.Column="2"/>
+                    <Button Content="+" Margin="2.0"  Grid.Row="3" Grid.Column="3"/>
 
                 </Grid>
                 <Grid Grid.Row="3">
@@ -64,9 +64,9 @@
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Button Content="" Margin="2.0" Grid.Row="0" Grid.Column="0" />
-                    <Button Content="" Margin="2.0" Grid.Row="0" Grid.Column="1" />
-                    <Button Content="" Margin="2.0" Grid.Row="0" Grid.Column="2"   />
+                    <Button Content="." Margin="2.0" Grid.Row="0" Grid.Column="0" />
+                    <Button Content="0" Margin="2.0" Grid.Row="0" Grid.Column="1" />
+                    <Button Content="=" Margin="2.0" Grid.Row="0" Grid.Column="2"   />
 
                 </Grid>
             </Grid>
