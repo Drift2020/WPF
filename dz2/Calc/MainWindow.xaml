@@ -7,53 +7,73 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <DockPanel>
 
-            <Grid DockPanel.Dock="Top" Height="73.253">
+        <DockPanel Grid.Row="0">
+
+            <Grid DockPanel.Dock="Top">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"></RowDefinition>
+                    <RowDefinition Height="0.3*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
-
+                    <RowDefinition Height="0.25*"></RowDefinition>
                 </Grid.RowDefinitions>
-
 
                 <TextBox Grid.Row="0"/>
-                <TextBox Grid.Row="1"/>
+                    <TextBox Grid.Row="1"/>
+                
+
+                <Grid  Grid.Row="2" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Button Content="CE" Margin="2.0" Grid.Row="0" Grid.Column="0" />
+                    <Button Content="C" Margin="2.0"  Grid.Row="0" Grid.Column="1" />
+                    <Button Content="&lt;" Margin="2.0"   Grid.Row="0" Grid.Column="2"/>
+                    <Button Content="/" Margin="2.0"  Grid.Row="0" Grid.Column="3" />
+                    <Button Content="" Margin="2.0"   Grid.Row="1" Grid.Column="0"/>
+                    <Button Content="" Margin="2.0"   Grid.Row="1" Grid.Column="1"/>
+                    <Button Content="" Margin="2.0"  Grid.Row="1" Grid.Column="2" />
+                    <Button Content="" Margin="2.0"   Grid.Row="1" Grid.Column="3"/>
+                    <Button Content="" Margin="2.0"   Grid.Row="2" Grid.Column="0"/>
+                    <Button Content="" Margin="2.0"    Grid.Row="2" Grid.Column="1"/>
+                    <Button Content="" Margin="2.0"   Grid.Row="2" Grid.Column="2"/>
+                    <Button Content="" Margin="2.0"   Grid.Row="2" Grid.Column="3"/>
+                    <Button Content="" Margin="2.0"   Grid.Row="3" Grid.Column="0"/>
+                    <Button Content="" Margin="2.0"  Grid.Row="3" Grid.Column="1"/>
+                    <Button Content="" Margin="2.0"  Grid.Row="3" Grid.Column="2"/>
+                    <Button Content="" Margin="2.0"  Grid.Row="3" Grid.Column="3"/>
+
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Content="" Margin="2.0" Grid.Row="0" Grid.Column="0" />
+                    <Button Content="" Margin="2.0" Grid.Row="0" Grid.Column="1" />
+                    <Button Content="" Margin="2.0" Grid.Row="0" Grid.Column="2"   />
+
+                </Grid>
             </Grid>
-
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
-                </Grid.RowDefinitions>
-
-                <Button Content="" Margin="2.0" Grid.Row="0" Grid.Column="0" />
-                <Button Content="" Margin="2.0"  Grid.Row="0" Grid.Column="1" />
-                <Button Content="" Margin="2.0"   Grid.Row="0" Grid.Column="2"/>
-                <Button Content="" Margin="2.0"  Grid.Row="0" Grid.Column="3" />
-                <Button Content="" Margin="2.0"   Grid.Row="1" Grid.Column="0"/>
-                <Button Content="" Margin="2.0"   Grid.Row="1" Grid.Column="1"/>
-                <Button Content="" Margin="2.0"  Grid.Row="1" Grid.Column="2" />
-                <Button Content="" Margin="2.0"   Grid.Row="1" Grid.Column="3"/>
-                <Button Content="" Margin="2.0"   Grid.Row="2" Grid.Column="0"/>
-                <Button Content="" Margin="2.0"    Grid.Row="2" Grid.Column="1"/>
-                <Button Content="" Margin="2.0"   Grid.Row="2" Grid.Column="2"/>
-                <Button Content="" Margin="2.0"   Grid.Row="2" Grid.Column="3"/>
-                <Button Content="" Margin="2.0"   Grid.Row="3" Grid.Column="0"/>
-                <Button Content="" Margin="2.0"  Grid.Row="3" Grid.Column="1"/>
-                <Button Content="" Margin="2.0"  Grid.Row="3" Grid.Column="2"/>
-                <Button Content="" Margin="2.0"  Grid.Row="3" Grid.Column="3"/>
-              
-            </Grid>
-
         </DockPanel>
+
+        
+           
+        
     </Grid>
 </Window>
