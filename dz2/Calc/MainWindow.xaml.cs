@@ -13,18 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Calc
+namespace Calcs
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-    }
+    /// 
     class Calc
     {
         public string operators;
@@ -98,7 +92,8 @@ namespace Calc
             return null;
         }
     }
-    
+    public partial class MainWindow : Window
+    {
 
         Calc calc = new Calc();
         string strings;
@@ -106,16 +101,21 @@ namespace Calc
         string temp_strings;
         string lable;
 
-        public Form1()
+        public MainWindow()
         {
             InitializeComponent();
             sqrt = "";
             label1.Text = "0";
-            this.KeyPreview = true;
+            
             lable = "";
             label2.Text = strings = "";
-
         }
+
+
+    
+
+    
+
         public void Texts(string s)
         {
             if (lable == temp_strings && strings != "" && label2.Text == "")
@@ -174,7 +174,7 @@ namespace Calc
             }
         }
 
-        private void Backspase_Click(object sender, EventArgs e)
+        private void Backspase_Click(object sender, RoutedEventArgs e)
         {
             if (lable != "" && Double.Parse(lable) > 0 && lable != "0")
             {
@@ -189,7 +189,7 @@ namespace Calc
 
         }
 
-        private void CleanElement_Click(object sender, EventArgs e)
+        private void CleanElement_Click(object sender, RoutedEventArgs e)
         {
             calc.value2 = null;
             lable = "0";
@@ -200,7 +200,7 @@ namespace Calc
 
         }
 
-        private void CleanAll_Click(object sender, EventArgs e)
+        private void CleanAll_Click(object sender, RoutedEventArgs e)
         {
             calc.value2 = null;
             calc.value1 = null;
@@ -216,7 +216,7 @@ namespace Calc
             calc.member_value2 = null;
         }
 
-        private void Plus_Click(object sender, EventArgs e)
+        private void Plus_Click(object sender, RoutedEventArgs e)
         {
 
 
@@ -265,7 +265,7 @@ namespace Calc
         }
 
 
-        private void Min_Click(object sender, EventArgs e)
+        private void Min_Click(object sender, RoutedEventArgs e)
         {
 
             if (lable != "")
@@ -411,7 +411,7 @@ namespace Calc
                 calc.value2 = null;
             }
         }
-        private void Dell_Click(object sender, EventArgs e)
+        private void Dell_Click(object sender, RoutedEventArgs e)
         {
 
             if (lable != "")
@@ -488,82 +488,82 @@ namespace Calc
             }
         }
 
-        private void B1_Click(object sender, EventArgs e)
+        private void B1_Click(object sender, RoutedEventArgs e)
         {
 
             Button b = (Button)sender;
             b.Focus();
-            Texts(b.Text);
+            Texts(b.Content.ToString());
 
         }
 
 
         private void B3_KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.KeyCode)
+            switch (e.Key)
             {
-                case Keys.NumPad0:
+                case Key.NumPad0:
                     Texts("0");
                     break;
 
-                case Keys.NumPad1:
+                case Key.NumPad1:
                     Texts("1");
                     break;
 
-                case Keys.NumPad2:
+                case Key.NumPad2:
                     Texts("2");
                     break;
 
-                case Keys.NumPad3:
+                case Key.NumPad3:
                     Texts("3");
                     break;
 
-                case Keys.NumPad4:
+                case Key.NumPad4:
                     Texts("4");
                     break;
 
-                case Keys.NumPad5:
+                case Key.NumPad5:
                     Texts("5");
                     break;
 
-                case Keys.NumPad6:
+                case Key.NumPad6:
                     Texts("6");
                     break;
 
-                case Keys.NumPad7:
+                case Key.NumPad7:
                     Texts("7");
                     break;
 
-                case Keys.NumPad8:
+                case Key.NumPad8:
                     Texts("8");
                     break;
 
-                case Keys.NumPad9:
+                case Key.NumPad9:
                     Texts("9");
                     break;
 
-                case Keys.Divide:
+                case Key.Divide:
                     Dell_Click(sender, e);
                     break;
-                case Keys.Multiply:
+                case Key.Multiply:
                     Ymnoj_Click(sender, e);
                     break;
-                case Keys.Subtract:
+                case Key.Subtract:
                     Min_Click(sender, e);
                     break;
-                case Keys.Add:
+                case Key.Add:
                     Plus_Click(sender, e);
                     break;
-                case Keys.Return:
+                case Key.Return:
                     RESULT_Click(sender, e);
                     break;
-                case Keys.Decimal:
+                case Key.Decimal:
                     Zap_Click(sender, e);
                     break;
-                case Keys.Delete:
+                case Key.Delete:
                     CleanAll_Click(sender, e);
                     break;
-                case Keys.Back:
+                case Key.Back:
                     CleanElement_Click(sender, e);
                     break;
 
@@ -571,7 +571,7 @@ namespace Calc
 
         }
 
-        private void Ymnoj_Click(object sender, EventArgs e)
+        private void Ymnoj_Click(object sender, RoutedEventArgs e)
         {
 
             if (lable != "")
@@ -669,7 +669,7 @@ namespace Calc
 
 
 
-        private void RESULT_Click(object sender, EventArgs e)
+        private void RESULT_Click(object sender, RoutedEventArgs e)
         {
             if (calc.member_value2 != null && label2.Text == "")
             {
@@ -707,15 +707,16 @@ namespace Calc
 
 
 
-        private void Zap_Click(object sender, EventArgs e)
+        private void Zap_Click(object sender, RoutedEventArgs e)
         {
             if (!label1.Text.ToString().Contains("."))
             {
-                label1.Text += ",";
-                lable += ",";
+                label1.Text += ".";
+                lable += ".";
             }
-        }
-
+        }      
+    }
+}
 
     
-}
+    

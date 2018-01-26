@@ -1,4 +1,4 @@
-﻿<Window x:Class="Calc.MainWindow"
+﻿<Window x:Class="Calcs.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -18,8 +18,8 @@
                     <RowDefinition Height="0.25*"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <TextBox Grid.Row="0"/>
-                    <TextBox Grid.Row="1"/>
+                <TextBox Name="label2" Grid.Row="0" TextAlignment="Right"/>
+                <TextBox  Name="label1" Grid.Row="1" TextAlignment="Right" FontSize="20"/>
                 
 
                 <Grid  Grid.Row="2" >
@@ -36,22 +36,22 @@
                         <RowDefinition Height="1*"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Button Content="CE" Margin="2.0" Grid.Row="0" Grid.Column="0" />
-                    <Button Content="C" Margin="2.0"  Grid.Row="0" Grid.Column="1" />
-                    <Button Content="&lt;" Margin="2.0"   Grid.Row="0" Grid.Column="2"/>
-                    <Button Content="/" Margin="2.0"  Grid.Row="0" Grid.Column="3" />
-                    <Button Content="7" Margin="2.0"   Grid.Row="1" Grid.Column="0"/>
-                    <Button Content="8" Margin="2.0"   Grid.Row="1" Grid.Column="1"/>
-                    <Button Content="9" Margin="2.0"  Grid.Row="1" Grid.Column="2" />
-                    <Button Content="*" Margin="2.0"   Grid.Row="1" Grid.Column="3"/>
-                    <Button Content="4" Margin="2.0"   Grid.Row="2" Grid.Column="0"/>
-                    <Button Content="5" Margin="2.0"    Grid.Row="2" Grid.Column="1"/>
-                    <Button Content="6" Margin="2.0"   Grid.Row="2" Grid.Column="2"/>
-                    <Button Content="-" Margin="2.0"   Grid.Row="2" Grid.Column="3"/>
-                    <Button Content="1" Margin="2.0"   Grid.Row="3" Grid.Column="0"/>
-                    <Button Content="2" Margin="2.0"  Grid.Row="3" Grid.Column="1"/>
-                    <Button Content="3" Margin="2.0"  Grid.Row="3" Grid.Column="2"/>
-                    <Button Content="+" Margin="2.0"  Grid.Row="3" Grid.Column="3"/>
+                    <Button Content="CE" Margin="2.0" Grid.Row="0" Grid.Column="0" Click="CleanElement_Click" />
+                    <Button Content="C" Margin="2.0"  Grid.Row="0" Grid.Column="1" Click="CleanAll_Click" />
+                    <Button Content="&lt;" Margin="2.0"   Grid.Row="0" Grid.Column="2" Click="Backspase_Click"/>
+                    <Button Content="/" Margin="2.0"  Grid.Row="0" Grid.Column="3" Click="Dell_Click" />
+                    <Button Content="7" Margin="2.0"   Grid.Row="1" Grid.Column="0" Click="B1_Click"/>
+                    <Button Content="8" Margin="2.0"   Grid.Row="1" Grid.Column="1" Click="B1_Click"/>
+                    <Button Content="9" Margin="2.0"  Grid.Row="1" Grid.Column="2" Click="B1_Click" />
+                    <Button Content="*" Margin="2.0"   Grid.Row="1" Grid.Column="3" Click="Ymnoj_Click"/>
+                    <Button Content="4" Margin="2.0"   Grid.Row="2" Grid.Column="0" Click="B1_Click"/>
+                    <Button Content="5" Margin="2.0"    Grid.Row="2" Grid.Column="1" Click="B1_Click"/>
+                    <Button Content="6" Margin="2.0"   Grid.Row="2" Grid.Column="2" Click="B1_Click"/>
+                    <Button Content="-" Margin="2.0"   Grid.Row="2" Grid.Column="3" Click="Min_Click"/>
+                    <Button Content="1" Margin="2.0"   Grid.Row="3" Grid.Column="0" Click="B1_Click"/>
+                    <Button Content="2" Margin="2.0"  Grid.Row="3" Grid.Column="1" Click="B1_Click"/>
+                    <Button Content="3" Margin="2.0"  Grid.Row="3" Grid.Column="2" Click="B1_Click"/>
+                    <Button Content="+" Margin="2.0"  Grid.Row="3" Grid.Column="3" Click="Plus_Click"/>
 
                 </Grid>
                 <Grid Grid.Row="3">
@@ -64,9 +64,9 @@
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Button Content="." Margin="2.0" Grid.Row="0" Grid.Column="0" />
-                    <Button Content="0" Margin="2.0" Grid.Row="0" Grid.Column="1" />
-                    <Button Content="=" Margin="2.0" Grid.Row="0" Grid.Column="2"   />
+                    <Button Content="." Margin="2.0" Grid.Row="0" Grid.Column="0" Click="Zap_Click" />
+                    <Button Content="0" Margin="2.0" Grid.Row="0" Grid.Column="1" Click="B1_Click" />
+                    <Button Content="=" Margin="2.0" Grid.Row="0" Grid.Column="2" Click="RESULT_Click"   />
 
                 </Grid>
             </Grid>
