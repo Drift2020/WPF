@@ -7,17 +7,32 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
-        <StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.RowSpan="0">
+            <TextBlock></TextBlock>
+        </Grid>
+
+        <StackPanel Grid.RowSpan="2">
             <Button Content="Ok"/>
             <Button Content="Cancel"/>
             <Button Content="Dellite"/>
         </StackPanel>
-        <DockPanel>
-            
-        </DockPanel>
-        <Grid>
+        
+      
+        
+        <Grid Grid.RowSpan="1">
+            <DockPanel>
 
+            </DockPanel>
+            <Grid >
+
+            </Grid>
         </Grid>
+        
     </Grid>
 </Window>
