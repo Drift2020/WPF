@@ -671,40 +671,48 @@ namespace Calcs
 
         private void RESULT_Click(object sender, RoutedEventArgs e)
         {
-            if (calc.member_value2 != null && label2.Text == "")
+            try
             {
-                calc.value2 = calc.member_value2;
-                calc.value1 = Double.Parse(label1.Text);
-                calc.value1 = calc.Operetion() != null ? calc.Operetion() : calc.value1;
+                if (calc.member_value2 != null && label2.Text == "")
+                {
+                    calc.value2 = calc.member_value2;
+                    calc.value1 = Double.Parse(label1.Text);
+                    calc.value1 = calc.Operetion() != null ? calc.Operetion() : calc.value1;
 
 
 
-                label2.Text = "";
-                label1.Text = calc.value1.ToString();
-                calc.value2 = null;
-                calc.value1 = null;
-                lable = "0";
-                strings = "";
-                sqrt = "";
+                    label2.Text = "";
+                    label1.Text = calc.value1.ToString();
+                    calc.value2 = null;
+                    calc.value1 = null;
+                    lable = "0";
+                    strings = "";
+                    sqrt = "";
+                }
+                else if (calc.value2 == null && calc.value1 != null)
+                {
+
+                    calc.member_value2 = calc.value2 = Double.Parse(lable);
+                    calc.value1 = calc.Operetion() != null ? calc.Operetion() : calc.value1;
+
+
+
+                    label2.Text = "";
+                    label1.Text = calc.value1.ToString();
+                    calc.value2 = null;
+                    //calc.value1 = null;
+                    lable = "0";
+                    strings = "";
+                    sqrt = "";
+                }
+
             }
-            else if (calc.value2 == null && calc.value1 != null)
+            catch
             {
 
-                calc.member_value2 = calc.value2 = Double.Parse(lable);
-                calc.value1 = calc.Operetion() != null ? calc.Operetion() : calc.value1;
-
-
-
-                label2.Text = "";
-                label1.Text = calc.value1.ToString();
-                calc.value2 = null;
-                //calc.value1 = null;
-                lable = "0";
-                strings = "";
-                sqrt = "";
             }
-        }
 
+            }
 
 
         private void Zap_Click(object sender, RoutedEventArgs e)
