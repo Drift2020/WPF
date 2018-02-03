@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
 
         <Grid  Grid.Row="0">
-            <ComboBox Name="ListUser"></ComboBox>
+            <ComboBox Name="ListUser" ContextMenuOpening="ListUser_ContextMenuOpening"></ComboBox>
         </Grid>
 
         <Grid Grid.Row="1">
@@ -70,18 +70,18 @@
                 <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">Адрес</TextBlock>
                 <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">e-mail</TextBlock>
 
-                <TextBox Name="NFO" Grid.Row="0" Grid.Column="1"/>
-                <TextBox Name="Value" Grid.Row="1" Grid.Column="1"/>
-                <TextBox Name="FamelyStatys" Grid.Row="2" Grid.Column="1"/>
-                <TextBox Name="Adress" Grid.Row="3" Grid.Column="1"/>
-                <TextBox Name="E_mail" Grid.Row="4" Grid.Column="1"/>
+                <TextBox Name="_NFO" Grid.Row="0" Grid.Column="1"/>
+                <TextBox Name="_Value" Grid.Row="1" Grid.Column="1"/>
+                <TextBox Name="_FamelyStatys" Grid.Row="2" Grid.Column="1"/>
+                <TextBox Name="_Adress" Grid.Row="3" Grid.Column="1"/>
+                <TextBox Name="_E_mail" Grid.Row="4" Grid.Column="1"/>
             </Grid>
         </Grid>
 
         <StackPanel Grid.Row="2">
-            <Button Content="Ok"/>
+            <Button Content="Ok" Click="Button_Click"/>
             <Button Content="Cancel"/>
-            <Button Content="Dellite"/>
+            <Button Content="prosmotr"/>
         </StackPanel>
 
 
