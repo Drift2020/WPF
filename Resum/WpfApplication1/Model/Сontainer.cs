@@ -13,7 +13,7 @@ namespace WpfApplication1.Model
       
        
 
-            List<Info> ques = new List<Info>();
+            List<Info> InfoUser = new List<Info>();
 
             ISerializer serialize;
             public Сontainer() { }
@@ -23,41 +23,41 @@ namespace WpfApplication1.Model
 
             }
 
-            public void Add(Info question)
+            public void Add(Info InfoUser)
             {
-                this.ques.Add(question);
+                this.InfoUser.Add(InfoUser);
               
             }
             public void Remove(int index)
             {
-                if (index < 0 || index >= ques.Count)
+                if (index < 0 || index >= InfoUser.Count)
                     return;
-                ques.RemoveAt(index);
+                InfoUser.RemoveAt(index);
               
             }
 
             public void RemoveAll()
             {
-                ques.RemoveRange(0, ques.Count);
+                InfoUser.RemoveRange(0, InfoUser.Count);
                
             }
             public void Save()
             {
-                serialize.Save(ques);
+                serialize.Save(InfoUser);
                 
             }
             public void Load()
             {
-                ques = serialize.Load() as List<Info>;
+                InfoUser = serialize.Load() as List<Info>;
                 
             }
             public Info Element(int index)
             {
-                return ques[index];
+                return InfoUser[index];
             }
             public int Count()
             {
-                return ques.Count;
+                return InfoUser.Count;
             }               
     }
 }

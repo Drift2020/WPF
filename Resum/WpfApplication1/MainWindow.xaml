@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
 
         <Grid  Grid.Row="0">
-            <ComboBox></ComboBox>
+            <ComboBox Name="ListUser"></ComboBox>
         </Grid>
 
         <Grid Grid.Row="1">
