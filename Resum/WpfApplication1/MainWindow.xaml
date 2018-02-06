@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" Closed="Window_Closed">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
 
         <Grid  Grid.Row="0">
-            <ComboBox Name="ListUser" ContextMenuOpening="ListUser_ContextMenuOpening"></ComboBox>
+            <ComboBox Name="ListUser" DropDownOpened="ListUser_DropDownOpened" FontSize="20" />
         </Grid>
 
         <Grid Grid.Row="1">
@@ -28,8 +28,8 @@
             <DockPanel  Grid.Column="1">
                 <TextBlock DockPanel.Dock="Top" TextAlignment="Center">Навыки и знания</TextBlock>
                 
-                <WrapPanel >
-                    
+                <WrapPanel Name="checGroup">
+                   
                     <CheckBox Margin="5" Name="Ch1" Content="C#"/>
                     <CheckBox Margin="5" Name="Ch2" Content="WinApp" />
                     <CheckBox Margin="5" Name="Ch3" Content="WindowForms" />
@@ -82,8 +82,8 @@
 
         <StackPanel Grid.Row="2">
             <Button Content="Ok" Click="Button_Click"/>
-            <Button Content="Cancel"/>
-            <Button Content="prosmotr"/>
+            <Button Content="Delete" Click="Button_Click_2"/>
+            <Button Content="prosmotr" Click="Button_Click_1"/>
         </StackPanel>
 
 

@@ -39,7 +39,7 @@ namespace WpfApplication1.Interfese
             get;
             set;
         }
-        bool[] ChecBox
+        bool[] ChecBoxs
         {
             get;
             set;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -33,7 +34,7 @@ namespace WpfApplication1
 
             checBox = new bool[itemChecBox];
 
-
+         
 
             myContainer.SetSerializer(new Model.XMLSerializer());
             myContainer.Load();
@@ -53,8 +54,8 @@ namespace WpfApplication1
         #region EventFunct
         private void AddResum1(object sender, EventArgs e)
         {
-            if (Nfo != "" && Nfo != null)
-                myContainer.Add(new Model.Info(Nfo,Value, FamelyStatys,Adress,E_mail,ChecBox));
+             if (Nfo != "" && Nfo != null)
+                myContainer.Add(new Model.Info(Nfo,Value, FamelyStatys,Adress,E_mail,ChecBoxs));
             else
                 throw new Exception("поле ФИО должо быть заполненно");
         }
@@ -62,7 +63,7 @@ namespace WpfApplication1
         {
             for (int i = 0; i < myContainer.Count(); i++)
             {
-              ElementResum.Add(myContainer.Element(i).Nfo);
+                ElementResum.Add(myContainer.Element(i).Nfo);
             }
 
         }
@@ -98,7 +99,7 @@ namespace WpfApplication1
             get { return _E_mail.Text; }
             set { _E_mail.Text= value; }
         }
-        public bool[] ChecBox
+        public bool[] ChecBoxs
         {
             get { return checBox; }
             set { checBox = value; }
@@ -112,20 +113,24 @@ namespace WpfApplication1
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
-            { 
-                for(int i=0;i<itemChecBox;i++)
+            {
+                for (int i = 0; i < itemChecBox; i++)
                 {
-                    if(Ch1.IsChecked==true)
+
+                    checBox[i] = false;
+                }
+                for (int i=0;i<itemChecBox;i++)
+                {
+
+                    CheckBox t =  (CheckBox)checGroup.FindName("Ch"+(i+1));
+                
+                    if (t.IsChecked == true)
                     {
-                        checBox[i] = true;
+                     checBox[i] = true;
                     }
                 }
                 AddResum?.Invoke(this, EventArgs.Empty);
-                for (int i = 0; i < itemChecBox; i++)
-                {
-                   
-                        checBox[i] = false;                 
-                }
+               
             }
             catch (Exception ex)
             {
@@ -134,21 +139,76 @@ namespace WpfApplication1
 
         }
 
-        private void ListUser_ContextMenuOpening(object sender, ContextMenuEventArgs e)
+    
+
+        private void ListUser_DropDownOpened(object sender, EventArgs e)
         {
             try
             {
-
+                elementResum.Clear();
+                ListUser.Items.Clear();
                 OpenList?.Invoke(this, EventArgs.Empty);
-                for(int i=0;i<elementResum.Count;i++)
-                {                   
-                    ListUser.Items.Add("1."+ (ElementResum));
+               
+                for (int i = 0; i < elementResum.Count; i++)
+                {
+                    ListUser.Items.Add("1." + (elementResum[i]));
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }       
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            
+            MainWindow win=new MainWindow();
+
+            for (int i = 0; i < elementResum.Count; i++)
+            {
+               if (ListUser.SelectedItem.ToString()==("1." + (elementResum[i])))
+               {
+                    win.Title= win.Nfo = myContainer.Element(i).Nfo;
+                    win.Adress = myContainer.Element(i).Adress;
+                    win.E_mail = myContainer.Element(i).E_mail;
+                    win.Value = myContainer.Element(i).Value;
+                    win.FamelyStatys = myContainer.Element(i).FamelyStatys;
+
+                    win.checBox = myContainer.Element(i).ChecBox;
+
+                    for (int i1 = 0; i1 < itemChecBox; i1++)
+                    {
+
+                        CheckBox t = (CheckBox)win.checGroup.FindName("Ch" + (i1 + 1));
+
+                        if (win.checBox[i1] == true)
+                        {
+                            t.IsChecked = true;
+                        }
+                    }
+                }
+            }
+          
+
+            // Show the window.
+            win.ShowDialog();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            myContainer.Save();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < elementResum.Count; i++)
+            {
+                if (ListUser.SelectedItem.ToString() == ("1." + (elementResum[i])))
+                {
+                    myContainer.Remove(i);
+                }
+            }
         }
     }
 }

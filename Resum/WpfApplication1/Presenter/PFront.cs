@@ -28,7 +28,7 @@ namespace WpfApplication1.Presenter
         private void AddResum(object sender, EventArgs e)
         {
             if (_view.Nfo != "" && _view.Nfo != null)
-                myContainer.Add(new Model.Info(_view.Nfo, _view.Value, _view.FamelyStatys, _view.Adress, _view.E_mail, _view.ChecBox));
+                myContainer.Add(new Model.Info(_view.Nfo, _view.Value, _view.FamelyStatys, _view.Adress, _view.E_mail, _view.ChecBoxs));
             else
                 throw new Exception("поле ФИО должо быть заполненно");
         }
