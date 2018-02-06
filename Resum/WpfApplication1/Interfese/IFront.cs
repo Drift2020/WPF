@@ -12,6 +12,8 @@ namespace WpfApplication1.Interfese
         event EventHandler<EventArgs> AddResum;
         event EventHandler<EventArgs> OpenList;
 
+     
+
         string Nfo
         {
             get;

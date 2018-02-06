@@ -27,7 +27,9 @@
             
             <DockPanel  Grid.Column="1">
                 <TextBlock DockPanel.Dock="Top" TextAlignment="Center">Навыки и знания</TextBlock>
+                
                 <WrapPanel >
+                    
                     <CheckBox Margin="5" Name="Ch1" Content="C#"/>
                     <CheckBox Margin="5" Name="Ch2" Content="WinApp" />
                     <CheckBox Margin="5" Name="Ch3" Content="WindowForms" />

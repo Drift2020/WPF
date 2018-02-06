@@ -36,7 +36,7 @@ namespace WpfApplication1.Model
                 return temp;
             }
             catch (Exception ex) { };
-            stream.Close();
+          
             return new List<Info>();
         }
 

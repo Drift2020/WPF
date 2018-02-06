@@ -22,20 +22,57 @@ namespace WpfApplication1
     {
         private bool[] checBox;
         const int itemChecBox = 14;
+
+
+        private Model.Сontainer myContainer = new Model.Сontainer();
+       
+
         public MainWindow()
         {
             InitializeComponent();
 
             checBox = new bool[itemChecBox];
-          
+
+
+
+            myContainer.SetSerializer(new Model.XMLSerializer());
+            myContainer.Load();
+
+           
+            // Презентер подписывается на уведомления о событиях Представления
+
+           AddResum += new EventHandler<EventArgs>(AddResum1);
+           OpenList += new EventHandler<EventArgs>(OpenList1);
+
         }
         #region event
         public event EventHandler<EventArgs> AddResum;
         public event EventHandler<EventArgs> OpenList;
         #endregion event
+
+        #region EventFunct
+        private void AddResum1(object sender, EventArgs e)
+        {
+            if (Nfo != "" && Nfo != null)
+                myContainer.Add(new Model.Info(Nfo,Value, FamelyStatys,Adress,E_mail,ChecBox));
+            else
+                throw new Exception("поле ФИО должо быть заполненно");
+        }
+        private void OpenList1(object sender, EventArgs e)
+        {
+            for (int i = 0; i < myContainer.Count(); i++)
+            {
+              ElementResum.Add(myContainer.Element(i).Nfo);
+            }
+
+        }
+        #endregion EventFunct
+
         List<string> elementResum = new List<string>();
 
         #region pole
+ 
+
         public string Nfo
         {
             get { return _NFO.Text; }
@@ -76,7 +113,19 @@ namespace WpfApplication1
         {
             try
             { 
+                for(int i=0;i<itemChecBox;i++)
+                {
+                    if(Ch1.IsChecked==true)
+                    {
+                        checBox[i] = true;
+                    }
+                }
                 AddResum?.Invoke(this, EventArgs.Empty);
+                for (int i = 0; i < itemChecBox; i++)
+                {
+                   
+                        checBox[i] = false;                 
+                }
             }
             catch (Exception ex)
             {
@@ -92,8 +141,8 @@ namespace WpfApplication1
 
                 OpenList?.Invoke(this, EventArgs.Empty);
                 for(int i=0;i<elementResum.Count;i++)
-                {
-                    iuty
+                {                   
+                    ListUser.Items.Add("1."+ (ElementResum));
                 }
             }
             catch (Exception ex)

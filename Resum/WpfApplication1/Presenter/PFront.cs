@@ -34,7 +34,11 @@ namespace WpfApplication1.Presenter
         }
         private void OpenList(object sender, EventArgs e)
         {
-
+            for(int i=0;i<myContainer.Count();i++)
+            {
+                _view.ElementResum.Add(myContainer.Element(i).Nfo);
+            }
+            
         }
         
     }
