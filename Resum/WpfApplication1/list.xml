@@ -1,26 +1,26 @@
 <?xml version="1.0"?>
 <ArrayOfInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Info>
-    <Nfo>Буженко Александр Александрович</Nfo>
-    <Value>6935 дней</Value>
-    <FamelyStatys>Две кошки</FamelyStatys>
-    <Adress>00000001</Adress>
-    <E_mail>Голубь iВася</E_mail>
+    <Nfo>g</Nfo>
+    <Value>g</Value>
+    <FamelyStatys>g</FamelyStatys>
+    <Adress>g</Adress>
+    <E_mail>g</E_mail>
     <ChecBox>
-      <boolean>true</boolean>
-      <boolean>true</boolean>
-      <boolean>true</boolean>
-      <boolean>true</boolean>
-      <boolean>true</boolean>
-      <boolean>true</boolean>
-      <boolean>true</boolean>
-      <boolean>true</boolean>
-      <boolean>true</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
       <boolean>false</boolean>
       <boolean>true</boolean>
       <boolean>false</boolean>
       <boolean>false</boolean>
-      <boolean>true</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
     </ChecBox>
   </Info>
 </ArrayOfInfo>

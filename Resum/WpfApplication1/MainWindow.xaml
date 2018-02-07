@@ -33,7 +33,7 @@
             </Grid.ColumnDefinitions>
             
             <DockPanel  Grid.Column="1" Background="Black">
-                <TextBlock DockPanel.Dock="Top" TextAlignment="Center">Навыки и знания</TextBlock>
+                <TextBlock DockPanel.Dock="Top" TextAlignment="Center" Foreground="White">Навыки и знания</TextBlock>
 
                 <WrapPanel  DockPanel.Dock="Top" Name="checGroup" Background="Black" VerticalAlignment="Top">
                    

@@ -20,7 +20,7 @@
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.75*"></RowDefinition>
             <RowDefinition></RowDefinition>
 
         </Grid.RowDefinitions>
@@ -37,21 +37,37 @@
         </DockPanel>
         <DockPanel Grid.Row="1" Grid.Column="1">
             <Label DockPanel.Dock="Top" >Время начала:</Label>
+            <TickBar></TickBar>
         </DockPanel>
         <DockPanel Grid.Row="1" Grid.Column="2">
             <Label DockPanel.Dock="Top" >Дата начала:</Label>
+            <DatePicker Name="datePicker1" IsDropDownOpen="True" SelectedDateFormat="Short" VerticalAlignment="Center"/>
         </DockPanel>
 
         <GroupBox Header="Расписание по неделям:" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
-            <DockPanel>
-                <CheckBox DockPanel.Dock="Left" Margin="10">Пн</CheckBox>
-                <CheckBox Margin="10">Вт</CheckBox>
-                <CheckBox Margin="10">Ср</CheckBox>
-                <CheckBox Margin="10">Чт</CheckBox>
-                <CheckBox Margin="10">Пт</CheckBox>
-                <CheckBox Margin="10">Сб</CheckBox>
-                <CheckBox DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="10">Вс</CheckBox>
-            </DockPanel>
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+
+               
+
+                <CheckBox  Grid.Column="0" Margin="10">Пн</CheckBox>
+                <CheckBox  Grid.Column="1"  Margin="10">Вт</CheckBox>
+                <CheckBox  Grid.Column="2" Margin="10">Ср</CheckBox>
+                <CheckBox   Grid.Column="3" Margin="10">Чт</CheckBox>
+                <CheckBox   Grid.Column="4" Margin="10">Пт</CheckBox>
+                <CheckBox  Grid.Column="5" Margin="10">Сб</CheckBox>
+                <CheckBox  Grid.Column="6" HorizontalAlignment="Center" Margin="10">Вс</CheckBox>
+            </Grid>
         </GroupBox>
         
         <Button Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,35.125,100,15.125"  Content="ОК"  Width="70"/>
