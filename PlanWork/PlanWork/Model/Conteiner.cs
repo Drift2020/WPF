@@ -11,7 +11,7 @@ namespace PlanWork.Model
     public class Сontainer
     {
 
-        List<Info> ques = new List<Info>();
+        List<Info> informs = new List<Info>();
 
         ISerializer serialize;
         public Сontainer() { }
@@ -24,39 +24,39 @@ namespace PlanWork.Model
 
         public void Add(Info Info)
         {
-            this.ques.Add(Info);
+            this.informs.Add(Info);
             //  log.Write("Данные успешно добавлены!");
         }
         public void Remove(int index)
         {
-            if (index < 0 || index >= ques.Count)
+            if (index < 0 || index >= informs.Count)
                 return;
-            ques.RemoveAt(index);
+            informs.RemoveAt(index);
             // log.Write("Удаление успешно выполнено!");
         }
 
         public void RemoveAll()
         {
-            ques.RemoveRange(0, ques.Count);
+            informs.RemoveRange(0, informs.Count);
             // log.Write("Все данные успешно удалены!");
         }
         public void Save()
         {
-            serialize.Save(ques);
+            serialize.Save(informs);
             //  log.Write("Сериализация успешно выполнена!");
         }
         public void Load()
         {
-            ques = serialize.Load() as List<Info>;
+            informs = serialize.Load() as List<Info>;
             //  log.Write("Десериализация успешно выполнена!");
         }
         public Info Element(int index)
         {
-            return ques[index];
+            return informs[index];
         }
         public int Count()
         {
-            return ques.Count;
+            return informs.Count;
         }
    
 

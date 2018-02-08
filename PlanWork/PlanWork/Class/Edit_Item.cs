@@ -8,5 +8,10 @@ namespace PlanWork.Class
 {
     class Edit_Item
     {
+        private string path;
+        private string program;
+        private string  timeThis;
+        private Model.Work myWork;
+        private bool[] days_of_the_week;
     }
 }

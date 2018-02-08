@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PlanWork.Class
+namespace PlanWork.Interfese
 {
-    class Add_Work
-    {
-    }
+   public interface IAdd
+   {
+
+   }
 }

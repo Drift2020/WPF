@@ -12,21 +12,24 @@ namespace PlanWork.Model
     public class Info
     {
         private string path;
-        private string program;
-        private DateTime timeThis;
+        private string timeThis;
+        private string dateThis;
         private Work myWork;
         private bool[] days_of_the_week;
-        public Info(string Path,string Program,DateTime TimeThis,Work MyWork)
+
+        public Info(string Path, string TimeThis ,string DateThis, Work MyWork,bool[] Days_of_the_week)
         {
             path = Path;
-            program = Program;
+            dateThis = DateThis;
             timeThis = TimeThis;
             myWork = MyWork;
+            days_of_the_week = Days_of_the_week;
         }
         
         public string Path { get { return path; } set { path = value; } }
-        public string Program { get { return program; } set { program = value; } }
-        public DateTime TimeThis { get { return timeThis; } set { timeThis = value; } }
+        public string DateThis { get { return dateThis; } set { dateThis = value; } }
+        public bool[] Days_of_the_week { get { return days_of_the_week; } set { days_of_the_week = value; } }
+        public string TimeThis { get { return timeThis; } set { timeThis = value; } }
         public Work MyWork { get { return myWork; } set { myWork = value; } }
     }
 }

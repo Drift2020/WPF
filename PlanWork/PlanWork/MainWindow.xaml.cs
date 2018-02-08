@@ -19,8 +19,11 @@ namespace PlanWork
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+   
     public partial class MainWindow : Window
     {
+        private Class.Plan_Work myPlan;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,6 +34,10 @@ namespace PlanWork
             
             AddAndEdit Temp = new AddAndEdit();
             Temp.ShowDialog();
+            if (Temp.DialogResult == true)
+            {
+                myPlan.Add(new Model.Info(Temp.add_item.Path, Temp.add_item.TimeThis, Temp.add_item.DateThis, Temp.add_item.MyWork, Temp.add_item.Days_of_the_week));
+            }
         }
     }
 }

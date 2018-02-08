@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace PlanWork.Class
 {
-    class Plan_Work
+    public class Add_Item: Interfese.IAdd
     {
-        Model.Сontainer myInfo;
         private string path;
         private string timeThis;
         private string dateThis;
@@ -22,7 +21,7 @@ namespace PlanWork.Class
         public Model.Work MyWork { get { return myWork; } set { myWork = value; } }
 
 
-        public Plan_Work (string Path, string TimeThis, string DateThis, Model.Work MyWork, bool[] Days_of_the_week)
+        public Add_Item( )
         {
             path = Path;
             dateThis = DateThis;
@@ -30,5 +29,6 @@ namespace PlanWork.Class
             myWork = MyWork;
             days_of_the_week = Days_of_the_week;
         }
+
     }
 }
