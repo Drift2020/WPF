@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -27,8 +28,9 @@ namespace PlanWork
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
+            
             AddAndEdit Temp = new AddAndEdit();
-            Temp.Show();
+            Temp.ShowDialog();
         }
     }
 }

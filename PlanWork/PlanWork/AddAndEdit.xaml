@@ -28,7 +28,7 @@
         <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
             <Label DockPanel.Dock="Top" HorizontalAlignment="Left" >Выполнить:</Label>
             <TextBox DockPanel.Dock="Top"></TextBox>
-            <Button DockPanel.Dock="Top" HorizontalAlignment="Right" Width="80" Height="20">Обзор...</Button>
+            <Button DockPanel.Dock="Top" HorizontalAlignment="Right" Width="80" Height="20" Click="Button_Click">Обзор...</Button>
         </DockPanel>
 
         <DockPanel Grid.Row="1" Grid.Column="0">
@@ -37,11 +37,12 @@
         </DockPanel>
         <DockPanel Grid.Row="1" Grid.Column="1">
             <Label DockPanel.Dock="Top" >Время начала:</Label>
-            <TickBar></TickBar>
+            <!--https://www.codeproject.com/Articles/237011/CREATING-A-CUSTOM-TIMEPICKER-CONTROL-IN-WPF -->
+            <Grid x:Class="DateTimePicker"></Grid>
         </DockPanel>
         <DockPanel Grid.Row="1" Grid.Column="2">
             <Label DockPanel.Dock="Top" >Дата начала:</Label>
-            <DatePicker Name="datePicker1" IsDropDownOpen="True" SelectedDateFormat="Short" VerticalAlignment="Center"/>
+            <DatePicker Name="datePicker1" Margin="10" IsDropDownOpen="True" SelectedDateFormat="Short" VerticalAlignment="Center"/>
         </DockPanel>
 
         <GroupBox Header="Расписание по неделям:" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
