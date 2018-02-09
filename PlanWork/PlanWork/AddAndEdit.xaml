@@ -52,25 +52,25 @@
             <Grid Name="_days_of_the_week">
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Name="Ch1" Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Name="Ch2" Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Name="Ch3" Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Name="Ch4" Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Name="Ch5" Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Name="Ch6" Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Name="Ch7" Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
 
                 </Grid.ColumnDefinitions>
 
-               
 
-                <CheckBox  Grid.Column="0" Margin="10">Пн</CheckBox>
-                <CheckBox  Grid.Column="1"  Margin="10">Вт</CheckBox>
-                <CheckBox  Grid.Column="2" Margin="10">Ср</CheckBox>
-                <CheckBox   Grid.Column="3" Margin="10">Чт</CheckBox>
-                <CheckBox   Grid.Column="4" Margin="10">Пт</CheckBox>
-                <CheckBox  Grid.Column="5" Margin="10">Сб</CheckBox>
-                <CheckBox  Grid.Column="6"  Margin="10">Вс</CheckBox>
+
+                <CheckBox Name="Ch1" Grid.Column="0" Margin="10">Пн</CheckBox>
+                <CheckBox Name="Ch2" Grid.Column="1"  Margin="10">Вт</CheckBox>
+                <CheckBox Name="Ch3" Grid.Column="2" Margin="10">Ср</CheckBox>
+                <CheckBox Name="Ch4" Grid.Column="3" Margin="10">Чт</CheckBox>
+                <CheckBox Name="Ch5" Grid.Column="4" Margin="10">Пт</CheckBox>
+                <CheckBox Name="Ch6" Grid.Column="5" Margin="10">Сб</CheckBox>
+                <CheckBox Name="Ch7" Grid.Column="6"  Margin="10">Вс</CheckBox>
             </Grid>
         </GroupBox>
         

@@ -25,7 +25,10 @@ namespace PlanWork.Model
             myWork = MyWork;
             days_of_the_week = Days_of_the_week;
         }
-        
+        public Info()
+        {
+           
+        }
         public string Path { get { return path; } set { path = value; } }
         public string DateThis { get { return dateThis; } set { dateThis = value; } }
         public bool[] Days_of_the_week { get { return days_of_the_week; } set { days_of_the_week = value; } }

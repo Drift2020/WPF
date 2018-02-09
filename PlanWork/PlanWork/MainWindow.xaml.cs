@@ -7,7 +7,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -28,9 +27,18 @@ namespace PlanWork
         public MainWindow()
         {
             InitializeComponent();
-            myPlan = new Class.Plan_Work();
-        }
 
+            complitWork = new List<string>();
+            workList = new List<string>();
+
+            myPlan = new Class.Plan_Work(workList);
+
+            foreach (string t in workList)
+            {
+                _worcList.Items.Add(new Label().Content = t);
+            }
+        }
+       
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             
@@ -49,6 +57,11 @@ namespace PlanWork
 
                 myPlan.Add(Temp);
             }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            myPlan.Save();
         }
     }
 }

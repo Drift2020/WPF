@@ -120,9 +120,9 @@ namespace PlanWork
                     return;
                 }
             }
-            if (dateTimePicker.Text == "" || dateTimePicker.Text == null)
+            if (datePicker1.Text == "" || datePicker1.Text == null)
             {
-                System.Windows.MessageBox.Show("Заполните дни недели.");
+                System.Windows.MessageBox.Show("Заполните Дату начала.");
                 return;
             }
 

@@ -33,9 +33,22 @@ namespace PlanWork.Class
             myInfo.Add(new Model.Info(path, timeThis, dateThis, myWork, days_of_the_week));
 
         }
-        public Plan_Work()
+
+        public void Save()
         {
-        
+            myInfo.Save();
+        }
+
+        public Plan_Work(List<string> workList)
+        {
+            myInfo = new Model.Сontainer();
+            myInfo.SetSerializer(new Model.XMLSerializer());
+            myInfo.Load();
+
+            for (int i = 0; i < myInfo.Count(); i++)
+                workList.Add(myInfo.Element(i).Path);
+
+
         }
     }
 }

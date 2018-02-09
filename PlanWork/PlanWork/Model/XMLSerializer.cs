@@ -35,8 +35,13 @@ namespace PlanWork.Model
 
                 return temp;
             }
-            catch (Exception ex) { };
-            stream.Close();
+            catch (Exception ex)
+            {
+                
+                if (stream != null)
+                    stream.Close();
+            };
+          
             return new List<Info>();
         }
 

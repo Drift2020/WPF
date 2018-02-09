@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PlanWork"
         mc:Ignorable="d"
-        Title="MainWindow" Height="371.366" Width="431.339" MinWidth="431.339" MinHeight="371.366">
+        Title="MainWindow" Height="371.366" Width="431.339" MinWidth="431.339" MinHeight="371.366" Closed="Window_Closed">
     <Grid>
 
 
