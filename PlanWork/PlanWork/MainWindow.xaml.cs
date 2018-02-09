@@ -19,14 +19,16 @@ namespace PlanWork
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-   
+
     public partial class MainWindow : Window
     {
         private Class.Plan_Work myPlan;
-
+        List<string> workList;
+        List<string> complitWork;
         public MainWindow()
         {
             InitializeComponent();
+            myPlan = new Class.Plan_Work();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -36,7 +38,16 @@ namespace PlanWork
             Temp.ShowDialog();
             if (Temp.DialogResult == true)
             {
-                myPlan.Add(new Model.Info(Temp.add_item.Path, Temp.add_item.TimeThis, Temp.add_item.DateThis, Temp.add_item.MyWork, Temp.add_item.Days_of_the_week));
+                workList.Add(Temp.Path);
+
+                _worcList.Items.Clear();
+
+                foreach (string t in workList)
+                {
+                    _worcList.Items.Add(new Label().Content = t);
+                }
+
+                myPlan.Add(Temp);
             }
         }
     }

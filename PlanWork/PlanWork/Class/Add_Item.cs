@@ -21,7 +21,7 @@ namespace PlanWork.Class
         public Model.Work MyWork { get { return myWork; } set { myWork = value; } }
 
 
-        public Add_Item( )
+        public Add_Item(string Path, string TimeThis, string DateThis, Model.Work MyWork, bool[] Days_of_the_week)
         {
             path = Path;
             dateThis = DateThis;
@@ -29,6 +29,14 @@ namespace PlanWork.Class
             myWork = MyWork;
             days_of_the_week = Days_of_the_week;
         }
-
+        public Add_Item(Interfese.IAdd view)
+        {
+            path = view.Path;
+            dateThis = view.DateThis;
+            timeThis = view.TimeThis;
+            myWork = view.MyWork;
+            days_of_the_week = view.Days_of_the_week;
+        }
+        
     }
 }

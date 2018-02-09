@@ -33,7 +33,9 @@
 
         <DockPanel Grid.Row="1" Grid.Column="0">
             <Label DockPanel.Dock="Top" >Назначить задание:</Label>
-            <ComboBox Name ="_program" Height="20" Margin="10"/>
+            <ComboBox Name ="_program" Height="20" Margin="10" SelectionChanged="_program_SelectionChanged">
+                
+            </ComboBox>
         </DockPanel>
         <DockPanel Grid.Row="1" Grid.Column="1">
             <Label DockPanel.Dock="Top" >Время начала:</Label>

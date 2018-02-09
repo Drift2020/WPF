@@ -22,13 +22,20 @@ namespace PlanWork.Class
         public Model.Work MyWork { get { return myWork; } set { myWork = value; } }
 
 
-        public Plan_Work (string Path, string TimeThis, string DateThis, Model.Work MyWork, bool[] Days_of_the_week)
+        public void Add(Interfese.IAdd viwe)
         {
-            path = Path;
-            dateThis = DateThis;
-            timeThis = TimeThis;
-            myWork = MyWork;
-            days_of_the_week = Days_of_the_week;
+            path = viwe.Path;
+            dateThis = viwe.DateThis;
+            timeThis = viwe.TimeThis;
+            myWork = viwe.MyWork;
+            days_of_the_week = viwe.Days_of_the_week;
+
+            myInfo.Add(new Model.Info(path, timeThis, dateThis, myWork, days_of_the_week));
+
+        }
+        public Plan_Work()
+        {
+        
         }
     }
 }

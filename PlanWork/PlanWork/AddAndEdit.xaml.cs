@@ -19,21 +19,40 @@ namespace PlanWork
     /// <summary>
     /// Interaction logic for AddAndEdit.xaml
     /// </summary>
-    public partial class AddAndEdit : Window
+    public partial class AddAndEdit : Window , Interfese.IAdd
     {
         DateTimePicker dateTimePicker;
         public Class.Add_Item add_item;
+        private Model.Work myWork;
+        bool[] days_of_the_week;
+
+        public string Path { get { return _Path.Text; } set { _Path.Text = value; } }
+        public string DateThis { get { return datePicker1.Text; } set { datePicker1.Text = value; } }
+        public bool[] Days_of_the_week { get { return days_of_the_week; } set { days_of_the_week = value; } }
+        public string TimeThis { get { return dateTimePicker.Text; } set { dateTimePicker.Text = value; } }
+        public Model.Work MyWork { get { return myWork; } set { myWork = value; } }
+
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         public AddAndEdit()
         {
             InitializeComponent();
+
+            _program.Items.Add("Ежедневно");
+            _program.Items.Add("Еженедельно");
+            _program.Items.Add("Ежемесячно");
+            _program.Items.Add("Однократно");
+            _program.SelectedIndex = 0;
+            days_of_the_week = new bool[7];
             openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            openFileDialog1.ShowDialog();
-
+           
+            if (openFileDialog1.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+            {
+                Path =  openFileDialog1.FileName;
+            }
         
             //temp = datePicker1.SelectedDate.Value;
 
@@ -64,26 +83,79 @@ namespace PlanWork
         {
             if (DialogResult==true)
             {
-                bool[] temp = new bool[7];
+                myWork = (Model.Work)_program.SelectedIndex;
 
                 for (int i = 0; i < 7; i++)
                 {
-                    temp[i] = ((System.Windows.Controls.CheckBox)_days_of_the_week.FindName("Ch" + (i + 1))).IsChecked.Value;
+                    days_of_the_week[i] = ((System.Windows.Controls.CheckBox)_days_of_the_week.FindName("Ch" + (i + 1))).IsChecked.Value;
 
                 }
 
-                add_item = new Class.Add_Item(this._Path.Text, dateTimePicker.Text, datePicker1.Text, (Model.Work)_program.SelectedIndex, temp);
+                add_item = new Class.Add_Item(this);
             }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
+
+            if ((Path == null || Path == ""))
+            {
+                System.Windows.MessageBox.Show("Заполните путь к файлу.");
+                return;
+            }
+            if(myWork != Model.Work.daily)
+            {
+                bool isChek = false;
+                for (int i = 0; i < days_of_the_week.Length; i++)
+                {
+                    if (days_of_the_week[i] == true)
+                    {
+                        isChek = true;
+                    }
+
+                }
+                if (isChek == false)
+                {
+                    System.Windows.MessageBox.Show("Заполните дни недели.");
+                    return;
+                }
+            }
+            if (dateTimePicker.Text == "" || dateTimePicker.Text == null)
+            {
+                System.Windows.MessageBox.Show("Заполните дни недели.");
+                return;
+            }
+
+            DialogResult = true;
+
+
+
+
+
         }
+          
+            
+    
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
+        }
+
+        private void _program_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            myWork = (Model.Work)_program.SelectedIndex;
+            switch (_program.SelectedIndex)
+            {
+
+                case 0:
+                    _days_of_the_week.IsEnabled = false;
+                    break;
+                default:
+                    _days_of_the_week.IsEnabled = true;
+                    break;
+             
+            }
         }
     }
 }

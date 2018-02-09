@@ -31,7 +31,7 @@
             </MenuItem>
         </Menu>
         <TextBlock TextAlignment="Center"  Margin="10,0" Grid.Row="1">Список задач</TextBlock>
-        <ListBox  Margin="10,0" Grid.Row="2"></ListBox>
+        <ListBox Name="_worcList" Margin="10,0" Grid.Row="2"></ListBox>
         <TextBlock  TextAlignment="Center" Margin="10,0" Grid.Row="3">Отчет о выполнении задания</TextBlock>
         <ListBox  Margin="10,0,10,20" Grid.Row="4"></ListBox>
     </Grid>
