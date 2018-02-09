@@ -24,12 +24,13 @@ namespace PlanWork
         DateTimePicker dateTimePicker;
         public Class.Add_Item add_item;
         private Model.Work myWork;
-        bool[] days_of_the_week;
+        private DateTime dateThis;
+        private bool[] days_of_the_week;
 
         public string Path { get { return _Path.Text; } set { _Path.Text = value; } }
-        public string DateThis { get { return datePicker1.Text; } set { datePicker1.Text = value; } }
+        public DateTime DateThis { get { return dateThis; } set { dateThis = value; } }
         public bool[] Days_of_the_week { get { return days_of_the_week; } set { days_of_the_week = value; } }
-        public string TimeThis { get { return dateTimePicker.Text; } set { dateTimePicker.Text = value; } }
+      
         public Model.Work MyWork { get { return myWork; } set { myWork = value; } }
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
@@ -125,13 +126,10 @@ namespace PlanWork
                 System.Windows.MessageBox.Show("Заполните Дату начала.");
                 return;
             }
-
+            DateTime DateThis = new DateTime(datePicker1.DisplayDate.Year, datePicker1.DisplayDate.Month, datePicker1.DisplayDate.Day, dateTimePicker.Value.Hour, dateTimePicker.Value.Minute, dateTimePicker.Value.Second);
+         
+   
             DialogResult = true;
-
-
-
-
-
         }
           
             
