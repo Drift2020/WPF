@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PlanWork"
         mc:Ignorable="d"
-        Title="AddAndEdit" Height="332" Width="527.048" MinWidth="527.048" MinHeight="332" MaxWidth="527.048" MaxHeight="332" Closed="Window_Closed">
+        Title="AddAndEdit" Height="332" Width="527.048" MinWidth="527.048" MinHeight="332" Closed="Window_Closed">
     <Grid Margin="10">
 
 
@@ -26,26 +26,37 @@
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
-            <Label DockPanel.Dock="Top" HorizontalAlignment="Left" >Выполнить:</Label>
-            <TextBox Name="_Path" DockPanel.Dock="Top"></TextBox>
-            <Button DockPanel.Dock="Top" HorizontalAlignment="Right" Width="80" Height="20" Click="Button_Click">Обзор...</Button>
+           <!-- <Label DockPanel.Dock="Top" HorizontalAlignment="Left" >Выполнить:</Label>-->
+            <GroupBox DockPanel.Dock="Top"  Header="Выполнить:" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                <DockPanel>
+                    <TextBox Name="_Path" DockPanel.Dock="Top"></TextBox>
+                    <Button DockPanel.Dock="Top" HorizontalAlignment="Right" Width="80" Height="20" Click="Button_Click">Обзор...</Button>
+                </DockPanel>
+            </GroupBox>
+            
         </DockPanel>
 
         <DockPanel Grid.Row="1" Grid.Column="0">
-            <Label DockPanel.Dock="Top" >Назначить задание:</Label>
-            <ComboBox Name ="_program" Height="20" Margin="10" SelectionChanged="_program_SelectionChanged">
-                
-            </ComboBox>
+            
+           <!-- <Label DockPanel.Dock="Top" >Назначить задание:</Label>-->
+            <GroupBox DockPanel.Dock="Top"  Header="Назначить задание:" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                <ComboBox Name ="_program" Height="20" Margin="10" SelectionChanged="_program_SelectionChanged">
+
+                </ComboBox>
+            </GroupBox>
         </DockPanel>
         <DockPanel Grid.Row="1" Grid.Column="1">
-            <Label DockPanel.Dock="Top" >Время начала:</Label>
-            <!--https://www.codeproject.com/Articles/237011/CREATING-A-CUSTOM-TIMEPICKER-CONTROL-IN-WPF -->
-            <Grid Name="TimePiker" Loaded="TimeSpiker_Loaded"></Grid>
-
+          <!--<Label DockPanel.Dock="Top" >Время начала:</Label>-->
+            <GroupBox DockPanel.Dock="Top"  Header="Время начала:" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                <!--https://www.codeproject.com/Articles/237011/CREATING-A-CUSTOM-TIMEPICKER-CONTROL-IN-WPF -->
+                <Grid Name="TimePiker" Loaded="TimeSpiker_Loaded"></Grid>
+            </GroupBox>
         </DockPanel>
         <DockPanel Grid.Row="1" Grid.Column="2">
-            <Label DockPanel.Dock="Top" >Дата начала:</Label>
-            <DatePicker Name="datePicker1" Margin="10" IsDropDownOpen="True" SelectedDateFormat="Short" VerticalAlignment="Center"/>
+            <GroupBox DockPanel.Dock="Top"  Header="Дата начала:" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+               <!-- <Label DockPanel.Dock="Top" >Дата начала:</Label>-->
+                <DatePicker Name="datePicker1" Margin="10" IsDropDownOpen="True" SelectedDateFormat="Short" VerticalAlignment="Center"/>
+            </GroupBox>
         </DockPanel>
 
         <GroupBox Header="Расписание по неделям:" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
@@ -64,18 +75,18 @@
 
 
 
-                <CheckBox Name="Ch1" Grid.Column="0" Margin="10">Пн</CheckBox>
-                <CheckBox Name="Ch2" Grid.Column="1"  Margin="10">Вт</CheckBox>
-                <CheckBox Name="Ch3" Grid.Column="2" Margin="10">Ср</CheckBox>
-                <CheckBox Name="Ch4" Grid.Column="3" Margin="10">Чт</CheckBox>
-                <CheckBox Name="Ch5" Grid.Column="4" Margin="10">Пт</CheckBox>
-                <CheckBox Name="Ch6" Grid.Column="5" Margin="10">Сб</CheckBox>
-                <CheckBox Name="Ch7" Grid.Column="6"  Margin="10">Вс</CheckBox>
+                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center" Name="Ch1" Grid.Column="0" Margin="10">Пн</CheckBox>
+                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center" Name="Ch2" Grid.Column="1"  Margin="10">Вт</CheckBox>
+                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center" Name="Ch3" Grid.Column="2" Margin="10">Ср</CheckBox>
+                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center" Name="Ch4" Grid.Column="3" Margin="10">Чт</CheckBox>
+                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center" Name="Ch5" Grid.Column="4" Margin="10">Пт</CheckBox>
+                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center" Name="Ch6" Grid.Column="5" Margin="10">Сб</CheckBox>
+                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center" Name="Ch7" Grid.Column="6"  Margin="10">Вс</CheckBox>
             </Grid>
         </GroupBox>
-        
-        <Button Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,35.125,100,15.125"  Content="ОК"  Width="70" Click="Button_Click_1"/>
-        <Button  Grid.Row="3"  Grid.Column="1" Content="Отмена"  HorizontalAlignment="Left"  Margin="75,35.125,0,15.125" Width="70" Grid.ColumnSpan="2" Click="Button_Click_2"/>
+
+        <Button Grid.Row="3"  HorizontalAlignment="Right" VerticalAlignment="Center"  Content="ОК"  Width="70" Click="Button_Click_1"/>
+        <Button  Grid.Row="3"  Grid.Column="2" Content="Отмена"  HorizontalAlignment="Left"  VerticalAlignment="Center" Width="70" Click="Button_Click_2"/>
 
 
     </Grid>

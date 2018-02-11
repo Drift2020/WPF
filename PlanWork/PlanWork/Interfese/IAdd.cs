@@ -11,7 +11,8 @@ namespace PlanWork.Interfese
          string Path { get; set; }
         DateTime DateThis { get; set; }
          bool[] Days_of_the_week { get; set; }
-        
+        int Number { get; set; }
          Model.Work MyWork { get; set; }
+
     }
 }

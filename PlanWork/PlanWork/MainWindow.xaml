@@ -23,7 +23,7 @@
         <Menu Height="20" Grid.Row="0" VerticalAlignment="Top">
             <MenuItem Header="Задания">
                 <MenuItem Header="Добавить задание" Click="MenuItem_Click"></MenuItem>
-                <MenuItem Header="Удалить задание" ></MenuItem>
+                <MenuItem Header="Удалить задание" Click="MenuItem_Click_1" ></MenuItem>
                 <MenuItem Header="Изменить задание"/>
                 <MenuItem Header="Очистить список отчётов"/>
                 <Separator />
@@ -31,8 +31,8 @@
             </MenuItem>
         </Menu>
         <TextBlock TextAlignment="Center"  Margin="10,0" Grid.Row="1">Список задач</TextBlock>
-        <ListBox Name="_worcList" Margin="10,0" Grid.Row="2"></ListBox>
+        <ListBox Name="_worcList" Margin="10,0" Grid.Row="2" SelectionChanged="_worcList_SelectionChanged"></ListBox>
         <TextBlock  TextAlignment="Center" Margin="10,0" Grid.Row="3">Отчет о выполнении задания</TextBlock>
-        <ListBox  Margin="10,0,10,20" Grid.Row="4"></ListBox>
+        <ListBox Name="_complitWork" Margin="10,0,10,20" Grid.Row="4"></ListBox>
     </Grid>
 </Window>

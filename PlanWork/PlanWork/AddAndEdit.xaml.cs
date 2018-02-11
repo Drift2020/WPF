@@ -26,7 +26,9 @@ namespace PlanWork
         private Model.Work myWork;
         private DateTime dateThis;
         private bool[] days_of_the_week;
+        private int number;
 
+        public int Number { get { return number; } set { number = value; } }
         public string Path { get { return _Path.Text; } set { _Path.Text = value; } }
         public DateTime DateThis { get { return dateThis; } set { dateThis = value; } }
         public bool[] Days_of_the_week { get { return days_of_the_week; } set { days_of_the_week = value; } }
@@ -91,8 +93,8 @@ namespace PlanWork
                     days_of_the_week[i] = ((System.Windows.Controls.CheckBox)_days_of_the_week.FindName("Ch" + (i + 1))).IsChecked.Value;
 
                 }
-
-                add_item = new Class.Add_Item(this);
+                
+                 add_item = new Class.Add_Item(this);
             }
         }
 
@@ -126,7 +128,7 @@ namespace PlanWork
                 System.Windows.MessageBox.Show("Заполните Дату начала.");
                 return;
             }
-            DateTime DateThis = new DateTime(datePicker1.DisplayDate.Year, datePicker1.DisplayDate.Month, datePicker1.DisplayDate.Day, dateTimePicker.Value.Hour, dateTimePicker.Value.Minute, dateTimePicker.Value.Second);
+            DateThis = new DateTime(datePicker1.DisplayDate.Year, datePicker1.DisplayDate.Month, datePicker1.DisplayDate.Day, dateTimePicker.Value.Hour, dateTimePicker.Value.Minute, dateTimePicker.Value.Second);
          
    
             DialogResult = true;

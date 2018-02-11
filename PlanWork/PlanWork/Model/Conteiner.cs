@@ -34,6 +34,12 @@ namespace PlanWork.Model
             informs.RemoveAt(index);
             // log.Write("Удаление успешно выполнено!");
         }
+        public void Remove(Info obj)
+        {
+            
+            informs.Remove(obj);
+            // log.Write("Удаление успешно выполнено!");
+        }
 
         public void RemoveAll()
         {

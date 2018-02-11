@@ -15,7 +15,7 @@ namespace PlanWork.Model
         private DateTime dateThis;
         private Work myWork;
         private bool[] days_of_the_week;
-
+        private int number;
         public Info(string Path , DateTime DateThis, Work MyWork,bool[] Days_of_the_week)
         {
             path = Path;
@@ -33,5 +33,7 @@ namespace PlanWork.Model
         public DateTime DateThis { get { return dateThis; } set { dateThis = value; } }
         public bool[] Days_of_the_week { get { return days_of_the_week; } set { days_of_the_week = value; } }
         public Work MyWork { get { return myWork; } set { myWork = value; } }
+
+        public int Number { get { return number; } set { number = value; } }
     }
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <ArrayOfInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Info>
-    <Path>C:\Users\drift\Documents\gitignore_global.txt</Path>
-    <DateThis>05.02.2018</DateThis>
+    <Path>F:\ЕКО_16_П3\Ссылки.txt</Path>
+    <DateThis>2018-02-12T22:12:20</DateThis>
     <Days_of_the_week>
       <boolean>false</boolean>
       <boolean>false</boolean>
@@ -12,7 +12,7 @@
       <boolean>false</boolean>
       <boolean>false</boolean>
     </Days_of_the_week>
-    <TimeThis>09:58:17</TimeThis>
     <MyWork>daily</MyWork>
+    <Number>0</Number>
   </Info>
 </ArrayOfInfo>
