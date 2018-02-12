@@ -100,13 +100,19 @@ namespace PlanWork
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            for (int i = 0; i < 7; i++)
+            {
+                days_of_the_week[i] = ((System.Windows.Controls.CheckBox)_days_of_the_week.FindName("Ch" + (i + 1))).IsChecked.Value;
+
+            }
+
 
             if ((Path == null || Path == ""))
             {
                 System.Windows.MessageBox.Show("Заполните путь к файлу.");
                 return;
             }
-            if(myWork != Model.Work.daily)
+            if(myWork == Model.Work.weekly)
             {
                 bool isChek = false;
                 for (int i = 0; i < days_of_the_week.Length; i++)
@@ -128,6 +134,17 @@ namespace PlanWork
                 System.Windows.MessageBox.Show("Заполните Дату начала.");
                 return;
             }
+            else 
+            {
+                DateTime tempDate = new DateTime(datePicker1.DisplayDate.Year, datePicker1.DisplayDate.Month, datePicker1.DisplayDate.Day, dateTimePicker.Value.Hour, dateTimePicker.Value.Minute, dateTimePicker.Value.Second);
+                if(DateTime.Compare(tempDate,DateTime.Now)<0)
+                {
+                    System.Windows.MessageBox.Show("Дата начала не может быть раньше сегодняшнего числа и время не может быть раньше которое в данный момент.");
+                    return;
+                }
+            }
+             
+
             DateThis = new DateTime(datePicker1.DisplayDate.Year, datePicker1.DisplayDate.Month, datePicker1.DisplayDate.Day, dateTimePicker.Value.Hour, dateTimePicker.Value.Minute, dateTimePicker.Value.Second);
          
    
@@ -148,11 +165,11 @@ namespace PlanWork
             switch (_program.SelectedIndex)
             {
 
-                case 0:
-                    _days_of_the_week.IsEnabled = false;
+                case 1:
+                    _days_of_the_week.IsEnabled = true;
                     break;
                 default:
-                    _days_of_the_week.IsEnabled = true;
+                    _days_of_the_week.IsEnabled = false;
                     break;
              
             }

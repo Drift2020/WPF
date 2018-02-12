@@ -34,6 +34,8 @@ namespace PlanWork.Class
             number = myInfo.Count();
             myWork = MyWork;
             days_of_the_week = Days_of_the_week;
+
+
         }
         public Add_Item(Interfese.IAdd view)
         {

@@ -78,6 +78,7 @@
     <Compile Include="Class\Plan_Work.cs" />
     <Compile Include="Interfese\IAdd.cs" />
     <Compile Include="Interfese\ICompliteWork.cs" />
+    <Compile Include="Interfese\IEdit.cs" />
     <Compile Include="Interfese\IFront.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

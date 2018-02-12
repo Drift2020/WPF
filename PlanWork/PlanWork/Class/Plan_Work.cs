@@ -13,146 +13,132 @@ namespace PlanWork.Class
 
         Interfese.IFront _viwe;
         private Model.Сontainer myInfo;
-        private string path;
-        DispatcherTimer tempTimer;
-        TimeSpan tempSpan;
-        private DateTime dateThis;
-        private Model.Work myWork;
-        private bool[] days_of_the_week;
-        private int number;
-        private List<DispatcherTimer> timer;
 
-        public string Path { get { return path; } set { path = value; } }
-        public DateTime DateThis { get { return dateThis; } set { dateThis = value; } }
-        public bool[] Days_of_the_week { get { return days_of_the_week; } set { days_of_the_week = value; } }
-       
-        public Model.Work MyWork { get { return myWork; } set { myWork = value; } }
+
+        DispatcherTimer tempTimer;
+
 
         public void Delete(int i)
         {
-              myInfo.Remove(i);                                  
-              _viwe.WorkList.RemoveAt(i);
-              _viwe.Worc.Items.RemoveAt(i);         
-              timer[i].Stop();
-              timer.RemoveAt(i);
+            myInfo.Remove(i);
+            _viwe.WorkList.RemoveAt(i);
+            _viwe.Worc.Items.RemoveAt(i);
+            if (myInfo.Count() == 0)
+                tempTimer.Stop();
             myInfo.Save();
         }
 
         public void Add(Interfese.IAdd viwe)
         {
-            path = viwe.Path;
-            number = viwe.Number;
-            dateThis = viwe.DateThis;         
-            myWork = viwe.MyWork;
-            days_of_the_week = viwe.Days_of_the_week;
-            Model.Info Info = new Model.Info(path, dateThis, myWork, days_of_the_week);
+        
+            Model.Info Info = new Model.Info(viwe.Path, viwe.DateThis, viwe.MyWork, viwe.Days_of_the_week);
             myInfo.Add(Info);
-
-             tempTimer = new DispatcherTimer();
-            
-          
-             tempSpan=new TimeSpan(100);
-            tempTimer.Interval = tempSpan;
+            myInfo.Save();
 
 
-           
-
-            tempTimer.Tick += new EventHandler(timer_Tick);
-            timer.Add(tempTimer);
-            tempTimer.Start();         
+            tempTimer.Start();
         }
         void timer_Tick(object sender, EventArgs e)
         {
-            if (DateTime.Compare(myInfo.Element(number).DateThis, DateTime.Now) == 0 || DateTime.Compare(myInfo.Element(number).DateThis, DateTime.Now) < 0)
-                switch (MyWork)
-                {
-                    case Model.Work.daily:
-
-
-                        try
+            for (int number = 0; number < myInfo.Count(); number++)
+                if (DateTime.Compare(myInfo.Element(number).DateThis, DateTime.Now) == 0 || DateTime.Compare(myInfo.Element(number).DateThis, DateTime.Now) < 0)
+                    try
+                    {
+                        switch (myInfo.Element(number).MyWork)
                         {
-                            System.Diagnostics.Process.Start(myInfo.Element(number).Path);
-                            //_viwe.ComplitWork.Items.Add(new Label().Content = string.Format("Задача была выполнена в {0}", myInfo.Element(number).DateThis));
-                                //if (myInfo.Element(number).Path == Path &&
-                                //    myInfo.Element(number).MyWork == MyWork &&
-                                //    myInfo.Element(number).DateThis.CompareTo(DateThis) == 0 &&
-                                //    myInfo.Element(number).Days_of_the_week[0] == Days_of_the_week[0] &&
-                                //    myInfo.Element(number).Days_of_the_week[0] == Days_of_the_week[1] &&
-                                //    myInfo.Element(number).Days_of_the_week[0] == Days_of_the_week[2] &&
-                                //    myInfo.Element(number).Days_of_the_week[0] == Days_of_the_week[3] &&
-                                //    myInfo.Element(number).Days_of_the_week[0] == Days_of_the_week[4] &&
-                                //    myInfo.Element(number).Days_of_the_week[0] == Days_of_the_week[5] &&
-                                //    myInfo.Element(number).Days_of_the_week[0] == Days_of_the_week[6])
-                                //{
-                            myInfo.Element(number).DateThis = DateThis = myInfo.Element(number).DateThis.AddDays(1);
-                            _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, DateTime.Now);
-                            EditList?.Invoke(this, EventArgs.Empty);
+                            case Model.Work.daily:
 
-                         
+                                System.Diagnostics.Process.Start(myInfo.Element(number).Path);
+
+                                myInfo.Element(number).DateThis = myInfo.Element(number).DateThis.AddDays(1);
+                                _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, DateTime.Now);
+                                EditList?.Invoke(this, EventArgs.Empty);
+                                break;
+                            case Model.Work.weekly:
+                                    System.Diagnostics.Process.Start(myInfo.Element(number).Path);
+                                    _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, DateTime.Now);
+                                    EditList?.Invoke(this, EventArgs.Empty);
+
+                                    bool isSerhc = true;
+                                    int i1 = 0;
+                                    int i = (int)myInfo.Element(number).DateThis.DayOfWeek;
+                                    do
+                                    {
+                                        for (; i < 7; i++, i1++)
+                                        {
+                                            if (myInfo.Element(number).Days_of_the_week[i] == true)
+                                            {
+                                                myInfo.Element(number).DateThis = myInfo.Element(number).DateThis.AddDays((i1 + i + 1));
+                                                isSerhc = false;
+                                                break;
+                                            }
+
+                                        }
+                                        i = 0;
+                                    } while (isSerhc == true);
+
+                                break;
+                            case Model.Work.monthly:
+
+                                    System.Diagnostics.Process.Start(myInfo.Element(number).Path);
+
+                                    myInfo.Element(number).DateThis = myInfo.Element(number).DateThis.AddMonths(1);
+                                    _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, DateTime.Now);
+                                    EditList?.Invoke(this, EventArgs.Empty);
+                                break;
+                            case Model.Work.once:
+
+                                    System.Diagnostics.Process.Start(myInfo.Element(number).Path);
+                                    _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, DateTime.Now);
+                                    EditList?.Invoke(this, EventArgs.Empty);
+                                    Delete(number);
+
+                                break;
+
                         }
-                        
-                        catch (Exception ex)
-                        {
-                            
-                            Delete(number);
-                            _viwe.NewMesege = string.Format("Задача {0} была прорваленна в {1}, информация ошибки: {2}", myInfo.Element(number).Path, DateTime.Now,ex.Message);
-                            EditList?.Invoke(this, EventArgs.Empty);
-                        }
-                        //tempTimer.Stop();
-                        // timer.Remove(tempTimer);
 
-                       
+                    }
 
+                    catch (Exception ex)
+                    {
 
-                        break;
-                    case Model.Work.weekly:
-
-                        break;
-                    case Model.Work.monthly:
-
-                        break;
-                    case Model.Work.once:
-
-
-                        System.Diagnostics.Process.Start(Path);
                         Delete(number);
-
-
-                        break;
-
-                }
+                        _viwe.NewMesege = string.Format("Задача {0} была прорваленна в {1}, информация ошибки: {2}", myInfo.Element(number).Path, DateTime.Now, ex.Message);
+                        EditList?.Invoke(this, EventArgs.Empty);
+                    }
         }
         public void Save()
         {
             myInfo.Save();
         }
 
-        
+
 
         public Plan_Work(Interfese.IFront viwe)
         {
             _viwe = viwe;
 
+
             myInfo = new Model.Сontainer();
             myInfo.SetSerializer(new Model.XMLSerializer());
-            timer = new List<DispatcherTimer>();
+
 
             myInfo.Load();
 
             for (int i = 0; i < myInfo.Count(); i++)
             {
                 viwe.WorkList.Add(myInfo.Element(i).Path);
-                tempTimer = new DispatcherTimer();
-                tempSpan = new TimeSpan(100);
-                tempTimer.Interval = tempSpan;
-
-                tempTimer.Tick += new EventHandler(timer_Tick);
-                timer.Add(tempTimer);
-                tempTimer.Start();
-
             }
 
-            
+            tempTimer = new DispatcherTimer();
+            tempTimer.Tick += new EventHandler(timer_Tick);
+            TimeSpan tempSpan = new TimeSpan(100);
+            tempTimer.Interval = tempSpan;
+
+
+
+            tempTimer.Start();
+
         }
     }
 }
