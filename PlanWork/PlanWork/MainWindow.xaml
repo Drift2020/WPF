@@ -24,7 +24,7 @@
             <MenuItem Header="Задания">
                 <MenuItem Header="Добавить задание" Click="MenuItem_Click"></MenuItem>
                 <MenuItem Header="Удалить задание" Click="MenuItem_Click_1" ></MenuItem>
-                <MenuItem Header="Изменить задание"/>
+                <MenuItem Header="Изменить задание" Click="MenuItem_Click_2"/>
                 <MenuItem Header="Очистить список отчётов"/>
                 <Separator />
                 <MenuItem Header="Выход" ></MenuItem>

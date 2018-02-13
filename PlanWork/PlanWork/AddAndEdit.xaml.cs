@@ -19,13 +19,15 @@ namespace PlanWork
     /// <summary>
     /// Interaction logic for AddAndEdit.xaml
     /// </summary>
-    public partial class AddAndEdit : Window , Interfese.IAdd
+    public partial class AddAndEdit : Window , Interfese.IAdd,Interfese.IEdit
     {
         DateTimePicker dateTimePicker;
         public Class.Add_Item add_item;
+        private Class.Edit_Item edit_item;
         private Model.Work myWork;
         private DateTime dateThis;
         private bool[] days_of_the_week;
+        private bool version;
         private int number;
 
         public int Number { get { return number; } set { number = value; } }
@@ -36,18 +38,31 @@ namespace PlanWork
         public Model.Work MyWork { get { return myWork; } set { myWork = value; } }
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        public AddAndEdit()
+        public AddAndEdit(bool version)
         {
+            this.version = version;
             InitializeComponent();
 
             _program.Items.Add("Ежедневно");
             _program.Items.Add("Еженедельно");
             _program.Items.Add("Ежемесячно");
             _program.Items.Add("Однократно");
-            _program.SelectedIndex = 0;
             days_of_the_week = new bool[7];
             openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            if (version == true)
+            {
+             
+                _program.SelectedIndex = 0;
+              
+            }
+            else
+            {
+                edit_item = new Class.Edit_Item();
+
+            }
         }
+
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -84,17 +99,24 @@ namespace PlanWork
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            if (DialogResult==true)
+            if (version == true)
             {
-                myWork = (Model.Work)_program.SelectedIndex;
-
-                for (int i = 0; i < 7; i++)
+                if (DialogResult == true)
                 {
-                    days_of_the_week[i] = ((System.Windows.Controls.CheckBox)_days_of_the_week.FindName("Ch" + (i + 1))).IsChecked.Value;
+                    myWork = (Model.Work)_program.SelectedIndex;
 
+                    for (int i = 0; i < 7; i++)
+                    {
+                        days_of_the_week[i] = ((System.Windows.Controls.CheckBox)_days_of_the_week.FindName("Ch" + (i + 1))).IsChecked.Value;
+
+                    }
+
+                    add_item = new Class.Add_Item(this);
                 }
-                
-                 add_item = new Class.Add_Item(this);
+            }
+            else if(version == false)
+            {
+
             }
         }
 
@@ -136,7 +158,7 @@ namespace PlanWork
             }
             else 
             {
-                DateTime tempDate = new DateTime(datePicker1.DisplayDate.Year, datePicker1.DisplayDate.Month, datePicker1.DisplayDate.Day, dateTimePicker.Value.Hour, dateTimePicker.Value.Minute, dateTimePicker.Value.Second);
+                DateTime tempDate = new DateTime(datePicker1.SelectedDate.Value.Year, datePicker1.SelectedDate.Value.Month, datePicker1.SelectedDate.Value.Day, dateTimePicker.Value.Hour, dateTimePicker.Value.Minute, dateTimePicker.Value.Second);
                 if(DateTime.Compare(tempDate,DateTime.Now)<0)
                 {
                     System.Windows.MessageBox.Show("Дата начала не может быть раньше сегодняшнего числа и время не может быть раньше которое в данный момент.");

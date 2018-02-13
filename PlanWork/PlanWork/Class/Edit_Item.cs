@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PlanWork.Class
 {
-    class Edit_Item :Interfese.IEdit
+    public class Edit_Item :Interfese.IEdit
     {
         private string path;
         Model.Сontainer myInfo;
@@ -22,6 +22,10 @@ namespace PlanWork.Class
 
         public Model.Work MyWork { get { return myWork; } set { myWork = value; } }
 
+        public Edit_Item()
+        {
+
+        }
 
     }
 }

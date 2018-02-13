@@ -12,7 +12,7 @@ namespace PlanWork.Interfese
         List<string> WorkList { get; set; }
         ListBox Worc{get;set;}
          string NewMesege { get; set; }
-
+        event EventHandler<EventArgs> EditWork;
 
     }
 }

@@ -23,18 +23,13 @@ namespace PlanWork
     public partial class MainWindow : Window , Interfese.IFront
     {
         private Class.Plan_Work myPlan;
-        public string NewMesege { get; set; }
-        
-
-
-        public List<string> WorkList { get { return workList; } set { workList = value; } }
-      
-        public ListBox Worc { get { return _worcList; } set { _worcList = value; }}
-      
-
-
         List<string> workList;
 
+        public string NewMesege { get; set; }
+        public event EventHandler<EventArgs> EditWork;
+        public List<string> WorkList { get { return workList; } set { workList = value; } }    
+        public ListBox Worc { get { return _worcList; } set { _worcList = value; }}
+          
         private void EditList(object sender, EventArgs e)
         {
        
@@ -44,9 +39,7 @@ namespace PlanWork
         public MainWindow()
         {
             InitializeComponent();
-          
-        
-           
+                           
             workList = new List<string>();
 
             myPlan = new Class.Plan_Work(this);
@@ -60,7 +53,7 @@ namespace PlanWork
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             try { 
-            AddAndEdit Temp = new AddAndEdit();
+            AddAndEdit Temp = new AddAndEdit(true);
             Temp.ShowDialog();
             if (Temp.DialogResult == true)
             {
@@ -73,7 +66,7 @@ namespace PlanWork
                     _worcList.Items.Add(new Label().Content = t);
                 }
 
-                myPlan.Add(Temp);
+                myPlan.Add();
             }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -93,6 +86,32 @@ namespace PlanWork
         private void _worcList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (_worcList.SelectedIndex != -1)
+                try
+                {
+                    AddAndEdit Temp = new AddAndEdit(false);
+                    Temp.Number = _worcList.SelectedIndex;
+                    Temp.ShowDialog();
+                    if (Temp.DialogResult == true)
+                    {
+
+                    //    workList.Add(Temp.Path);
+                    //   _worcList.Items.Clear();
+                    //
+                    //   foreach (string t in workList)
+                    //   {
+                    //       _worcList.Items.Add(new Label().Content = t);
+                    //  }
+
+                    //  myPlan.Add(Temp);
+                    }
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+           
         }
     }
 }

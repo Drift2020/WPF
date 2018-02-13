@@ -28,13 +28,13 @@ namespace PlanWork.Class
             myInfo.Save();
         }
 
-        public void Add(Interfese.IAdd viwe)
+        public void Add()
         {
-        
-            Model.Info Info = new Model.Info(viwe.Path, viwe.DateThis, viwe.MyWork, viwe.Days_of_the_week);
-            myInfo.Add(Info);
-            myInfo.Save();
 
+            //Model.Info Info = new Model.Info(viwe.Path, viwe.DateThis, viwe.MyWork, viwe.Days_of_the_week);
+            //  myInfo.Add(Info);
+            //  myInfo.Save();
+            myInfo.Load();
 
             tempTimer.Start();
         }

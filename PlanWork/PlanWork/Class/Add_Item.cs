@@ -50,6 +50,9 @@ namespace PlanWork.Class
 
             myWork = view.MyWork;
             days_of_the_week = view.Days_of_the_week;
+
+            myInfo.Save();
+
         }
         
     }
