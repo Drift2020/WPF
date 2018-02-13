@@ -21,9 +21,11 @@ namespace PlanWork
     /// </summary>
     public partial class AddAndEdit : Window , Interfese.IAdd,Interfese.IEdit
     {
-        DateTimePicker dateTimePicker;
+       
         public Class.Add_Item add_item;
         private Class.Edit_Item edit_item;
+
+        private DateTimePicker dateTimePicker;    
         private Model.Work myWork;
         private DateTime dateThis;
         private bool[] days_of_the_week;
@@ -33,11 +35,14 @@ namespace PlanWork
         public int Number { get { return number; } set { number = value; } }
         public string Path { get { return _Path.Text; } set { _Path.Text = value; } }
         public DateTime DateThis { get { return dateThis; } set { dateThis = value; } }
-        public bool[] Days_of_the_week { get { return days_of_the_week; } set { days_of_the_week = value; } }
-      
+        public bool[] Days_of_the_week { get { return days_of_the_week; } set { days_of_the_week = value; } }   
         public Model.Work MyWork { get { return myWork; } set { myWork = value; } }
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+
+        public event EventHandler<EventArgs> PoleInfo;
+        public event EventHandler<EventArgs> Edit_Save;
+
         public AddAndEdit(bool version)
         {
             this.version = version;
@@ -49,20 +54,21 @@ namespace PlanWork
             _program.Items.Add("Однократно");
             days_of_the_week = new bool[7];
             openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            if (version == true)
-            {
-             
-                _program.SelectedIndex = 0;
-              
-            }
-            else
-            {
-                edit_item = new Class.Edit_Item();
-
-            }
+          
         }
 
+        private void Load_View_Edit_Form()
+        {
 
+          
+            _program.SelectedIndex = (int)MyWork;
+            for(int i=0;i<7;i++)
+            {
+                ((System.Windows.Controls.CheckBox)_days_of_the_week.FindName("Ch" + (i + 1))).IsChecked = Days_of_the_week[i];
+            }
+            datePicker1.SelectedDate= new DateTime(DateThis.Year, DateThis.Month, DateThis.Day,0, 0, 0);
+           
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -90,6 +96,9 @@ namespace PlanWork
             dateTimePicker.ShowUpDown = true;
 
             // Assign the MaskedTextBox control as the host control's child.
+            if(version==false)
+                dateTimePicker.Value = DateThis.AddSeconds(0);
+        
             host.Child = dateTimePicker;
 
             // Add the interop host control to the Grid
@@ -114,9 +123,19 @@ namespace PlanWork
                     add_item = new Class.Add_Item(this);
                 }
             }
-            else if(version == false)
+            else if (version == false)
             {
+                if (DialogResult == true)
+                {
+                    myWork = (Model.Work)_program.SelectedIndex;
 
+                    for (int i = 0; i < 7; i++)
+                    {
+                        days_of_the_week[i] = ((System.Windows.Controls.CheckBox)_days_of_the_week.FindName("Ch" + (i + 1))).IsChecked.Value;
+
+                    }
+                    Edit_Save?.Invoke(this, EventArgs.Empty);
+                }
             }
         }
 
@@ -167,7 +186,7 @@ namespace PlanWork
             }
              
 
-            DateThis = new DateTime(datePicker1.DisplayDate.Year, datePicker1.DisplayDate.Month, datePicker1.DisplayDate.Day, dateTimePicker.Value.Hour, dateTimePicker.Value.Minute, dateTimePicker.Value.Second);
+            DateThis = new DateTime(datePicker1.SelectedDate.Value.Year, datePicker1.SelectedDate.Value.Month, datePicker1.SelectedDate.Value.Day, dateTimePicker.Value.Hour, dateTimePicker.Value.Minute, dateTimePicker.Value.Second);
          
    
             DialogResult = true;
@@ -194,6 +213,24 @@ namespace PlanWork
                     _days_of_the_week.IsEnabled = false;
                     break;
              
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (version == true)
+            {
+
+                _program.SelectedIndex = 0;
+
+            }
+            else
+            {
+
+
+                edit_item = new Class.Edit_Item(this);
+                PoleInfo?.Invoke(this, EventArgs.Empty);
+                Load_View_Edit_Form();
             }
         }
     }

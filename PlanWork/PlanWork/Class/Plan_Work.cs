@@ -40,8 +40,9 @@ namespace PlanWork.Class
         }
         void timer_Tick(object sender, EventArgs e)
         {
+            DateTime tempTime = DateTime.Now;
             for (int number = 0; number < myInfo.Count(); number++)
-                if (DateTime.Compare(myInfo.Element(number).DateThis, DateTime.Now) == 0 || DateTime.Compare(myInfo.Element(number).DateThis, DateTime.Now) < 0)
+                if (DateTime.Compare(myInfo.Element(number).DateThis, tempTime) == 0 && DateTime.Compare(myInfo.Element(number).DateThis, tempTime) < 0)
                     try
                     {
                         switch (myInfo.Element(number).MyWork)
@@ -51,12 +52,12 @@ namespace PlanWork.Class
                                 System.Diagnostics.Process.Start(myInfo.Element(number).Path);
 
                                 myInfo.Element(number).DateThis = myInfo.Element(number).DateThis.AddDays(1);
-                                _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, DateTime.Now);
+                                _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, tempTime);
                                 EditList?.Invoke(this, EventArgs.Empty);
                                 break;
                             case Model.Work.weekly:
                                     System.Diagnostics.Process.Start(myInfo.Element(number).Path);
-                                    _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, DateTime.Now);
+                                    _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, tempTime);
                                     EditList?.Invoke(this, EventArgs.Empty);
 
                                     bool isSerhc = true;
@@ -83,13 +84,13 @@ namespace PlanWork.Class
                                     System.Diagnostics.Process.Start(myInfo.Element(number).Path);
 
                                     myInfo.Element(number).DateThis = myInfo.Element(number).DateThis.AddMonths(1);
-                                    _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, DateTime.Now);
+                                    _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, tempTime);
                                     EditList?.Invoke(this, EventArgs.Empty);
                                 break;
                             case Model.Work.once:
 
                                     System.Diagnostics.Process.Start(myInfo.Element(number).Path);
-                                    _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, DateTime.Now);
+                                    _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, tempTime);
                                     EditList?.Invoke(this, EventArgs.Empty);
                                     Delete(number);
 
@@ -103,13 +104,14 @@ namespace PlanWork.Class
                     {
 
                         Delete(number);
-                        _viwe.NewMesege = string.Format("Задача {0} была прорваленна в {1}, информация ошибки: {2}", myInfo.Element(number).Path, DateTime.Now, ex.Message);
+                        _viwe.NewMesege = string.Format("Задача {0} была прорваленна в {1}, информация ошибки: {2}", myInfo.Element(number).Path, tempTime, ex.Message);
                         EditList?.Invoke(this, EventArgs.Empty);
                     }
         }
         public void Save()
         {
             myInfo.Save();
+            tempTimer.Stop();
         }
 
 

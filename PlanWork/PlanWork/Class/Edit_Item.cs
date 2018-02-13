@@ -6,25 +6,37 @@ using System.Threading.Tasks;
 
 namespace PlanWork.Class
 {
-    public class Edit_Item :Interfese.IEdit
+    public class Edit_Item 
     {
-        private string path;
-        Model.Сontainer myInfo;
-        private DateTime dateThis;
-        private Model.Work myWork;
-        private bool[] days_of_the_week;
-        private int number;
 
-        public int Number { get { return number; } set { number = value; } }
-        public string Path { get { return path; } set { path = value; } }
-        public DateTime DateThis { get { return dateThis; } set { dateThis = value; } }
-        public bool[] Days_of_the_week { get { return days_of_the_week; } set { days_of_the_week = value; } }
+        private readonly Model.Сontainer myInfo;
+        private readonly Interfese.IEdit _view;
 
-        public Model.Work MyWork { get { return myWork; } set { myWork = value; } }
-
-        public Edit_Item()
+        public Edit_Item(Interfese.IEdit view)
+        {
+            _view = view;
+            _view.PoleInfo += new EventHandler<EventArgs>(PrintElement);
+            _view.Edit_Save += new EventHandler<EventArgs>(Edit_Save);
+            myInfo = new Model.Сontainer();
+            myInfo.SetSerializer(new Model.XMLSerializer());
+            myInfo.Load();
+        }
+        private void PrintElement(object sender, EventArgs e)
         {
 
+            _view.Path = myInfo.Element(_view.Number).Path;
+            _view.DateThis = myInfo.Element(_view.Number).DateThis;
+            _view.Days_of_the_week = myInfo.Element(_view.Number).Days_of_the_week;
+            _view.MyWork = myInfo.Element(_view.Number).MyWork;
+       
+        }
+        private void Edit_Save(object sender, EventArgs e)
+        {
+            myInfo.Element(_view.Number).Number = _view.Number;
+            myInfo.Element(_view.Number).DateThis = _view.DateThis;
+            myInfo.Element(_view.Number).Days_of_the_week = _view.Days_of_the_week;
+            myInfo.Element(_view.Number).MyWork = _view.MyWork;
+            myInfo.Save();
         }
 
     }

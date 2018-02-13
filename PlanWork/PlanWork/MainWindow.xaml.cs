@@ -93,21 +93,23 @@ namespace PlanWork
             if (_worcList.SelectedIndex != -1)
                 try
                 {
+
                     AddAndEdit Temp = new AddAndEdit(false);
                     Temp.Number = _worcList.SelectedIndex;
                     Temp.ShowDialog();
                     if (Temp.DialogResult == true)
                     {
 
-                    //    workList.Add(Temp.Path);
-                    //   _worcList.Items.Clear();
-                    //
-                    //   foreach (string t in workList)
-                    //   {
-                    //       _worcList.Items.Add(new Label().Content = t);
-                    //  }
+                        //    workList.Add(Temp.Path);
+                        //   _worcList.Items.Clear();
+                        //
+                        //   foreach (string t in workList)
+                        //   {
+                        //       _worcList.Items.Add(new Label().Content = t);
+                        //  }
 
-                    //  myPlan.Add(Temp);
+                        //  myPlan.Add(Temp);
+                        myPlan.Add();
                     }
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }

@@ -13,5 +13,7 @@ namespace PlanWork.Interfese
         bool[] Days_of_the_week { get; set; }
         int Number { get; set; }
         Model.Work MyWork { get; set; }
+        event EventHandler<EventArgs> PoleInfo;
+        event EventHandler<EventArgs> Edit_Save;
     }
 }

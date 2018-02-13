@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PlanWork"
         mc:Ignorable="d"
-        Title="AddAndEdit" Height="332" Width="527.048" MinWidth="527.048" MinHeight="332" Closed="Window_Closed">
+        Title="AddAndEdit" Height="332" Width="527.048" MinWidth="527.048" MinHeight="332" Closed="Window_Closed" Loaded="Window_Loaded">
     <Grid Margin="10">
 
 

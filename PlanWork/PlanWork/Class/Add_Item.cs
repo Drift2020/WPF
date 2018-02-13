@@ -51,6 +51,7 @@ namespace PlanWork.Class
             myWork = view.MyWork;
             days_of_the_week = view.Days_of_the_week;
 
+            myInfo.Add(new Model.Info(path, dateThis, myWork, days_of_the_week));
             myInfo.Save();
 
         }
