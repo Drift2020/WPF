@@ -15,19 +15,4 @@
     <MyWork>weekly</MyWork>
     <Number>0</Number>
   </Info>
-  <Info>
-    <Path>E:\Новый текстовый документ.txt</Path>
-    <DateThis>2018-02-13T15:41:00</DateThis>
-    <Days_of_the_week>
-      <boolean>false</boolean>
-      <boolean>false</boolean>
-      <boolean>false</boolean>
-      <boolean>false</boolean>
-      <boolean>false</boolean>
-      <boolean>false</boolean>
-      <boolean>false</boolean>
-    </Days_of_the_week>
-    <MyWork>once</MyWork>
-    <Number>0</Number>
-  </Info>
 </ArrayOfInfo>

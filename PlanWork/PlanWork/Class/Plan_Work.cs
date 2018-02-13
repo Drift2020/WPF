@@ -41,24 +41,49 @@ namespace PlanWork.Class
         void timer_Tick(object sender, EventArgs e)
         {
             DateTime tempTime = DateTime.Now;
+            TimeSpan n;
+         
             for (int number = 0; number < myInfo.Count(); number++)
-                if (DateTime.Compare(myInfo.Element(number).DateThis, tempTime) == 0 && DateTime.Compare(myInfo.Element(number).DateThis, tempTime) < 0)
+                if (DateTime.Compare(myInfo.Element(number).DateThis, tempTime) == 0 || DateTime.Compare(myInfo.Element(number).DateThis, tempTime) < 0)
                     try
                     {
+                        n = (tempTime-myInfo.Element(number).DateThis);
+
                         switch (myInfo.Element(number).MyWork)
                         {
                             case Model.Work.daily:
 
-                                System.Diagnostics.Process.Start(myInfo.Element(number).Path);
+                                if (n.Days > 1 || n.Hours > 1 || n.Minutes > 1 || n.Seconds > 10)
+                                {
 
-                                myInfo.Element(number).DateThis = myInfo.Element(number).DateThis.AddDays(1);
-                                _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, tempTime);
-                                EditList?.Invoke(this, EventArgs.Empty);
-                                break;
-                            case Model.Work.weekly:
+                                }
+                                else
+                                {
                                     System.Diagnostics.Process.Start(myInfo.Element(number).Path);
                                     _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, tempTime);
                                     EditList?.Invoke(this, EventArgs.Empty);
+                                }
+
+                           
+
+                                myInfo.Element(number).DateThis = myInfo.Element(number).DateThis.AddDays(1);
+                             
+                                break;
+                            case Model.Work.weekly:
+
+                                if (n.Days > 1 || n.Hours > 1 || n.Minutes > 1 || n.Seconds > 10)
+                                {
+
+                                }
+                                else
+                                {
+                                    System.Diagnostics.Process.Start(myInfo.Element(number).Path);
+                                    _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, tempTime);
+                                    EditList?.Invoke(this, EventArgs.Empty);
+
+                                }
+
+                             
 
                                     bool isSerhc = true;
                                     int i1 = 0;
@@ -81,18 +106,38 @@ namespace PlanWork.Class
                                 break;
                             case Model.Work.monthly:
 
-                                    System.Diagnostics.Process.Start(myInfo.Element(number).Path);
 
+                                if (n.Days > 1 || n.Hours > 1 || n.Minutes > 1 || n.Seconds > 10)
+                                {
+                                    myInfo.Element(number).DateThis = myInfo.Element(number).DateThis.AddMonths(1);
+                                }
+                                else
+                                {
+
+                                    System.Diagnostics.Process.Start(myInfo.Element(number).Path);
                                     myInfo.Element(number).DateThis = myInfo.Element(number).DateThis.AddMonths(1);
                                     _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, tempTime);
                                     EditList?.Invoke(this, EventArgs.Empty);
+                                }
+
+
+                                 
                                 break;
                             case Model.Work.once:
 
+                                if (n.Days > 1 || n.Hours > 1||n.Minutes>1||n.Seconds>10)
+                                {
+                                    Delete(number);
+                                }
+                                else
+                                {
                                     System.Diagnostics.Process.Start(myInfo.Element(number).Path);
                                     _viwe.NewMesege = string.Format("Задача {0} была выполнена в {1}", myInfo.Element(number).Path, tempTime);
+
                                     EditList?.Invoke(this, EventArgs.Empty);
                                     Delete(number);
+                                }
+                                 
 
                                 break;
 
