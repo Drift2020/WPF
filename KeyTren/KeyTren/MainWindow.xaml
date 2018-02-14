@@ -6,7 +6,7 @@
         xmlns:res="clr-namespace:KeyTren.Properties"
         xmlns:local="clr-namespace:KeyTren"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="751.014" PreviewKeyDown="Window_PreviewKeyDown">
+        Title="MainWindow" Height="350" Width="751.014" PreviewKeyDown="Window_PreviewKeyDown" PreviewKeyUp="Window_PreviewKeyUp">
     <Window.Resources>
         <!--https://habrahabr.ru/post/86778/-->
 
@@ -102,7 +102,7 @@
 
         </Grid>
 
-        <Grid Name="Keys" Grid.Row="2" Margin="0,3,0,0" PreviewMouseDown="Grid_PreviewMouseDown">
+        <Grid Name="Keys" Grid.Row="2" Margin="0,3,0,0" PreviewMouseDown="Keys_PreviewMouseDown">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -253,10 +253,10 @@
 
                 </Grid.ColumnDefinitions>
 
-                <Button Name="_LeftCtrl" Template="{DynamicResource SmallButton}" Grid.Column="0" Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="{x:Static res:Resources.Ctrl}"/>
-                <Button Name="_LWin" Template="{DynamicResource SmallButton}"  Grid.Column="1" Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="{x:Static res:Resources.Win}"/>
-                <Button Name="_System" Template="{DynamicResource SmallButton}"  Grid.Column="2"  Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="{x:Static res:Resources.Alt}"/>
-                <Button Name="_Space" Template="{DynamicResource SmallButton}"  Grid.Column="3"  Background="#FF7A382E" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="{x:Static res:Resources.Space}"/>
+                <Button Name="LeftCtrl" Template="{DynamicResource SmallButton}" Grid.Column="0" Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="{x:Static res:Resources.Ctrl}"/>
+                <Button Name="LWin" Template="{DynamicResource SmallButton}"  Grid.Column="1" Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="{x:Static res:Resources.Win}"/>
+                <Button Name="Alt" Template="{DynamicResource SmallButton}"  Grid.Column="2"  Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="{x:Static res:Resources.Alt}"/>
+                <Button Name="Space" Template="{DynamicResource SmallButton}"  Grid.Column="3"  Background="#FF7A382E" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="{x:Static res:Resources.Space}"/>
                 <Button Template="{DynamicResource SmallButton}"  Grid.Column="4"  Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="{x:Static res:Resources.Alt}"/>
                 <Button Name="RWin" Template="{DynamicResource SmallButton}"  Grid.Column="5"  Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="{x:Static res:Resources.Win}"/>
                 <Button Name="RightCtrl" Template="{DynamicResource SmallButton}"  Grid.Column="6"  Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="{x:Static res:Resources.Ctrl}"/>
