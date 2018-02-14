@@ -117,107 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="B14" xml:space="preserve">
-    <value>q</value>
-  </data>
-  <data name="B15" xml:space="preserve">
-    <value>w</value>
-  </data>
-  <data name="B16" xml:space="preserve">
-    <value>e</value>
-  </data>
-  <data name="B17" xml:space="preserve">
-    <value>r</value>
-  </data>
-  <data name="B18" xml:space="preserve">
-    <value>t</value>
-  </data>
-  <data name="B19" xml:space="preserve">
-    <value>y</value>
-  </data>
-  <data name="B20" xml:space="preserve">
-    <value>u</value>
-  </data>
-  <data name="B21" xml:space="preserve">
-    <value>i</value>
-  </data>
-  <data name="B22" xml:space="preserve">
-    <value>o</value>
-  </data>
-  <data name="B23" xml:space="preserve">
-    <value>p</value>
-  </data>
-  <data name="B24" xml:space="preserve">
-    <value>[</value>
-  </data>
-  <data name="B25" xml:space="preserve">
-    <value>]</value>
-  </data>
-  <data name="B26" xml:space="preserve">
-    <value>\</value>
-  </data>
-  <data name="B27" xml:space="preserve">
+  <data name="A" xml:space="preserve">
     <value>a</value>
   </data>
-  <data name="B28" xml:space="preserve">
-    <value>s</value>
+  <data name="Alt" xml:space="preserve">
+    <value>Alt</value>
   </data>
-  <data name="B29" xml:space="preserve">
-    <value>d</value>
-  </data>
-  <data name="B30" xml:space="preserve">
-    <value>f</value>
-  </data>
-  <data name="B31" xml:space="preserve">
-    <value>g</value>
-  </data>
-  <data name="B32" xml:space="preserve">
-    <value>h</value>
-  </data>
-  <data name="B33" xml:space="preserve">
-    <value>j</value>
-  </data>
-  <data name="B34" xml:space="preserve">
-    <value>k</value>
-  </data>
-  <data name="B35" xml:space="preserve">
-    <value>l</value>
-  </data>
-  <data name="B36" xml:space="preserve">
-    <value>;</value>
-  </data>
-  <data name="B37" xml:space="preserve">
-    <value>'</value>
-  </data>
-  <data name="B38" xml:space="preserve">
-    <value>z</value>
-  </data>
-  <data name="B39" xml:space="preserve">
-    <value>x</value>
-  </data>
-  <data name="B40" xml:space="preserve">
-    <value>c</value>
-  </data>
-  <data name="B41" xml:space="preserve">
-    <value>v</value>
-  </data>
-  <data name="B42" xml:space="preserve">
+  <data name="B" xml:space="preserve">
     <value>b</value>
   </data>
-  <data name="B43" xml:space="preserve">
-    <value>n</value>
+  <data name="Backspace" xml:space="preserve">
+    <value>Backspace</value>
   </data>
-  <data name="B44" xml:space="preserve">
-    <value>m</value>
+  <data name="C" xml:space="preserve">
+    <value>c</value>
   </data>
-  <data name="B45" xml:space="preserve">
-    <value>,</value>
+  <data name="Caps_Lock" xml:space="preserve">
+    <value>Caps Lock</value>
   </data>
-  <data name="B46" xml:space="preserve">
-    <value>.</value>
+  <data name="Ctrl" xml:space="preserve">
+    <value>Ctrl</value>
   </data>
-  <data name="B47" xml:space="preserve">
-    <value>/</value>
+  <data name="D" xml:space="preserve">
+    <value>d</value>
   </data>
   <data name="D0" xml:space="preserve">
     <value>0</value>
@@ -249,13 +171,118 @@
   <data name="D9" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="E" xml:space="preserve">
+    <value>e</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="F" xml:space="preserve">
+    <value>f</value>
+  </data>
+  <data name="G" xml:space="preserve">
+    <value>g</value>
+  </data>
+  <data name="H" xml:space="preserve">
+    <value>h</value>
+  </data>
+  <data name="I" xml:space="preserve">
+    <value>i</value>
+  </data>
+  <data name="J" xml:space="preserve">
+    <value>j</value>
+  </data>
+  <data name="K" xml:space="preserve">
+    <value>k</value>
+  </data>
+  <data name="L" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="M" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="N" xml:space="preserve">
+    <value>n</value>
+  </data>
+  <data name="O" xml:space="preserve">
+    <value>o</value>
+  </data>
+  <data name="Oem1" xml:space="preserve">
+    <value>;</value>
+  </data>
   <data name="Oem3" xml:space="preserve">
     <value>~</value>
+  </data>
+  <data name="Oem5" xml:space="preserve">
+    <value>\</value>
+  </data>
+  <data name="Oem6" xml:space="preserve">
+    <value>]</value>
+  </data>
+  <data name="OemComma" xml:space="preserve">
+    <value>,</value>
   </data>
   <data name="OemMinus" xml:space="preserve">
     <value>-</value>
   </data>
+  <data name="OemOpenBrackets" xml:space="preserve">
+    <value>[</value>
+  </data>
+  <data name="OemPeriod" xml:space="preserve">
+    <value>.</value>
+  </data>
   <data name="OemPlus" xml:space="preserve">
     <value>=</value>
+  </data>
+  <data name="OemQuestion" xml:space="preserve">
+    <value>/</value>
+  </data>
+  <data name="OemQuotes" xml:space="preserve">
+    <value>'</value>
+  </data>
+  <data name="P" xml:space="preserve">
+    <value>p</value>
+  </data>
+  <data name="Q" xml:space="preserve">
+    <value>q</value>
+  </data>
+  <data name="R" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="S" xml:space="preserve">
+    <value>s</value>
+  </data>
+  <data name="Shift" xml:space="preserve">
+    <value>Shift</value>
+  </data>
+  <data name="Space" xml:space="preserve">
+    <value>Space</value>
+  </data>
+  <data name="T" xml:space="preserve">
+    <value>t</value>
+  </data>
+  <data name="Tab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="U" xml:space="preserve">
+    <value>u</value>
+  </data>
+  <data name="V" xml:space="preserve">
+    <value>v</value>
+  </data>
+  <data name="W" xml:space="preserve">
+    <value>w</value>
+  </data>
+  <data name="Win" xml:space="preserve">
+    <value>Win</value>
+  </data>
+  <data name="X" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="Y" xml:space="preserve">
+    <value>y</value>
+  </data>
+  <data name="Z" xml:space="preserve">
+    <value>z</value>
   </data>
 </root>

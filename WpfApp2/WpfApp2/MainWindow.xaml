@@ -1,0 +1,267 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <!--https://habrahabr.ru/post/86778/-->
+
+
+        <ControlTemplate x:Key="SmallButton" TargetType="{x:Type Button}">
+
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="10"
+       Background="{TemplateBinding Background}" TextBlock.Foreground="{TemplateBinding  TextBlock.Foreground}" Name="Border"  Margin="1">
+
+                <Grid>
+                    <Rectangle Name="FocusCue" Visibility="Hidden" Stroke="Black"
+           StrokeThickness="1" StrokeDashArray="1 2"></Rectangle>
+                    <ContentPresenter RecognizesAccessKey="True"
+         Margin="{TemplateBinding Padding}"></ContentPresenter>
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <!--<Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Border" Property="Background" Value="DarkRed" />
+            </Trigger>-->
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="Border" Property="Background" Value="IndianRed" />
+                    <Setter TargetName="Border" Property="BorderBrush" Value="DarkKhaki" />
+                </Trigger>
+                <!--<Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter TargetName="FocusCue" Property="Visibility" Value="Visible" />
+            </Trigger>-->
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter TargetName="Border" Property="TextBlock.Foreground" Value="Gray" />
+                    <Setter TargetName="Border" Property="Background" Value="MistyRose" />
+                </Trigger>
+
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Column="0">
+                <Label Content="Speed:"/>
+                <Label Name="_Speed_Chars" Content="0"/>
+                <Label Content="chars/min"/>
+            </DockPanel>
+            <DockPanel Grid.Column="1">
+                <Label Content="Fails:"/>
+                <Label Name="_Fails" Content="0"/>
+            </DockPanel>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Grid.Column="1" Content="Case Sensitive" VerticalAlignment="Center"/>
+                <Button Grid.Row="1" Grid.Column="0" Margin="2" Content="Start"/>
+                <Button Grid.Row="1" Grid.Column="1" Margin="2" Content="Stop"/>
+                <DockPanel Grid.Column="0">
+                    <Label  VerticalAlignment="Center">Difficulty:</Label>
+                    <Label Name="_Difficulty" Content="0"  VerticalAlignment="Center"/>
+                    <Slider Minimum="1" Maximum="10" VerticalAlignment="Center" />
+                </DockPanel>
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Background="#FF78DADA" Name="_Str_Program"/>
+            <Label Background="#FF78DADA" Grid.Row="1" Name="_Str_My"/>
+
+
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0,3,0,0" PreviewMouseDown="Grid_PreviewMouseDown">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Name="Oem3" Template="{DynamicResource SmallButton}"  Grid.Column="0" Background="Red" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"/>
+                <Button Name="D1" Template="{DynamicResource SmallButton}"  Grid.Column="1" Background="Red" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="g"/>
+                <Button Name="D2" Template="{DynamicResource SmallButton}"  Grid.Column="2"  Background="Red" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="D3" Template="{DynamicResource SmallButton}"  Grid.Column="3"  Background="Yellow" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="D4" Template="{DynamicResource SmallButton}"  Grid.Column="4"  Background="Green" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="D5" Template="{DynamicResource SmallButton}"  Grid.Column="5"  Background="Blue" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="g"/>
+                <Button Name="D6" Template="{DynamicResource SmallButton}"  Grid.Column="6"  Background="Blue" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="D7" Template="{DynamicResource SmallButton}"  Grid.Column="7"  Background="Violet" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="D8" Template="{DynamicResource SmallButton}"  Grid.Column="8" Background="Violet" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="D9" Template="{DynamicResource SmallButton}"  Grid.Column="9"  Background="Red" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="D0" Template="{DynamicResource SmallButton}"  Grid.Column="10" Background="Yellow" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="g"/>
+                <Button Name="OemMinus" Template="{DynamicResource SmallButton}"  Grid.Column="11"  Background="Green" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="q"/>
+                <Button Name="OemPlus" Template="{DynamicResource SmallButton}"  Grid.Column="12"  Background="Green" TextBlock.FontSize="20"  TextBlock.TextAlignment="Center" Content="q"/>
+                <Button Name="Back" Template="{DynamicResource SmallButton}"  Grid.Column="14"  Background="Gray" TextBlock.FontSize="15" TextBlock.TextAlignment="Center" Content="Backspace"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="1.5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Name="Tab"  Template="{DynamicResource SmallButton}" Grid.Column="0" Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="Q" Template="{DynamicResource SmallButton}"  Grid.Column="1" Background="Red" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="g"/>
+                <Button Name="W" Template="{DynamicResource SmallButton}"  Grid.Column="2"  Background="Yellow" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="E" Template="{DynamicResource SmallButton}"  Grid.Column="3"  Background="Green" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="R" Template="{DynamicResource SmallButton}"  Grid.Column="4"  Background="Blue" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="T" Template="{DynamicResource SmallButton}"  Grid.Column="5"  Background="Blue" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="g"/>
+                <Button Name="Y" Template="{DynamicResource SmallButton}"  Grid.Column="6"  Background="Violet" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="U" Template="{DynamicResource SmallButton}"  Grid.Column="7"  Background="Violet" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="I" Template="{DynamicResource SmallButton}"  Grid.Column="8" Background="Red" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="O" Template="{DynamicResource SmallButton}"  Grid.Column="9"  Background="Yellow" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="P" Template="{DynamicResource SmallButton}"  Grid.Column="10" Background="Green" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="g"/>
+                <Button Name="OemOpenBrackets" Template="{DynamicResource SmallButton}"  Grid.Column="11"  Background="Green" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="q"/>
+                <Button Name="Oem6" Template="{DynamicResource SmallButton}"  Grid.Column="12"  Background="Green" TextBlock.FontSize="20"  TextBlock.TextAlignment="Center" Content="q"/>
+                <Button Name="Oem5" Template="{DynamicResource SmallButton}"  Grid.Column="13"  Background="Green" TextBlock.FontSize="15" TextBlock.TextAlignment="Center" Content="Backspace"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Button Name="Capital" Template="{DynamicResource SmallButton}" Grid.Column="0" Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="A" Template="{DynamicResource SmallButton}"  Grid.Column="1" Background="Red" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="g"/>
+                <Button Name="S" Template="{DynamicResource SmallButton}"  Grid.Column="2"  Background="Yellow" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="D" Template="{DynamicResource SmallButton}"  Grid.Column="3"  Background="Green" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="F" Template="{DynamicResource SmallButton}"  Grid.Column="4"  Background="Blue" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="G" Template="{DynamicResource SmallButton}"  Grid.Column="5"  Background="Blue" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="g"/>
+                <Button Name="H" Template="{DynamicResource SmallButton}"  Grid.Column="6"  Background="Violet" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="J" Template="{DynamicResource SmallButton}"  Grid.Column="7"  Background="Violet" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="K" Template="{DynamicResource SmallButton}"  Grid.Column="8" Background="Red" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="L" Template="{DynamicResource SmallButton}"  Grid.Column="9"  Background="Yellow" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="Oem1" Template="{DynamicResource SmallButton}"  Grid.Column="10" Background="Green" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="g"/>
+                <Button Name="OemQuotes" Template="{DynamicResource SmallButton}"  Grid.Column="11"  Background="Green" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="q"/>
+                <Button Name="Return" Template="{DynamicResource SmallButton}"  Grid.Column="12"  Background="Gray" TextBlock.FontSize="20"  TextBlock.TextAlignment="Center" Content="q"/>
+
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2.5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Name="LeftShift"  Template="{DynamicResource SmallButton}" Grid.Column="0" Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="Z" Template="{DynamicResource SmallButton}"  Grid.Column="1" Background="Red" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="g"/>
+                <Button Name="X" Template="{DynamicResource SmallButton}"  Grid.Column="2"  Background="Yellow" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="C" Template="{DynamicResource SmallButton}"  Grid.Column="3"  Background="Green" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="V" Template="{DynamicResource SmallButton}"  Grid.Column="4"  Background="Blue" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="B" Template="{DynamicResource SmallButton}"  Grid.Column="5"  Background="Blue" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="g"/>
+                <Button Name="N" Template="{DynamicResource SmallButton}"  Grid.Column="6"  Background="Violet" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="M" Template="{DynamicResource SmallButton}"  Grid.Column="7"  Background="Violet" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="OemComma" Template="{DynamicResource SmallButton}"  Grid.Column="8" Background="Red" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="OemPeriod" Template="{DynamicResource SmallButton}"  Grid.Column="9"  Background="Yellow" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="OemQuestion" Template="{DynamicResource SmallButton}"  Grid.Column="10" Background="Green" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="g"/>
+                <Button Name="RightShift" Template="{DynamicResource SmallButton}"  Grid.Column="11"  Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="q"/>
+
+            </Grid>
+            <Grid  Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Button Name="LeftCtrl" Template="{DynamicResource SmallButton}" Grid.Column="0" Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="LWin" Template="{DynamicResource SmallButton}"  Grid.Column="1" Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="g"/>
+                <Button Name="System" Template="{DynamicResource SmallButton}"  Grid.Column="2"  Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="Space" Template="{DynamicResource SmallButton}"  Grid.Column="3"  Background="#FF7A382E" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="System_1" Template="{DynamicResource SmallButton}"  Grid.Column="4"  Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+                <Button Name="RWin" Template="{DynamicResource SmallButton}"  Grid.Column="5"  Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center"  Content="g"/>
+                <Button Name="RightCtrl" Template="{DynamicResource SmallButton}"  Grid.Column="6"  Background="Gray" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Content="g"/>
+
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -61,308 +61,74 @@ namespace KeyTren.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to q.
-        /// </summary>
-        public static string B14 {
-            get {
-                return ResourceManager.GetString("B14", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to w.
-        /// </summary>
-        public static string B15 {
-            get {
-                return ResourceManager.GetString("B15", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to e.
-        /// </summary>
-        public static string B16 {
-            get {
-                return ResourceManager.GetString("B16", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to r.
-        /// </summary>
-        public static string B17 {
-            get {
-                return ResourceManager.GetString("B17", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to t.
-        /// </summary>
-        public static string B18 {
-            get {
-                return ResourceManager.GetString("B18", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to y.
-        /// </summary>
-        public static string B19 {
-            get {
-                return ResourceManager.GetString("B19", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to u.
-        /// </summary>
-        public static string B20 {
-            get {
-                return ResourceManager.GetString("B20", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to i.
-        /// </summary>
-        public static string B21 {
-            get {
-                return ResourceManager.GetString("B21", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to o.
-        /// </summary>
-        public static string B22 {
-            get {
-                return ResourceManager.GetString("B22", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to p.
-        /// </summary>
-        public static string B23 {
-            get {
-                return ResourceManager.GetString("B23", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [.
-        /// </summary>
-        public static string B24 {
-            get {
-                return ResourceManager.GetString("B24", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ].
-        /// </summary>
-        public static string B25 {
-            get {
-                return ResourceManager.GetString("B25", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to \.
-        /// </summary>
-        public static string B26 {
-            get {
-                return ResourceManager.GetString("B26", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to a.
         /// </summary>
-        public static string B27 {
+        public static string A {
             get {
-                return ResourceManager.GetString("B27", resourceCulture);
+                return ResourceManager.GetString("A", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to s.
+        ///   Looks up a localized string similar to Alt.
         /// </summary>
-        public static string B28 {
+        public static string Alt {
             get {
-                return ResourceManager.GetString("B28", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to d.
-        /// </summary>
-        public static string B29 {
-            get {
-                return ResourceManager.GetString("B29", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to f.
-        /// </summary>
-        public static string B30 {
-            get {
-                return ResourceManager.GetString("B30", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to g.
-        /// </summary>
-        public static string B31 {
-            get {
-                return ResourceManager.GetString("B31", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to h.
-        /// </summary>
-        public static string B32 {
-            get {
-                return ResourceManager.GetString("B32", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to j.
-        /// </summary>
-        public static string B33 {
-            get {
-                return ResourceManager.GetString("B33", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to k.
-        /// </summary>
-        public static string B34 {
-            get {
-                return ResourceManager.GetString("B34", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to l.
-        /// </summary>
-        public static string B35 {
-            get {
-                return ResourceManager.GetString("B35", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ;.
-        /// </summary>
-        public static string B36 {
-            get {
-                return ResourceManager.GetString("B36", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &apos;.
-        /// </summary>
-        public static string B37 {
-            get {
-                return ResourceManager.GetString("B37", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to z.
-        /// </summary>
-        public static string B38 {
-            get {
-                return ResourceManager.GetString("B38", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to x.
-        /// </summary>
-        public static string B39 {
-            get {
-                return ResourceManager.GetString("B39", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to c.
-        /// </summary>
-        public static string B40 {
-            get {
-                return ResourceManager.GetString("B40", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to v.
-        /// </summary>
-        public static string B41 {
-            get {
-                return ResourceManager.GetString("B41", resourceCulture);
+                return ResourceManager.GetString("Alt", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to b.
         /// </summary>
-        public static string B42 {
+        public static string B {
             get {
-                return ResourceManager.GetString("B42", resourceCulture);
+                return ResourceManager.GetString("B", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to n.
+        ///   Looks up a localized string similar to Backspace.
         /// </summary>
-        public static string B43 {
+        public static string Backspace {
             get {
-                return ResourceManager.GetString("B43", resourceCulture);
+                return ResourceManager.GetString("Backspace", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to m.
+        ///   Looks up a localized string similar to c.
         /// </summary>
-        public static string B44 {
+        public static string C {
             get {
-                return ResourceManager.GetString("B44", resourceCulture);
+                return ResourceManager.GetString("C", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ,.
+        ///   Looks up a localized string similar to Caps Lock.
         /// </summary>
-        public static string B45 {
+        public static string Caps_Lock {
             get {
-                return ResourceManager.GetString("B45", resourceCulture);
+                return ResourceManager.GetString("Caps_Lock", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ..
+        ///   Looks up a localized string similar to Ctrl.
         /// </summary>
-        public static string B46 {
+        public static string Ctrl {
             get {
-                return ResourceManager.GetString("B46", resourceCulture);
+                return ResourceManager.GetString("Ctrl", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to /.
+        ///   Looks up a localized string similar to d.
         /// </summary>
-        public static string B47 {
+        public static string D {
             get {
-                return ResourceManager.GetString("B47", resourceCulture);
+                return ResourceManager.GetString("D", resourceCulture);
             }
         }
         
@@ -457,11 +223,155 @@ namespace KeyTren.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to e.
+        /// </summary>
+        public static string E {
+            get {
+                return ResourceManager.GetString("E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter.
+        /// </summary>
+        public static string Enter {
+            get {
+                return ResourceManager.GetString("Enter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to f.
+        /// </summary>
+        public static string F {
+            get {
+                return ResourceManager.GetString("F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to g.
+        /// </summary>
+        public static string G {
+            get {
+                return ResourceManager.GetString("G", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to h.
+        /// </summary>
+        public static string H {
+            get {
+                return ResourceManager.GetString("H", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to i.
+        /// </summary>
+        public static string I {
+            get {
+                return ResourceManager.GetString("I", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to j.
+        /// </summary>
+        public static string J {
+            get {
+                return ResourceManager.GetString("J", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to k.
+        /// </summary>
+        public static string K {
+            get {
+                return ResourceManager.GetString("K", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to l.
+        /// </summary>
+        public static string L {
+            get {
+                return ResourceManager.GetString("L", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to m.
+        /// </summary>
+        public static string M {
+            get {
+                return ResourceManager.GetString("M", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to n.
+        /// </summary>
+        public static string N {
+            get {
+                return ResourceManager.GetString("N", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to o.
+        /// </summary>
+        public static string O {
+            get {
+                return ResourceManager.GetString("O", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ;.
+        /// </summary>
+        public static string Oem1 {
+            get {
+                return ResourceManager.GetString("Oem1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ~.
         /// </summary>
         public static string Oem3 {
             get {
                 return ResourceManager.GetString("Oem3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to \.
+        /// </summary>
+        public static string Oem5 {
+            get {
+                return ResourceManager.GetString("Oem5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ].
+        /// </summary>
+        public static string Oem6 {
+            get {
+                return ResourceManager.GetString("Oem6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ,.
+        /// </summary>
+        public static string OemComma {
+            get {
+                return ResourceManager.GetString("OemComma", resourceCulture);
             }
         }
         
@@ -475,11 +385,182 @@ namespace KeyTren.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [.
+        /// </summary>
+        public static string OemOpenBrackets {
+            get {
+                return ResourceManager.GetString("OemOpenBrackets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ..
+        /// </summary>
+        public static string OemPeriod {
+            get {
+                return ResourceManager.GetString("OemPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to =.
         /// </summary>
         public static string OemPlus {
             get {
                 return ResourceManager.GetString("OemPlus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /.
+        /// </summary>
+        public static string OemQuestion {
+            get {
+                return ResourceManager.GetString("OemQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;.
+        /// </summary>
+        public static string OemQuotes {
+            get {
+                return ResourceManager.GetString("OemQuotes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to p.
+        /// </summary>
+        public static string P {
+            get {
+                return ResourceManager.GetString("P", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to q.
+        /// </summary>
+        public static string Q {
+            get {
+                return ResourceManager.GetString("Q", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to r.
+        /// </summary>
+        public static string R {
+            get {
+                return ResourceManager.GetString("R", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to s.
+        /// </summary>
+        public static string S {
+            get {
+                return ResourceManager.GetString("S", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shift.
+        /// </summary>
+        public static string Shift {
+            get {
+                return ResourceManager.GetString("Shift", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Space.
+        /// </summary>
+        public static string Space {
+            get {
+                return ResourceManager.GetString("Space", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to t.
+        /// </summary>
+        public static string T {
+            get {
+                return ResourceManager.GetString("T", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tab.
+        /// </summary>
+        public static string Tab {
+            get {
+                return ResourceManager.GetString("Tab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to u.
+        /// </summary>
+        public static string U {
+            get {
+                return ResourceManager.GetString("U", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to v.
+        /// </summary>
+        public static string V {
+            get {
+                return ResourceManager.GetString("V", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to w.
+        /// </summary>
+        public static string W {
+            get {
+                return ResourceManager.GetString("W", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win.
+        /// </summary>
+        public static string Win {
+            get {
+                return ResourceManager.GetString("Win", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        public static string X {
+            get {
+                return ResourceManager.GetString("X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to y.
+        /// </summary>
+        public static string Y {
+            get {
+                return ResourceManager.GetString("Y", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to z.
+        /// </summary>
+        public static string Z {
+            get {
+                return ResourceManager.GetString("Z", resourceCulture);
             }
         }
     }

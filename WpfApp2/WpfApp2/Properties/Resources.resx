@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,7 +60,6 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -69,10 +68,9 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -87,10 +85,9 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -112,150 +109,9 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="B14" xml:space="preserve">
-    <value>q</value>
-  </data>
-  <data name="B15" xml:space="preserve">
-    <value>w</value>
-  </data>
-  <data name="B16" xml:space="preserve">
-    <value>e</value>
-  </data>
-  <data name="B17" xml:space="preserve">
-    <value>r</value>
-  </data>
-  <data name="B18" xml:space="preserve">
-    <value>t</value>
-  </data>
-  <data name="B19" xml:space="preserve">
-    <value>y</value>
-  </data>
-  <data name="B20" xml:space="preserve">
-    <value>u</value>
-  </data>
-  <data name="B21" xml:space="preserve">
-    <value>i</value>
-  </data>
-  <data name="B22" xml:space="preserve">
-    <value>o</value>
-  </data>
-  <data name="B23" xml:space="preserve">
-    <value>p</value>
-  </data>
-  <data name="B24" xml:space="preserve">
-    <value>[</value>
-  </data>
-  <data name="B25" xml:space="preserve">
-    <value>]</value>
-  </data>
-  <data name="B26" xml:space="preserve">
-    <value>\</value>
-  </data>
-  <data name="B27" xml:space="preserve">
-    <value>a</value>
-  </data>
-  <data name="B28" xml:space="preserve">
-    <value>s</value>
-  </data>
-  <data name="B29" xml:space="preserve">
-    <value>d</value>
-  </data>
-  <data name="B30" xml:space="preserve">
-    <value>f</value>
-  </data>
-  <data name="B31" xml:space="preserve">
-    <value>g</value>
-  </data>
-  <data name="B32" xml:space="preserve">
-    <value>h</value>
-  </data>
-  <data name="B33" xml:space="preserve">
-    <value>j</value>
-  </data>
-  <data name="B34" xml:space="preserve">
-    <value>k</value>
-  </data>
-  <data name="B35" xml:space="preserve">
-    <value>l</value>
-  </data>
-  <data name="B36" xml:space="preserve">
-    <value>;</value>
-  </data>
-  <data name="B37" xml:space="preserve">
-    <value>'</value>
-  </data>
-  <data name="B38" xml:space="preserve">
-    <value>z</value>
-  </data>
-  <data name="B39" xml:space="preserve">
-    <value>x</value>
-  </data>
-  <data name="B40" xml:space="preserve">
-    <value>c</value>
-  </data>
-  <data name="B41" xml:space="preserve">
-    <value>v</value>
-  </data>
-  <data name="B42" xml:space="preserve">
-    <value>b</value>
-  </data>
-  <data name="B43" xml:space="preserve">
-    <value>n</value>
-  </data>
-  <data name="B44" xml:space="preserve">
-    <value>m</value>
-  </data>
-  <data name="B45" xml:space="preserve">
-    <value>,</value>
-  </data>
-  <data name="B46" xml:space="preserve">
-    <value>.</value>
-  </data>
-  <data name="B47" xml:space="preserve">
-    <value>/</value>
-  </data>
-  <data name="D0" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="D1" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="D2" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="D3" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="D4" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="D5" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="D6" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="D7" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="D8" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="D9" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="Oem3" xml:space="preserve">
-    <value>~</value>
-  </data>
-  <data name="OemMinus" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="OemPlus" xml:space="preserve">
-    <value>=</value>
-  </data>
 </root>
