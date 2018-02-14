@@ -24,5 +24,10 @@ namespace KeyTren
         {
             InitializeComponent();
         }
+
+        private void Grid_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

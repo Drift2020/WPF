@@ -61,51 +61,6 @@ namespace KeyTren.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ~.
-        /// </summary>
-        public static string B1 {
-            get {
-                return ResourceManager.GetString("B1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 9.
-        /// </summary>
-        public static string B10 {
-            get {
-                return ResourceManager.GetString("B10", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 0.
-        /// </summary>
-        public static string B11 {
-            get {
-                return ResourceManager.GetString("B11", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to -.
-        /// </summary>
-        public static string B12 {
-            get {
-                return ResourceManager.GetString("B12", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to =.
-        /// </summary>
-        public static string B13 {
-            get {
-                return ResourceManager.GetString("B13", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to q.
         /// </summary>
         public static string B14 {
@@ -156,15 +111,6 @@ namespace KeyTren.Properties {
         public static string B19 {
             get {
                 return ResourceManager.GetString("B19", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 1.
-        /// </summary>
-        public static string B2 {
-            get {
-                return ResourceManager.GetString("B2", resourceCulture);
             }
         }
         
@@ -259,15 +205,6 @@ namespace KeyTren.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2.
-        /// </summary>
-        public static string B3 {
-            get {
-                return ResourceManager.GetString("B3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to f.
         /// </summary>
         public static string B30 {
@@ -358,15 +295,6 @@ namespace KeyTren.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 3.
-        /// </summary>
-        public static string B4 {
-            get {
-                return ResourceManager.GetString("B4", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to c.
         /// </summary>
         public static string B40 {
@@ -439,47 +367,119 @@ namespace KeyTren.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 0.
+        /// </summary>
+        public static string D0 {
+            get {
+                return ResourceManager.GetString("D0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        public static string D1 {
+            get {
+                return ResourceManager.GetString("D1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        public static string D2 {
+            get {
+                return ResourceManager.GetString("D2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        public static string D3 {
+            get {
+                return ResourceManager.GetString("D3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 4.
         /// </summary>
-        public static string B5 {
+        public static string D4 {
             get {
-                return ResourceManager.GetString("B5", resourceCulture);
+                return ResourceManager.GetString("D4", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 5.
         /// </summary>
-        public static string B6 {
+        public static string D5 {
             get {
-                return ResourceManager.GetString("B6", resourceCulture);
+                return ResourceManager.GetString("D5", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 6.
         /// </summary>
-        public static string B7 {
+        public static string D6 {
             get {
-                return ResourceManager.GetString("B7", resourceCulture);
+                return ResourceManager.GetString("D6", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 7.
         /// </summary>
-        public static string B8 {
+        public static string D7 {
             get {
-                return ResourceManager.GetString("B8", resourceCulture);
+                return ResourceManager.GetString("D7", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 8.
         /// </summary>
-        public static string B9 {
+        public static string D8 {
             get {
-                return ResourceManager.GetString("B9", resourceCulture);
+                return ResourceManager.GetString("D8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9.
+        /// </summary>
+        public static string D9 {
+            get {
+                return ResourceManager.GetString("D9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ~.
+        /// </summary>
+        public static string Oem3 {
+            get {
+                return ResourceManager.GetString("Oem3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -.
+        /// </summary>
+        public static string OemMinus {
+            get {
+                return ResourceManager.GetString("OemMinus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to =.
+        /// </summary>
+        public static string OemPlus {
+            get {
+                return ResourceManager.GetString("OemPlus", resourceCulture);
             }
         }
     }
