@@ -108,9 +108,9 @@ namespace KeyTren.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Caps Lock.
         /// </summary>
-        public static string Caps_Lock {
+        public static string Capital {
             get {
-                return ResourceManager.GetString("Caps_Lock", resourceCulture);
+                return ResourceManager.GetString("Capital", resourceCulture);
             }
         }
         

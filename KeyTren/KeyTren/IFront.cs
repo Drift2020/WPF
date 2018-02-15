@@ -8,8 +8,8 @@ namespace KeyTren
 {
     public interface IFront
     {
-         string prow_str { set; get; }
-         string my_str { set; get; }
+        string prow_str { set; get; }
+        string my_str { set; get; }
 
         string my_chars { set; get; }
         bool sensitive { set; get; }
@@ -17,12 +17,15 @@ namespace KeyTren
         int fails { set; get; }
         int speed_chars { set; get; }
 
-       
+        bool is_Start_button { set; get; }
+        bool is_Stop_button { set; get; }
+
+        bool is_Start { set; get; }
 
         event EventHandler<EventArgs> DownKey;
         event EventHandler<EventArgs> Start;
         event EventHandler<EventArgs> Stop;
-
+        event EventHandler<EventArgs> Start_program;
         event EventHandler<EventArgs> Speed_Chars;
         event EventHandler<EventArgs> Fails;
     }
