@@ -6,14 +6,18 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Data;
 
 namespace KeyTren
 {
+   
+
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
+
         private static List<CultureInfo> m_Languages = new List<CultureInfo>();
 
         public static List<CultureInfo> Languages
@@ -27,8 +31,11 @@ namespace KeyTren
         public App()
         {
             m_Languages.Clear();
+            m_Languages.Add(new CultureInfo("ja-JP"));
             m_Languages.Add(new CultureInfo("en-US")); //Нейтральная культура для этого проекта
             m_Languages.Add(new CultureInfo("ru-RU"));
+            m_Languages.Add(new CultureInfo("en-JM"));
+          
         }
 
         public static event EventHandler LanguageChanged;
@@ -54,8 +61,19 @@ namespace KeyTren
                     case "ru-RU":
                         dict.Source = new Uri(String.Format("Resources/lang.{0}.xaml", value.Name), UriKind.Relative);
                         break;
+
+                    case "en-US":
+                        dict.Source = new Uri(String.Format("Resources/lang.{0}.xaml", value.Name), UriKind.Relative);
+                        break;
+
+                    case "en-JM":
+                        dict.Source = new Uri(String.Format("Resources/lang.{0}.xaml", value.Name), UriKind.Relative);
+                        break;
+                    case "ja-JP":
+                        dict.Source = new Uri(String.Format("Resources/lang.{0}.xaml", value.Name), UriKind.Relative);
+                        break;
                     default:
-                        dict.Source = new Uri("Resources/lang.xaml", UriKind.Relative);
+                        dict.Source = new Uri("Resources/lang.ja-JP.xaml", UriKind.Relative);
                         break;
                 }
 

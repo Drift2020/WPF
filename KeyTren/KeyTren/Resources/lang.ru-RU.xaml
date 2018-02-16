@@ -2,66 +2,63 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:KeyTren.Resources"
                     xmlns:v="clr-namespace:System;assembly=mscorlib">
-    <v:String x:Key="A">a</v:String>
+   
+
+
+    <v:String x:Key="A">A</v:String>
     <v:String x:Key="Alt">Alt</v:String>
-    <v:String x:Key="B">b</v:String>
+    <v:String x:Key="B">B</v:String>
     <v:String x:Key="Backspace">Backspace</v:String>
-    <v:String x:Key="C">c</v:String>
+    <v:String x:Key="C">C</v:String>
     <v:String x:Key="Capital">Caps Lock</v:String>
     <v:String x:Key="Ctrl">Ctrl</v:String>
-    <v:String x:Key="D">d</v:String>
-    <v:String x:Key="D0">0</v:String>
-    <v:String x:Key="D1">1</v:String>
-    <v:String x:Key="D2">2</v:String>
-    <v:String x:Key="D3">3</v:String>
-    <v:String x:Key="D4">4</v:String>
-    <v:String x:Key="D5">5</v:String>
-    <v:String x:Key="D6">6</v:String>
-    <v:String x:Key="D7">7</v:String>
-    <v:String x:Key="D8">8</v:String>
-    <v:String x:Key="D9">9</v:String>
-    <v:String x:Key="E">e</v:String>
+    <v:String x:Key="D">D</v:String>
+    <v:String x:Key="D0">)</v:String>
+    <v:String x:Key="D1">!</v:String>
+    <v:String x:Key="D2">@</v:String>
+    <v:String x:Key="D3">#</v:String>
+    <v:String x:Key="D4">$</v:String>
+    <v:String x:Key="D5">%</v:String>
+    <v:String x:Key="D6">^</v:String>
+    <v:String x:Key="D7" >&#38;</v:String>
+    <v:String x:Key="D8">*</v:String>
+    <v:String x:Key="D9">(</v:String>
+    <v:String x:Key="E">E</v:String>
     <v:String x:Key="Enter">Enter</v:String>
-    <v:String x:Key="F">f</v:String>
-    <v:String x:Key="G">g</v:String>
-    <v:String x:Key="H">h</v:String>
-    <v:String x:Key="I">i</v:String>
-    <v:String x:Key="J">j</v:String>
-    <v:String x:Key="K">k</v:String>
-    <v:String x:Key="L">l</v:String>
-    <v:String x:Key="M">m</v:String>
-    <v:String x:Key="N">n</v:String>
-    <v:String x:Key="O">o</v:String>
-    <v:String x:Key="Oem1">;</v:String>
-    <v:String x:Key="Oem3">~</v:String>
-    <v:String x:Key="Oem5">\</v:String>
-    <v:String x:Key="Oem6">]</v:String>
-    <v:String x:Key="OemComma">,</v:String>
-    <v:String x:Key="OemMinus">-</v:String>
-    <v:String x:Key="OemOpenBrackets">[</v:String>
-    <v:String x:Key="OemPeriod">.</v:String>
-
-    <v:String x:Key="OemPlus">=</v:String>
-    <v:String x:Key="OemQuestion">/</v:String>
-    <v:String x:Key="OemQuotes">'</v:String>
-    <v:String x:Key="P">p</v:String>
-    <v:String x:Key="Q">q</v:String>
-    <v:String x:Key="R">r</v:String>
-    <v:String x:Key="S">s</v:String>
+    <v:String x:Key="F">F</v:String>
+    <v:String x:Key="G">G</v:String>
+    <v:String x:Key="H">H</v:String>
+    <v:String x:Key="I">I</v:String>
+    <v:String x:Key="J">J</v:String>
+    <v:String x:Key="K">K</v:String>
+    <v:String x:Key="L">L</v:String>
+    <v:String x:Key="M">M</v:String>
+    <v:String x:Key="N">N</v:String>
+    <v:String x:Key="O">O</v:String>
+    <v:String x:Key="Oem1">:</v:String>
+    <v:String x:Key="Oem3">`</v:String>
+    <v:String x:Key="Oem5">|</v:String>
+    <v:String x:Key="Oem6">}</v:String>
+    <v:String x:Key="OemComma">&#60;</v:String>
+    <v:String x:Key="OemMinus">_</v:String>
+    <v:String x:Key="OemOpenBrackets">{</v:String>
+    <v:String x:Key="OemPeriod">&#62;</v:String>
+    <v:String x:Key="OemPlus">+</v:String>
+    <v:String x:Key="OemQuestion">?</v:String>
+    <v:String x:Key="OemQuotes">"</v:String>
+    <v:String x:Key="P">P</v:String>
+    <v:String x:Key="Q">Q</v:String>
+    <v:String x:Key="R">R</v:String>
+    <v:String x:Key="S">S</v:String>
     <v:String x:Key="Shift">Shift</v:String>
     <v:String x:Key="Space">Space</v:String>
-    <v:String x:Key="T">t</v:String>
+    <v:String x:Key="T">T</v:String>
     <v:String x:Key="Tab">Tab</v:String>
-    <v:String x:Key="U">u</v:String>
-    <v:String x:Key="V">v</v:String>
-    <v:String x:Key="W">w</v:String>
-
+    <v:String x:Key="U">U</v:String>
+    <v:String x:Key="V">V</v:String>
+    <v:String x:Key="W">W</v:String>
     <v:String x:Key="Win">Win</v:String>
-    <v:String x:Key="X">x</v:String>
-    <v:String x:Key="Y">y</v:String>
-
-    <v:String x:Key="Z">z</v:String>
-
-
-
+    <v:String x:Key="X">X</v:String>
+    <v:String x:Key="Y">Y</v:String>
+    <v:String x:Key="Z">Z</v:String>
 </ResourceDictionary>

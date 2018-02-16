@@ -17,10 +17,15 @@ namespace KeyTren
         int fails { set; get; }
         int speed_chars { set; get; }
 
+        bool is_Start { set; get; }
+
         bool is_Start_button { set; get; }
         bool is_Stop_button { set; get; }
+        bool is_Enable_text_box { set; get; }
+        bool is_Enable_slad_box { set; get; }
+        bool is_Enable_chek_box { set; get; }
+    
 
-        bool is_Start { set; get; }
 
         event EventHandler<EventArgs> DownKey;
         event EventHandler<EventArgs> Start;
