@@ -62,9 +62,10 @@ namespace KeyTren
         public bool is_Enable_slad_box { set { sld.IsEnabled = value; } get { return sld.IsEnabled; } }
         public bool is_Enable_chek_box { set { _registr.IsEnabled = value; } get { return _registr.IsEnabled; } }
 
+        public int level { set { _Difficulty.Content = value; } get { return Int32.Parse(_Difficulty.Content.ToString()); } }
 
-        public string prow_str { set; get; }
-        public string my_str { set; get; }
+        public string prow_str { set { _Str_Program.Content = value; } get { return _Str_Program.Content.ToString(); } }
+        public string my_str { set { _Str_My.Text = value; } get { return _Str_My.Text; } }
 
         public string my_chars { set; get; }
         public bool sensitive { set; get; }
@@ -150,7 +151,13 @@ namespace KeyTren
                     temp = Keys.FindName("Alt") as Button;
 
 
-               
+               if(e.Key.ToString()=="K")
+                {
+                    Rect rect = _Str_My.GetRectFromCharacterIndex(_Str_My.CaretIndex == 0 ? 0 : _Str_My.CaretIndex - 1);
+                    _Str_My.ScrollToHorizontalOffset(rect.Left);
+                }
+                  
+              
 
 
                 if (temp != null)

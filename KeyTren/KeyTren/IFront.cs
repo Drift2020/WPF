@@ -16,6 +16,7 @@ namespace KeyTren
 
         int fails { set; get; }
         int speed_chars { set; get; }
+        int level { set; get; }
 
         bool is_Start { set; get; }
 
@@ -24,9 +25,9 @@ namespace KeyTren
         bool is_Enable_text_box { set; get; }
         bool is_Enable_slad_box { set; get; }
         bool is_Enable_chek_box { set; get; }
-    
 
 
+      
         event EventHandler<EventArgs> DownKey;
         event EventHandler<EventArgs> Start;
         event EventHandler<EventArgs> Stop;
