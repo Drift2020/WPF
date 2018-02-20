@@ -18,6 +18,7 @@ namespace KeyTren
         int speed_chars { set; get; }
         int level { set; get; }
 
+        bool is_Fail { get; set; }
         bool is_Start { set; get; }
 
         bool is_Start_button { set; get; }

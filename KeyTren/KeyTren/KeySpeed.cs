@@ -30,7 +30,15 @@ namespace KeyTren
 
         private void DownKey(object sender, EventArgs e)
         {
-
+            if(_viwe.my_chars[0]!=_viwe.prow_str[(_viwe.my_str.Length)])
+            {
+                _viwe.is_Fail = true;
+            }
+            else
+            {
+                _viwe.is_Fail = false;
+                _viwe.
+            }
         }
         private void Fails(object sender, EventArgs e)
         {
@@ -79,27 +87,63 @@ namespace KeyTren
             for (int i = 0; i < 50; i++)
             {
                 temp = "";
-                lengh = my_rand.Next(1, 2*level);
+                lengh = my_rand.Next(1, my_rand.Next(1,5)+level);
 
                 switch (level)
                 {
                     case 1:
+                        for (int il = 0; il < lengh; il++)
+                        {
+                            temp += (char)my_rand.Next(33, 43);
+                        }
                         break;
                     case 2:
+                        for (int il = 0; il < lengh; il++)
+                        {
+                            temp += (char)my_rand.Next(33, 54);
+                        }
                         break;
                     case 3:
+                        for (int il = 0; il < lengh; il++)
+                        {
+                            temp += (char)my_rand.Next(33, 65);
+                        }
                         break;
                     case 4:
+                        for (int il = 0; il < lengh; il++)
+                        {
+                            temp += (char)my_rand.Next(33, 76);
+                        }
                         break;
                     case 5:
+                        for (int il = 0; il < lengh; il++)
+                        {
+                            temp += (char)my_rand.Next(33, 87);
+                        }
                         break;
                     case 6:
+                        for (int il = 0; il < lengh; il++)
+                        {
+                            temp += (char)my_rand.Next(33, 98);
+                        }
                         break;
                     case 7:
+                        for (int il = 0; il < lengh; il++)
+                        {
+                            temp += (char)my_rand.Next(33, 109);
+                        }
                         break;
                     case 8:
+                        for (int il = 0; il < lengh; il++)
+                        {
+                            temp += (char)my_rand.Next(33, 110);
+                        }
                         break;
                     case 9:
+                        for (int il = 0; il < lengh; il++)
+                        {
+                            temp += (char)my_rand.Next(33, 115);
+                        }
                         break;
                     case 10:
                         for (int il = 0; il < lengh; il++)

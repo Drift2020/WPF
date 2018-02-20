@@ -96,8 +96,10 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-
-            <Label Background="#FF78DADA" Name="_Str_Program"/>
+            <ScrollViewer Name="Scroll"  VerticalScrollBarVisibility="Disabled" CanContentScroll="True">
+                <Label Background="#FF78DADA" Name="_Str_Program" Padding="0"/>
+            </ScrollViewer>
+          
             <TextBox Margin="-1" Background="#FF78DADA" Grid.Row="1" Name="_Str_My" BorderBrush="{x:Null}"/>
 
 

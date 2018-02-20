@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,13 +14,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace KeyTren
 {
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
     /// 
-
+    
     public partial class Slad : IValueConverter
     {
         public object Convert(object value, Type targetType,
@@ -46,13 +48,14 @@ namespace KeyTren
 
     public partial class MainWindow : Window, IFront
     {
-
+        
 
         bool capital_key_is_activ = false;
         bool shift_key_Up=true;
 
         KeySpeed Hell_keys;
         
+        #region svoistva
         public bool is_Enable_text_box { set { _Str_My.IsEnabled = value; } get { return _Str_My.IsEnabled; } }
         public bool is_Start { set; get; }
 
@@ -69,9 +72,11 @@ namespace KeyTren
 
         public string my_chars { set; get; }
         public bool sensitive { set; get; }
+        public bool is_Fail { get; set; }
 
         public int fails { set; get; }
         public int speed_chars { set; get; }
+        #endregion svoistva
 
         public event EventHandler<EventArgs> DownKey;
         public event EventHandler<EventArgs> Start;
@@ -87,13 +92,14 @@ namespace KeyTren
 
             System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("ja-JP");
 
-
+           
 
             InitializeComponent();
             startBrush = new List<mycolor>();
             Hell_keys = new KeySpeed(this);
 
             App.Language = new CultureInfo("ja-JP");
+
         }
 
         void Spehil_Key(KeyEventArgs e)
@@ -141,48 +147,59 @@ namespace KeyTren
 
         }
 
+        
+
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
+           
+
             if (is_Start)
             {
+               
+
                 Button temp = Keys.FindName(e.Key.ToString()) as Button;
 
                 if (e.Key.ToString() == "System")
                     temp = Keys.FindName("Alt") as Button;
 
-
-               if(e.Key.ToString()=="K")
+                if (e.Key.ToString().Length == 1)
                 {
-                    Rect rect = _Str_My.GetRectFromCharacterIndex(_Str_My.CaretIndex == 0 ? 0 : _Str_My.CaretIndex - 1);
-                    _Str_My.ScrollToHorizontalOffset(rect.Left);
+                    my_chars = e.Key.ToString();
+                    DownKey?.Invoke(this, EventArgs.Empty);
                 }
-                  
-              
+
+
 
 
                 if (temp != null)
                 {
-                    for (int i = 0; i < startBrush.Count; i++)
+                    if (is_Fail==false)
                     {
-                        if (startBrush[i].temp.Content == temp.Content)
-                            return;
+
+                        for (int i = 0; i < startBrush.Count; i++)
+                        {
+                            if (startBrush[i].temp.Content == temp.Content)
+                                return;
+                        }
+                        mycolor tempM = new mycolor();
+                        Spehil_Key(e);
+                        tempM.temp = temp;
+                        tempM.startBrush = temp.Background;
+                        startBrush.Add(tempM);
+
+                        temp.Background = Brushes.IndianRed;
                     }
-                    mycolor tempM = new mycolor();
-                    Spehil_Key(e);
-                    tempM.temp = temp;
-                    tempM.startBrush = temp.Background;
-                    startBrush.Add(tempM);
-
-                    temp.Background = Brushes.IndianRed;
-
-                   
+                   else
+                    {
+                        MessageBox.Show(string.Format("The character you entered({0}) is incorrect.",my_chars));
+                    }
                 }
 
 
                
             }
         }
-    private void Window_PreviewKeyUp(object sender, KeyEventArgs e)
+        private void Window_PreviewKeyUp(object sender, KeyEventArgs e)
         {
             if (is_Start)
             {
