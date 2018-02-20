@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
+
 namespace KeyTren
 {
   
@@ -30,15 +31,23 @@ namespace KeyTren
 
         private void DownKey(object sender, EventArgs e)
         {
-            if(_viwe.my_chars[0]!=_viwe.prow_str[(_viwe.my_str.Length)])
+            if(_viwe.my_chars[0]!=_viwe.prow_str[(_viwe.my_str.Length)+1])
             {
                 _viwe.is_Fail = true;
             }
             else
             {
                 _viwe.is_Fail = false;
-                _viwe.
+
+                _viwe.my_str += _viwe.my_chars;
+
+                _viwe.ScrollToHOffset();
             }
+
+        }
+        void PrintLins()
+        {
+
         }
         private void Fails(object sender, EventArgs e)
         {

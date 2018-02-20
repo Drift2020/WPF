@@ -27,7 +27,7 @@ namespace KeyTren
         bool is_Enable_slad_box { set; get; }
         bool is_Enable_chek_box { set; get; }
 
-
+        void ScrollToHOffset();
       
         event EventHandler<EventArgs> DownKey;
         event EventHandler<EventArgs> Start;

@@ -13,8 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
-
+using System.Drawing;
+using System.Windows.Forms;
 namespace KeyTren
 {
     /// <summary>
@@ -41,8 +41,8 @@ namespace KeyTren
     }
     struct mycolor
     {
-        public Brush startBrush;
-        public Button temp;
+        public System.Windows.Media.Brush startBrush;
+        public System.Windows.Controls.Button temp;
       
     }
 
@@ -54,7 +54,7 @@ namespace KeyTren
         bool shift_key_Up=true;
 
         KeySpeed Hell_keys;
-        
+        System.Drawing.Size len = new System.Drawing.Size();
         #region svoistva
         public bool is_Enable_text_box { set { _Str_My.IsEnabled = value; } get { return _Str_My.IsEnabled; } }
         public bool is_Start { set; get; }
@@ -67,7 +67,7 @@ namespace KeyTren
 
         public int level { set { _Difficulty.Content = value; } get { return Int32.Parse(_Difficulty.Content.ToString()); } }
 
-        public string prow_str { set { _Str_Program.Content = value; } get { return _Str_Program.Content.ToString(); } }
+        public string prow_str { set { _Str_Program.Text = value; } get { return _Str_Program.Text.ToString(); } }
         public string my_str { set { _Str_My.Text = value; } get { return _Str_My.Text; } }
 
         public string my_chars { set; get; }
@@ -102,7 +102,7 @@ namespace KeyTren
 
         }
 
-        void Spehil_Key(KeyEventArgs e)
+        void Spehil_Key(System.Windows.Input.KeyEventArgs e)
         {
             if(e.Key.ToString() == "Capital" && capital_key_is_activ == false && shift_key_Up == true)
             {
@@ -124,22 +124,22 @@ namespace KeyTren
                 capital_key_is_activ = false;
                 App.Language = new CultureInfo("ru-RU");
             }
-            else if(e.Key.ToString() == "LeftShift" && shift_key_Up == true && capital_key_is_activ == false)
+            else if((e.Key.ToString() == "LeftShift" || e.Key.ToString() == "LeftShift") && shift_key_Up == true && capital_key_is_activ == false)
             {
                 shift_key_Up = false;
                 App.Language = new CultureInfo("ru-RU");
             }
-            else if(e.Key.ToString() == "LeftShift" && shift_key_Up == false && capital_key_is_activ == false)
+            else if((e.Key.ToString() == "LeftShift" || e.Key.ToString() == "LeftShift") && shift_key_Up == false && capital_key_is_activ == false)
             {
                 shift_key_Up = true;
                 App.Language = new CultureInfo("ja-JP");
             }
-            else if(e.Key.ToString() == "LeftShift" && shift_key_Up == true && capital_key_is_activ == true)
+            else if((e.Key.ToString() == "LeftShift" || e.Key.ToString() == "LeftShift") && shift_key_Up == true && capital_key_is_activ == true)
             {
                 shift_key_Up = false;
                 App.Language = new CultureInfo("en-JM");
             }
-            else if (e.Key.ToString() == "LeftShift" && shift_key_Up == false && capital_key_is_activ == true)
+            else if ((e.Key.ToString() == "LeftShift"|| e.Key.ToString() == "LeftShift") && shift_key_Up == false && capital_key_is_activ == true)
             {
                 shift_key_Up = true;
                 App.Language = new CultureInfo("en-US");
@@ -147,34 +147,57 @@ namespace KeyTren
 
         }
 
-        
 
-        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        public void ScrollToHOffset()
+        {
+
+            Font t = new Font((_Str_My.FontFamily.ToString()), float.Parse(_Str_My.FontSize.ToString()));
+            System.Drawing.Size len1 = TextRenderer.MeasureText(_Str_My.Text, t);
+            if(_Scroll_Prow_Str.Width/5 == len1.Width)
+            _Scroll_Prow_Str.ScrollToHorizontalOffset(len.Width / 2);
+        }
+        private void Window_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
            
 
+
             if (is_Start)
             {
+
                
 
-                Button temp = Keys.FindName(e.Key.ToString()) as Button;
-
-                if (e.Key.ToString() == "System")
-                    temp = Keys.FindName("Alt") as Button;
-
-                if (e.Key.ToString().Length == 1)
+                System.Windows.Controls.Button temp = Keys.FindName(e.Key.ToString()) as System.Windows.Controls.Button;
+                if (temp != null)
                 {
-                    my_chars = e.Key.ToString();
-                    DownKey?.Invoke(this, EventArgs.Empty);
+                    if (e.Key.ToString() == "System")
+                    temp = Keys.FindName("Alt") as System.Windows.Controls.Button;
+              
+                if (temp.Content.ToString().Length == 1|| temp.Content.ToString()=="Space")
+                {
+                        if (temp.Content.ToString() != "Space")
+                            my_chars = temp.Content.ToString();
+                        else
+                            my_chars = " ";
+
+                        Font t = new Font((_Str_My.FontFamily.ToString()), float.Parse(_Str_My.FontSize.ToString()));
+                        len = TextRenderer.MeasureText(my_chars, t);
+
+                       
+
+                        DownKey?.Invoke(this, EventArgs.Empty);
+                }
+                else
+                {
+                    my_chars = "";
+                    is_Fail = false;
                 }
 
 
+                   
 
-
-                if (temp != null)
-                {
                     if (is_Fail==false)
                     {
+                       
 
                         for (int i = 0; i < startBrush.Count; i++)
                         {
@@ -187,11 +210,11 @@ namespace KeyTren
                         tempM.startBrush = temp.Background;
                         startBrush.Add(tempM);
 
-                        temp.Background = Brushes.IndianRed;
+                        temp.Background = System.Windows.Media.Brushes.IndianRed;
                     }
                    else
                     {
-                        MessageBox.Show(string.Format("The character you entered({0}) is incorrect.",my_chars));
+                        System.Windows.MessageBox.Show(string.Format("The character you entered({0}) is incorrect.",my_chars));
                     }
                 }
 
@@ -199,13 +222,13 @@ namespace KeyTren
                
             }
         }
-        private void Window_PreviewKeyUp(object sender, KeyEventArgs e)
+        private void Window_PreviewKeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (is_Start)
             {
-                Button temp = Keys.FindName(e.Key.ToString()) as Button;
+                System.Windows.Controls.Button temp = Keys.FindName(e.Key.ToString()) as System.Windows.Controls.Button;
                 if (e.Key.ToString() == "System")
-                    temp = Keys.FindName("Alt") as Button;
+                    temp = Keys.FindName("Alt") as System.Windows.Controls.Button;
 
 
 
