@@ -18,9 +18,9 @@ namespace KeyTren
         DateTime starts, now;
         public KeySpeed(IFront viwe)
         {
-           
-           
-            _viwe = viwe;
+            starts = new DateTime();
+            now = new DateTime();
+             _viwe = viwe;
             _viwe.DownKey += new EventHandler<EventArgs>(DownKey);
             _viwe.Fails += new EventHandler<EventArgs>(Fails);
             _viwe.Speed_Chars += new EventHandler<EventArgs>(Speed_Chars);
@@ -80,8 +80,13 @@ namespace KeyTren
         }
         private void Speed_Chars(object sender, EventArgs e)
         {
-            
-            _viwe.speed_chars = _viwe.my_str.Length / ;
+            now = DateTime.Now;
+            TimeSpan f = now - starts;
+            double m, s;
+            m = f.Minutes * 60;
+            s = f.Seconds;
+
+            _viwe.speed_chars = Convert.ToDouble(_viwe.my_str.Length) / (m+s)/60 ;
         }
         private void Start(object sender, EventArgs e)
         {

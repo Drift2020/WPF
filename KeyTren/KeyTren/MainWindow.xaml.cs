@@ -96,6 +96,7 @@ namespace KeyTren
             InitializeComponent();
             startBrush = new List<mycolor>();
             Hell_keys = new KeySpeed(this);
+            timers = new Timer();
             timers.Interval = 1000;
             timers.Tick += new EventHandler(Speed_Chars);
 
