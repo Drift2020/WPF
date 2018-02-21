@@ -92,15 +92,20 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+               
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!--<Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
-            </Grid.RowDefinitions>
-            <ScrollViewer Name="_Scroll_Prow_Str"  VerticalScrollBarVisibility="Disabled"  HorizontalScrollBarVisibility="Hidden" CanContentScroll="True">
+            </Grid.RowDefinitions>-->
+            <ScrollViewer  Margin="-0.1" Grid.Row="0" Grid.Column="1" Name="_Scroll_Prow_Str"   VerticalScrollBarVisibility="Disabled"  HorizontalScrollBarVisibility="Hidden" CanContentScroll="True">
                 <TextBlock Padding="0" Background="#FF78DADA" Name="_Str_Program" FontSize="16" />
             </ScrollViewer>
-            <ScrollViewer  Grid.Row="1" Margin="-1" Name="_Scroll_My_Str"  VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden" CanContentScroll="True">
-                <TextBlock  Background="#FF78DADA" Name="_Str_My" Padding="4,0,0,0" FontSize="16" />
+            <ScrollViewer  Margin="-0.2" Grid.Row="1"  Grid.Column="0"   Name="_Scroll_My_Str"  VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden" CanContentScroll="True">
+                <TextBlock  Background="#FF78DA78" Name="_Str_My"  FontSize="16" TextAlignment="Right" />
             </ScrollViewer>
 
         </Grid>

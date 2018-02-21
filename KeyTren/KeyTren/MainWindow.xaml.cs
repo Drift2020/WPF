@@ -13,8 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Drawing;
-using System.Windows.Forms;
+//using System.Drawing;
+//using System.Windows.Forms;
 namespace KeyTren
 {
     /// <summary>
@@ -54,7 +54,7 @@ namespace KeyTren
         bool shift_key_Up=true;
 
         KeySpeed Hell_keys;
-        System.Drawing.Size len = new System.Drawing.Size();
+       Size len = new Size();
         #region svoistva
         public bool is_Enable_text_box { set { _Str_My.IsEnabled = value; } get { return _Str_My.IsEnabled; } }
         public bool is_Start { set; get; }
@@ -150,12 +150,10 @@ namespace KeyTren
 
         public void ScrollToHOffset()
         {
-
-            Font t = new Font((_Str_My.FontFamily.ToString()), float.Parse(_Str_My.FontSize.ToString()));
-            System.Drawing.Size len1 = TextRenderer.MeasureText(_Str_My.Text, t);
-            if(_Scroll_Prow_Str.Width/5 == len1.Width)
-            _Scroll_Prow_Str.ScrollToHorizontalOffset(len.Width / 2);
+            
+                _Scroll_Prow_Str.ScrollToHorizontalOffset((len.Width*2-0.2 + _Scroll_Prow_Str.ContentHorizontalOffset));         
         }
+
         private void Window_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
            
@@ -179,10 +177,15 @@ namespace KeyTren
                         else
                             my_chars = " ";
 
-                        Font t = new Font((_Str_My.FontFamily.ToString()), float.Parse(_Str_My.FontSize.ToString()));
-                        len = TextRenderer.MeasureText(my_chars, t);
+                    
 
-                       
+                        FormattedText formattedText = new FormattedText(my_chars,CultureInfo.CurrentCulture,
+                            System.Windows.FlowDirection.LeftToRight,
+                             new Typeface(this._Scroll_Prow_Str.FontFamily, this._Scroll_Prow_Str.FontStyle, this._Scroll_Prow_Str.FontWeight, 
+                             this._Scroll_Prow_Str.FontStretch),this._Scroll_Prow_Str.FontSize, System.Windows.Media.Brushes.Black, new NumberSubstitution(), TextFormattingMode.Display);
+
+                          
+                        len = new Size(formattedText.Width, formattedText.Height);
 
                         DownKey?.Invoke(this, EventArgs.Empty);
                 }
