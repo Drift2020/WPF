@@ -12,7 +12,7 @@ namespace KeyTren
         string my_str { set; get; }
 
         string my_chars { set; get; }
-        bool sensitive { set; get; }
+        bool is_Sensitive { set; get; }
 
         int fails { set; get; }
         int speed_chars { set; get; }

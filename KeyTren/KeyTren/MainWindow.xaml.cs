@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Threading;
+using System.Windows.Forms;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -48,8 +48,9 @@ namespace KeyTren
 
     public partial class MainWindow : Window, IFront
     {
-        
 
+        Timer timers;
+      
         bool capital_key_is_activ = false;
         bool shift_key_Up=true;
 
@@ -71,10 +72,10 @@ namespace KeyTren
         public string my_str { set { _Str_My.Text = value; } get { return _Str_My.Text; } }
 
         public string my_chars { set; get; }
-        public bool sensitive { set; get; }
+        public bool is_Sensitive { set { _registr.IsChecked = value; } get { return _registr.IsChecked.Value; } }
         public bool is_Fail { get; set; }
 
-        public int fails { set; get; }
+        public int fails { set { _Fails.Content = value; } get { return Int32.Parse(_Fails.Content.ToString()); } }
         public int speed_chars { set; get; }
         #endregion svoistva
 
@@ -90,13 +91,13 @@ namespace KeyTren
         public MainWindow()
         {
 
-            System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("ja-JP");
-
-           
+            System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("ja-JP");       
 
             InitializeComponent();
             startBrush = new List<mycolor>();
             Hell_keys = new KeySpeed(this);
+            timers.Interval = 1000;
+            timers.Tick += new EventHandler(Speed_Chars);
 
             App.Language = new CultureInfo("ja-JP");
 
@@ -147,11 +148,13 @@ namespace KeyTren
 
         }
 
-
+       
         public void ScrollToHOffset()
         {
             
-                _Scroll_Prow_Str.ScrollToHorizontalOffset((len.Width*2-0.2 + _Scroll_Prow_Str.ContentHorizontalOffset));         
+            _Scroll_Prow_Str.ScrollToHorizontalOffset((15.1 + _Scroll_Prow_Str.ContentHorizontalOffset));
+
+            _Scroll_My_Str.ScrollToEnd();
         }
 
         private void Window_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
@@ -217,6 +220,7 @@ namespace KeyTren
                     }
                    else
                     {
+                        fails += 1;
                         System.Windows.MessageBox.Show(string.Format("The character you entered({0}) is incorrect.",my_chars));
                     }
                 }
@@ -282,12 +286,13 @@ namespace KeyTren
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Start?.Invoke(this, EventArgs.Empty);
-           
+            timers.Start();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Stop?.Invoke(this, EventArgs.Empty);
+            timers.Stop();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

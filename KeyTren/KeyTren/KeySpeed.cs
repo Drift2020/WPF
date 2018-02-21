@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 using System.Threading.Tasks;
+
 using System.Windows.Data;
 
 
@@ -12,11 +14,12 @@ namespace KeyTren
     class KeySpeed
     {
 
-   
         IFront _viwe;
-       
+        DateTime starts, now;
         public KeySpeed(IFront viwe)
         {
+           
+           
             _viwe = viwe;
             _viwe.DownKey += new EventHandler<EventArgs>(DownKey);
             _viwe.Fails += new EventHandler<EventArgs>(Fails);
@@ -31,7 +34,25 @@ namespace KeyTren
 
         private void DownKey(object sender, EventArgs e)
         {
-            if(_viwe.my_chars[0]!=_viwe.prow_str[(_viwe.my_str.Length)+1])
+            if(_viwe.is_Sensitive==false)
+            {
+
+                if(_viwe.my_chars.ToLower()[0] != _viwe.prow_str.ToLower()[(_viwe.my_str.Length)])
+                {
+                    _viwe.is_Fail = true;
+                }
+                else
+                {
+
+                    _viwe.is_Fail = false;
+
+                    _viwe.my_str += _viwe.my_chars;
+
+                    _viwe.ScrollToHOffset();
+                }
+            }
+            else
+            if(_viwe.my_chars[0]!=_viwe.prow_str[(_viwe.my_str.Length)])
             {
                 _viwe.is_Fail = true;
             }
@@ -59,7 +80,8 @@ namespace KeyTren
         }
         private void Speed_Chars(object sender, EventArgs e)
         {
-
+            
+            _viwe.speed_chars = _viwe.my_str.Length / ;
         }
         private void Start(object sender, EventArgs e)
         {
@@ -70,6 +92,12 @@ namespace KeyTren
             _viwe.is_Enable_chek_box = false;
 
             _viwe.prow_str = Add_String(_viwe.level);
+            _viwe.fails = 0;
+
+            _viwe.my_str = "";
+            _viwe.my_chars = "";
+
+            starts = DateTime.Now;
         }
         private void Stop(object sender, EventArgs e)
         {
@@ -164,7 +192,7 @@ namespace KeyTren
 
                
 
-                my_str+=" " + temp;
+                my_str+= temp+ " " ;
 
             }
             return my_str;
