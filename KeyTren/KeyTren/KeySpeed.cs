@@ -78,15 +78,26 @@ namespace KeyTren
         {
 
         }
+      
         private void Speed_Chars(object sender, EventArgs e)
         {
             now = DateTime.Now;
             TimeSpan f = now - starts;
-            double m, s;
-            m = f.Minutes * 60;
-            s = f.Seconds;
 
-            _viwe.speed_chars = Convert.ToDouble(_viwe.my_str.Length) / (m+s)/60 ;
+         
+         
+
+            if (0 != f.Minutes)
+            {
+                _viwe.speed_chars = _viwe.my_str.Length / f.Minutes;
+            }
+                
+            else 
+                _viwe.speed_chars = _viwe.my_str.Length;
+
+            
+
+          
         }
         private void Start(object sender, EventArgs e)
         {
@@ -101,8 +112,9 @@ namespace KeyTren
 
             _viwe.my_str = "";
             _viwe.my_chars = "";
+            _viwe.speed_chars = 0;
 
-            starts = DateTime.Now;
+          starts = DateTime.Now;
         }
         private void Stop(object sender, EventArgs e)
         {

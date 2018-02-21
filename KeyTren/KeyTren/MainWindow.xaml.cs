@@ -76,7 +76,7 @@ namespace KeyTren
         public bool is_Fail { get; set; }
 
         public int fails { set { _Fails.Content = value; } get { return Int32.Parse(_Fails.Content.ToString()); } }
-        public int speed_chars { set; get; }
+        public int speed_chars { set { _Speed_Chars .Content= value; } get {return Convert.ToInt32(_Speed_Chars.Content.ToString()); } }
         #endregion svoistva
 
         public event EventHandler<EventArgs> DownKey;
@@ -99,7 +99,7 @@ namespace KeyTren
             timers = new Timer();
             timers.Interval = 1000;
             timers.Tick += new EventHandler(Speed_Chars);
-
+            
             App.Language = new CultureInfo("ja-JP");
 
         }
@@ -155,7 +155,7 @@ namespace KeyTren
             
             _Scroll_Prow_Str.ScrollToHorizontalOffset((15.1 + _Scroll_Prow_Str.ContentHorizontalOffset));
 
-            _Scroll_My_Str.ScrollToEnd();
+            _Scroll_My_Str.ScrollToRightEnd();
         }
 
         private void Window_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
@@ -286,6 +286,7 @@ namespace KeyTren
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            _Scroll_Prow_Str.ScrollToLeftEnd();
             Start?.Invoke(this, EventArgs.Empty);
             timers.Start();
         }
