@@ -90,8 +90,7 @@ namespace KeyTren
             if (0 != f.Minutes)
             {
                 _viwe.speed_chars = _viwe.my_str.Length / f.Minutes;
-            }
-                
+            }           
             else 
                 _viwe.speed_chars = _viwe.my_str.Length;
 

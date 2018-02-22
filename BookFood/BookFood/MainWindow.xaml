@@ -20,8 +20,26 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-     
-        <FlowDocumentReader Grid.Column="1" Name="docViewer" MinZoom="1" MaxZoom="1000">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Menu Height="25" VerticalAlignment="Top"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <MenuItem Header="File">
+                <MenuItem Header="New book" Command="{Binding ButtonClick}" ></MenuItem>
+                <MenuItem Header="New food" Command="{Binding ButtonClick}"></MenuItem>
+                <MenuItem Header="Save file" Command="{Binding ButtonClick}"></MenuItem>
+                <MenuItem Header="Load file" Command="{Binding ButtonClick}"></MenuItem>
+                <Separator />
+                <MenuItem Header="Exit" Command="{Binding ButtonClick}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit" ></MenuItem>
+          
+        </Menu>
+
+        <FlowDocumentReader  Grid.Row="1" Grid.Column="1" Name="docViewer" MinZoom="1" MaxZoom="1000">
             <FlowDocument>
                 <Paragraph TextAlignment="Left" Name="_Name_food" Style="{StaticResource PullQuote}"></Paragraph>
                 
@@ -47,8 +65,8 @@
                 </Paragraph>
             </FlowDocument>
         </FlowDocumentReader>
-        
-        <ListBox Name="_List_Food">
+
+        <ListBox Name="_List_Food" ItemsSource="{Binding FoodsList}"  IsSynchronizedWithCurrentItem="True" Grid.Row="1">
             
 
         </ListBox>
