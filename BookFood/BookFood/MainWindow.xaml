@@ -10,7 +10,7 @@
         <Style x:Key="PullQuote">
             <Setter Property="Paragraph.FontSize" Value="30" ></Setter>
             <Setter Property="Paragraph.FontStyle" Value="Italic" ></Setter>
-            <Setter Property="Paragraph.Foreground" Value="Green" ></Setter>
+            <Setter Property="Paragraph.Foreground" Value="#FF5F5844" ></Setter>
             <Setter Property="Paragraph.Padding" Value="5"></Setter>
             <Setter Property="Paragraph.Margin" Value="5,10,15,10"></Setter>
         </Style>
@@ -29,46 +29,69 @@
         <Menu Height="25" VerticalAlignment="Top"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
             <MenuItem Header="File">
                 <MenuItem Header="New book" Command="{Binding ButtonClick}" ></MenuItem>
-                <MenuItem Header="New food" Command="{Binding ButtonClick}"></MenuItem>
-                <MenuItem Header="Save file" Command="{Binding ButtonClick}"></MenuItem>
+                <Separator />
+                <MenuItem Header="New food" Command="{Binding ButtonClick_New_Food}"></MenuItem>
+              
+                <MenuItem Header="Edit food" ></MenuItem>
+                <Separator />
                 <MenuItem Header="Load file" Command="{Binding ButtonClick}"></MenuItem>
                 <Separator />
                 <MenuItem Header="Exit" Command="{Binding ButtonClick}"></MenuItem>
             </MenuItem>
-            <MenuItem Header="Edit" ></MenuItem>
+           
           
         </Menu>
+        <ContentControl  Grid.Row="1"  Grid.Column="1" Content="{Binding FoodsList}">
+            <ContentControl.ContentTemplate>
+                <DataTemplate>
+                    <FlowDocumentReader  Grid.Row="1" Grid.Column="1" Name="docViewer" MinZoom="1" MaxZoom="1000">
+                        <FlowDocument>
+                            <Paragraph TextAlignment="Left" Name="_Name_food"   Style="{StaticResource PullQuote}">
+                                <Run Text="{Binding Name_food, UpdateSourceTrigger=PropertyChanged}"></Run>
+                            </Paragraph>
 
-        <FlowDocumentReader  Grid.Row="1" Grid.Column="1" Name="docViewer" MinZoom="1" MaxZoom="1000">
-            <FlowDocument>
-                <Paragraph TextAlignment="Left" Name="_Name_food" Style="{StaticResource PullQuote}"></Paragraph>
-                
-                <Paragraph>
-                   
-                    <Figure Width="100" Padding="5,0,5,0" HorizontalAnchor="ColumnLeft">
-                        
-                        <BlockUIContainer>
-                            <Image Name="_Image" > 
-                                
-                            </Image>
-                        </BlockUIContainer>
-                        
-                    </Figure>
-                    
-                    <StackPanel Name="_List_ingridient">
-                        
-                    </StackPanel>
-                   
-                </Paragraph>
-                <Paragraph Name="_Info_food"> 
-                    
-                </Paragraph>
-            </FlowDocument>
-        </FlowDocumentReader>
+                            <Paragraph>
+
+                                <Figure Width="100" Padding="5,0,5,0" HorizontalAnchor="ColumnLeft">
+
+                                    <BlockUIContainer>
+                                        <Image Name="_Image" Source="{Binding Image_path, UpdateSourceTrigger=PropertyChanged}">
+
+
+                                        </Image>
+                                    </BlockUIContainer>
+
+                                </Figure>
+
+                                <ListBox Name="_List_ingridient"  ItemsSource="{Binding List_ingridient, UpdateSourceTrigger=PropertyChanged}"  IsSynchronizedWithCurrentItem="True" >
+
+                                </ListBox>
+
+                            </Paragraph>
+                            <Paragraph Name="_Info_food">
+                                <Run Text="{Binding Info_food, UpdateSourceTrigger=PropertyChanged}"></Run>
+                            </Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentReader>
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
+        
 
         <ListBox Name="_List_Food" ItemsSource="{Binding FoodsList}"  IsSynchronizedWithCurrentItem="True" Grid.Row="1">
-            
 
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    
+                    <Border BorderBrush="Bisque" BorderThickness="1" >
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name_food}" FontWeight="Bold"/>
+                            
+                        </StackPanel>
+                    </Border>
+                    
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
     </Grid>
 </Window>

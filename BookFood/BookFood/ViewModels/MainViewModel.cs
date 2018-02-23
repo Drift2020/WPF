@@ -6,20 +6,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using BookFood.Models;
+using System.Windows.Controls;
 
 namespace BookFood.ViewModels
 {
     class MainViewModel : ViewModelBase
     {
-        public ObservableCollection<Models.Food> FoodsList { get; set; }
+        public ObservableCollection<FoodViewModel> FoodsList { get; set; }
 
-        public MainViewModel(List<Models.Food> Foods)
+        public MainViewModel(List<Food> Foods)
         {
-            FoodsList = new ObservableCollection<Models.Food>(Foods.Select(b => new Models.Food(b)));
+            FoodsList = new ObservableCollection<FoodViewModel>(Foods.Select(f => new FoodViewModel(f)));
         }
 
         private DelegateCommand _Command;
-        public ICommand ButtonClick
+        public ICommand ButtonClick_New_Food
         {
             get
             {
@@ -30,17 +32,26 @@ namespace BookFood.ViewModels
                 return _Command;
             }
         }
+
+
+
         private void Execute(object o)
         {
-            Add_food myAdd = new Add_food();
 
+            Add_food myAdd = new Add_food();
+            AddViewModel myViewModel = new AddViewModel();
+            myAdd.ShowDialog();
 
         }
 
         private bool CanExecute(object o)
-        {
-           
-            return true;
+        {                
+                return true;
+          
         }
+
+
+
+
     }
 }
