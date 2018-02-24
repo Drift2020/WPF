@@ -18,6 +18,11 @@ namespace BookFood.ViewModels
         {
             this.food = food;
         }
+        public FoodViewModel(FoodViewModel food)
+        {
+            this.food = new Food(food.Name_food, food.Image_path, food.Info_food, food.List_ingridient);
+           
+        }
 
         public string Name_food
         {

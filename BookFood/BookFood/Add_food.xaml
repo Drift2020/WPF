@@ -6,109 +6,118 @@
         xmlns:local="clr-namespace:BookFood"
         mc:Ignorable="d"
         Title="Add_food" Height="477.562" Width="394.687">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition  Height="20"/>
-        </Grid.RowDefinitions>
-        
-        <Grid Grid.Row="0" Grid.ColumnSpan="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=" 127"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Border BorderBrush="#FFABADB3" BorderThickness="0.5">
-                <TextBlock HorizontalAlignment="Center" Grid.Column="0">Название блюда:</TextBlock>
-            </Border>
-          
-            <TextBox   Grid.Column="1" Height="20" VerticalAlignment="Top" ></TextBox>
-        </Grid>
+    <ContentControl  Grid.Row="1"  Grid.Column="1" Content="{Binding Food}">
+        <ContentControl.ContentTemplate>
+            <DataTemplate>
 
-        <Grid  Grid.Row="1" Grid.ColumnSpan="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="127"/>
-                <ColumnDefinition Width="2*"/>
+                <Grid>
 
-            </Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition  Height="20"/>
+                    </Grid.RowDefinitions>
 
-            <Border BorderBrush="#FFABADB3" BorderThickness="1">
-                <DockPanel Grid.Column="0">
-                    <TextBlock HorizontalAlignment="Center"  DockPanel.Dock="Top">Изображение блюда</TextBlock>
-                    <Image   Name="_Image" Source="E:\062.jpg"/>
-                </DockPanel>
-            </Border>
+                    <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=" 127"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border BorderBrush="#FFABADB3" BorderThickness="0.5">
+                            <TextBlock HorizontalAlignment="Center" Grid.Column="0">Название блюда:</TextBlock>
+                        </Border>
+
+                        <TextBox  Text="{Binding Name_food, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Height="20" VerticalAlignment="Top" ></TextBox>
+                    </Grid>
+
+                    <Grid  Grid.Row="1" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="127"/>
+                            <ColumnDefinition Width="2*"/>
+
+                        </Grid.ColumnDefinitions>
 
 
+                        <Border BorderBrush="#FFABADB3" BorderThickness="1">
+                            <DockPanel Grid.Column="0">
+                                <TextBlock HorizontalAlignment="Center"  DockPanel.Dock="Top">Изображение блюда</TextBlock>
+                                <Image  Source="{Binding Image_path, UpdateSourceTrigger=PropertyChanged}" Name="_Image"/>
+                            </DockPanel>
+                        </Border>
 
-            <StackPanel VerticalAlignment="Center" Grid.Column="1" >
-                <TextBox Name="_My_path"></TextBox>
-                <Button Name="_Open_image" Width="100" HorizontalAlignment="Right">Открыть</Button>
-            </StackPanel>
-        </Grid>
 
-        <Grid Grid.Row="2" Grid.RowSpan="2">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition/>
-                    <RowDefinition  Height="40"/>
-                    <RowDefinition  Height="20"/>
-                    <RowDefinition Height="20"/>
-                </Grid.RowDefinitions>
-                <Border Margin="0,0,0.3,0" BorderBrush="#FFABADB3" BorderThickness="0.7">
-                <TextBlock  Grid.Row="0" TextAlignment="Center" >
+
+                        <StackPanel VerticalAlignment="Center" Grid.Column="1" >
+                            <TextBox Text="{Binding Image_path, UpdateSourceTrigger=PropertyChanged}" Name="_My_path"></TextBox>
+                            <Button Name="_Open_image" Width="100" HorizontalAlignment="Right">Открыть</Button>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="2" Grid.RowSpan="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition/>
+                                <RowDefinition  Height="40"/>
+                                <RowDefinition  Height="20"/>
+                                <RowDefinition Height="20"/>
+                            </Grid.RowDefinitions>
+                            <Border Margin="0,0,0.3,0" BorderBrush="#FFABADB3" BorderThickness="0.7">
+                                <TextBlock  Grid.Row="0" TextAlignment="Center" >
                     Список продуктов
-                </TextBlock>
-                </Border>
-                
-                <ListBox Grid.Row="1" >
+                                </TextBlock>
+                            </Border>
 
-                </ListBox >
-                <TextBox Height="Auto" Grid.Row="2"></TextBox>
-                <Button Grid.Row="3">Добавить</Button>
-                <Button Grid.Row="4">Удалить</Button>
-            </Grid>
+                            <ListBox ItemsSource="{Binding List_ingridient, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" >
 
-          
-            
-        </Grid>
+                            </ListBox >
+                            <TextBox Height="Auto" Text="{Binding Item_foodingridient, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2"></TextBox>
+                            <Button Grid.Row="3">Добавить</Button>
+                            <Button Grid.Row="4">Удалить</Button>
+                        </Grid>
 
-        <Grid Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="20"/>
-                <RowDefinition/>
 
-            </Grid.RowDefinitions>
-            <Border Margin="0,0,0.3,0" BorderBrush="#FFABADB3" BorderThickness="0.7">
-                <TextBlock  Grid.Row="0" TextAlignment="Center" >
+
+                    </Grid>
+
+                    <Grid Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition/>
+
+                        </Grid.RowDefinitions>
+                        <Border Margin="0,0,0.3,0" BorderBrush="#FFABADB3" BorderThickness="0.7">
+                            <TextBlock  Grid.Row="0" TextAlignment="Center" >
                    Информация о продукте
-                </TextBlock>
-            </Border>
+                            </TextBlock>
+                        </Border>
 
-            <TextBox  Grid.Row="1" TextWrapping="Wrap"
+                        <TextBox Text="{Binding Info_food, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" TextWrapping="Wrap"
 VerticalScrollBarVisibility="Visible"
 AcceptsReturn="True"  VerticalContentAlignment="Top" Height="Auto"   IsUndoEnabled="True" />
-            
-           
-        </Grid>
 
-        <Grid Grid.Row="4" Grid.ColumnSpan="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Margin="1" Content="Отменить"/>
-            <Button Grid.Column="1" Margin="1" Content="Создать"/>
-        </Grid>
-    </Grid>
+                    </Grid>
+
+                    <Grid Grid.Row="4" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="0" Margin="1" Content="Отменить"/>
+                        <Button Grid.Column="1" Margin="1" Content="Создать"/>
+                    </Grid>
+
+                </Grid>
+            </DataTemplate>
+        </ContentControl.ContentTemplate>
+    </ContentControl>
 </Window>

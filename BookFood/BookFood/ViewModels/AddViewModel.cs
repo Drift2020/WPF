@@ -11,7 +11,13 @@ namespace BookFood.ViewModels
 {
     class AddViewModel : ViewModelBase
     {
+        public AddViewModel()
+        {
+            
+        }
+
         private DelegateCommand _Command;
+
 
 
         private ObservableCollection<Models.Food> _food = new ObservableCollection<Models.Food>();
