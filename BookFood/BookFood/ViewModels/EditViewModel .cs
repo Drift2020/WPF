@@ -1,4 +1,5 @@
 ﻿using BookFood.Commands;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,13 +19,7 @@ namespace BookFood.ViewModels
             _food = new FoodViewModel(food);
                 
             OnPropertyChanged(nameof(Food));
-        }
-
-        private DelegateCommand _Command;
-
-
-
-       
+        }   
 
         public FoodViewModel Food
         {
@@ -39,7 +34,7 @@ namespace BookFood.ViewModels
             }
         }
 
-     //   private string _name_food;
+
         public string Name_food
         {
             get
@@ -53,7 +48,6 @@ namespace BookFood.ViewModels
             }
         }
 
-     //   private string _image_path;
         public string Image_path
         {
             get
@@ -67,7 +61,7 @@ namespace BookFood.ViewModels
             }
         }
 
-     //   private List<string> _list_ingridient;
+     
         public List<string> List_ingridient
         {
             get
@@ -93,7 +87,7 @@ namespace BookFood.ViewModels
             }
         }
 
-       // private string _info_food;
+    
         public string Info_food
         {
             get
@@ -109,6 +103,34 @@ namespace BookFood.ViewModels
             }
         }
 
+        private DelegateCommand _Command_Open;
+        public ICommand Button_Click_Open
+        {
+            get
+            {
+                if (_Command_Open == null)
+                {
+                    _Command_Open = new DelegateCommand(Execute_Open, CanExecute_Open);
+                }
+                return _Command_Open;
+            }
+        }
+        private void Execute_Open(object o)
+        {
+            // Food.Add(new Models.Food() { name_food = _name_food, image_path = _image_path, list_ingridient = _list_ingridient, info_food = _info_food });
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.ShowDialog();
+
+        }
+
+        private bool CanExecute_Open(object o)
+        {
+            // if (_name_food == string.Empty || _image_path == string.Empty|| _info_food == string.Empty|| _list_ingridient.Count!=0)
+            //    return false;
+            return true;
+        }
+
+        private DelegateCommand _Command;
         public ICommand Button_Click_Ok
         {
             get

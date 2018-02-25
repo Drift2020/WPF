@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:BookFood"
         mc:Ignorable="d"
         Title="Add_food" Height="477.562" Width="394.687">
+    <Grid>
+        <!--<Button Command="{Binding Button_Click_Open  }" Name="_Open_image" Width="100" HorizontalAlignment="Right">Открыть</Button>-->
+  
     <ContentControl  Grid.Row="1"  Grid.Column="1" Content="{Binding Food}">
         <ContentControl.ContentTemplate>
             <DataTemplate>
@@ -54,9 +57,9 @@
 
 
 
-                        <StackPanel VerticalAlignment="Center" Grid.Column="1" >
+                        <StackPanel VerticalAlignment="Center" Grid.Column="1"  >
                             <TextBox Text="{Binding Image_path, UpdateSourceTrigger=PropertyChanged}" Name="_My_path"></TextBox>
-                            <Button Name="_Open_image" Width="100" HorizontalAlignment="Right">Открыть</Button>
+                            <Button  Command="{Binding Button_Click_Open}" Name="_Open_image" Width="100" HorizontalAlignment="Right">Открыть</Button>
                         </StackPanel>
                     </Grid>
 
@@ -120,4 +123,5 @@ AcceptsReturn="True"  VerticalContentAlignment="Top" Height="Auto"   IsUndoEnabl
             </DataTemplate>
         </ContentControl.ContentTemplate>
     </ContentControl>
+    </Grid>
 </Window>

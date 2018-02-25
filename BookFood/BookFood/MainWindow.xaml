@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookFood"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="710" Width="1197">
     <Window.Resources>
         <Style x:Key="PullQuote">
             <Setter Property="Paragraph.FontSize" Value="30" ></Setter>
@@ -25,7 +25,7 @@
             <RowDefinition Height="25"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <Menu Height="25" VerticalAlignment="Top"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
             <MenuItem Header="File">
                 <MenuItem Header="New book" Command="{Binding ButtonClick}" ></MenuItem>
@@ -38,8 +38,8 @@
                 <Separator />
                 <MenuItem Header="Exit" Command="{Binding ButtonClick}"></MenuItem>
             </MenuItem>
-           
-          
+
+
         </Menu>
         <ContentControl  Grid.Row="1"  Grid.Column="1" Content="{Binding FoodsList}">
             <ContentControl.ContentTemplate>
@@ -82,14 +82,14 @@
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    
+
                     <Border BorderBrush="Bisque" BorderThickness="1" >
                         <StackPanel>
                             <TextBlock Text="{Binding Name_food}" FontWeight="Bold"/>
-                            
+
                         </StackPanel>
                     </Border>
-                    
+
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
