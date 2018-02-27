@@ -41,5 +41,15 @@ namespace BookFood
             Application.Current.Resources.MergedDictionaries.Add(ic);
 
         }
+         public void Show_Sellect_Item()
+        {
+            MessageBox.Show("Для начала выберите элемент из списка");
+        }
+        public MessageBoxResult _result;
+        public void Question()
+        {
+
+            _result= MessageBox.Show("Точно хотите удалить выбраный элемент?","Удаление",MessageBoxButton.YesNo,MessageBoxImage.Question);
+        }
     }
 }

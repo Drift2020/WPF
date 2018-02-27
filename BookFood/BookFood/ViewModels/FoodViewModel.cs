@@ -7,13 +7,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using BookFood.Models;
+using System.Xml.Serialization;
 
-namespace BookFood.ViewModels
+namespace BookFood
 {
-    class FoodViewModel : ViewModelBase
+    [Serializable(), XmlInclude(typeof(FoodViewModel))]
+    public class FoodViewModel : ViewModelBase , ICloneable
     {
-        private Food food;
+        public object Clone()
+        {
+            string[] t = new string[List_ingridient.Count];
+            List_ingridient.CopyTo(t, 0);
 
+
+            return new FoodViewModel(Name_food, Image_path, Info_food,new ObservableCollection<string>(t));
+        }
+
+
+        private Food food;
+        public FoodViewModel()
+        {
+            food = new Food();
+        }
         public FoodViewModel(Food food)
         {
             this.food = food;
@@ -23,7 +38,11 @@ namespace BookFood.ViewModels
             this.food = new Food(food.Name_food, food.Image_path, food.Info_food, food.List_ingridient);
            
         }
+        public FoodViewModel(string Name_food, string Image_path, string Info_food, ObservableCollection<string>List_ingridient)
+        {
+            this.food = new Food(Name_food, Image_path, Info_food, List_ingridient);
 
+        }
         public string Name_food
         {
             get { return food.name_food; }
@@ -43,7 +62,7 @@ namespace BookFood.ViewModels
                 OnPropertyChanged(nameof(Image_path));
             }
         }
-        public List<string> List_ingridient
+        public ObservableCollection<string> List_ingridient
         {
             get { return food.list_ingridient; }
             set

@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookFood"
+        xmlns:i="Windows.Interactivity"
         mc:Ignorable="d"
-        Title="MainWindow" Height="710" Width="1197">
+        Title="MainWindow" Height="710" Width="1197" >
+    
     <Window.Resources>
         <Style x:Key="PullQuote">
             <Setter Property="Paragraph.FontSize" Value="30" ></Setter>
@@ -28,15 +30,16 @@
 
         <Menu Height="25" VerticalAlignment="Top"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
             <MenuItem Header="File">
-                <MenuItem Header="New book" Command="{Binding ButtonClick}" ></MenuItem>
-                <Separator />
+               
                 <MenuItem Header="New food" Command="{Binding ButtonClick_New_Food }"></MenuItem>
 
                 <MenuItem Header="Edit food"   Command="{Binding ButtonClick_Edit_Food }"></MenuItem>
+                <MenuItem Header="Delete food" Command="{Binding ButtonClick_New_Delete }">
+                   
+                </MenuItem>
                 <Separator />
-                <MenuItem Header="Load file" Command="{Binding ButtonClick}"></MenuItem>
-                <Separator />
-                <MenuItem Header="Exit" Command="{Binding ButtonClick}"></MenuItem>
+
+                <MenuItem Header="Exit" Command="{Binding ButtonClick_Exit}"></MenuItem>
             </MenuItem>
 
 
@@ -55,7 +58,7 @@
                                 <Figure Width="100" Padding="5,0,5,0" HorizontalAnchor="ColumnLeft">
 
                                     <BlockUIContainer>
-                                        <Image Name="_Image" Source="{Binding Image_path, UpdateSourceTrigger=PropertyChanged}">
+                                        <Image Name="_Image"  Source="{Binding Image_path, UpdateSourceTrigger=PropertyChanged}">
 
 
                                         </Image>

@@ -21,6 +21,7 @@ namespace BookFood
     {
         public Add_food()
         {
+          
             InitializeComponent();
 
             DefaultStyle();
@@ -32,6 +33,7 @@ namespace BookFood
             var brush = new Uri("Brushes.xaml", UriKind.Relative);
             var ico = new Uri("Icons.xaml", UriKind.Relative);
 
+            
             ResourceDictionary resourceDictionary = Application.LoadComponent(core) as ResourceDictionary;
             ResourceDictionary bru = Application.LoadComponent(brush) as ResourceDictionary;
             ResourceDictionary ic = Application.LoadComponent(ico) as ResourceDictionary;

@@ -3,125 +3,160 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BookFood"
+        xmlns:local="clr-namespace:BookFood"    
         mc:Ignorable="d"
         Title="Add_food" Height="477.562" Width="394.687">
+
     <Grid>
         <!--<Button Command="{Binding Button_Click_Open  }" Name="_Open_image" Width="100" HorizontalAlignment="Right">Открыть</Button>-->
-  
-    <ContentControl  Grid.Row="1"  Grid.Column="1" Content="{Binding Food}">
-        <ContentControl.ContentTemplate>
-            <DataTemplate>
 
+        <!--<ContentControl  Name="k" Grid.Row="1"  Grid.Column="1" Content="{Binding Food}">
+            <ContentControl.ContentTemplate>
+                <DataTemplate >-->
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition  Height="20"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=" 127"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#FFABADB3" BorderThickness="0.5">
+                    <TextBlock HorizontalAlignment="Center" Grid.Column="0">Название блюда:</TextBlock>
+                </Border>
+                <ContentControl  Grid.Row="1"  Grid.Column="1" Content="{Binding Food}">
+                    <ContentControl.ContentTemplate>
+                        <DataTemplate >
+                            <TextBox  Text="{Binding Name_food, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Height="30" VerticalAlignment="Top" ></TextBox>
+                        </DataTemplate>
+                    </ContentControl.ContentTemplate>
+                </ContentControl>
+            </Grid>
+
+            <Grid   Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="127"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border BorderBrush="#FFABADB3" BorderThickness="1">
+                    <DockPanel Grid.Column="0">
+                        <TextBlock HorizontalAlignment="Center"  DockPanel.Dock="Top">Изображение блюда</TextBlock>
+                        <ContentControl  Name="k" Grid.Row="1"  Grid.Column="1" Content="{Binding Food}">
+                            <ContentControl.ContentTemplate>
+                                <DataTemplate >
+                                    <Image   Source="{Binding Image_path, UpdateSourceTrigger=PropertyChanged}" Name="_Image"/>
+                                </DataTemplate>
+                            </ContentControl.ContentTemplate>
+                        </ContentControl>
+                    </DockPanel>
+                </Border>
+
+                <StackPanel VerticalAlignment="Center" Grid.Column="1"  >
+                    <ContentControl  Grid.Row="1"  Grid.Column="1" Content="{Binding Food}">
+                        <ContentControl.ContentTemplate>
+                            <DataTemplate >
+                                <TextBox Text="{Binding Image_path, UpdateSourceTrigger=PropertyChanged}" Name="_My_path"></TextBox>
+                            </DataTemplate>
+                        </ContentControl.ContentTemplate>
+                    </ContentControl>
+
+                    <Button  Command="{Binding Button_Click_Open}" Name="_Open_image" Width="100" HorizontalAlignment="Right">Открыть</Button>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.RowSpan="2">
                 <Grid>
-
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-
                     <Grid.RowDefinitions>
                         <RowDefinition Height="20"/>
                         <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition Height="2*"/>
+                        <RowDefinition  Height="40"/>
                         <RowDefinition  Height="20"/>
+                        <RowDefinition Height="20"/>
                     </Grid.RowDefinitions>
-
-                    <Grid Grid.Row="0" Grid.ColumnSpan="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width=" 127"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Border BorderBrush="#FFABADB3" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" Grid.Column="0">Название блюда:</TextBlock>
-                        </Border>
-
-                        <TextBox  Text="{Binding Name_food, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Height="20" VerticalAlignment="Top" ></TextBox>
-                    </Grid>
-
-                    <Grid  Grid.Row="1" Grid.ColumnSpan="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="127"/>
-                            <ColumnDefinition Width="2*"/>
-
-                        </Grid.ColumnDefinitions>
-
-
-                        <Border BorderBrush="#FFABADB3" BorderThickness="1">
-                            <DockPanel Grid.Column="0">
-                                <TextBlock HorizontalAlignment="Center"  DockPanel.Dock="Top">Изображение блюда</TextBlock>
-                                <Image  Source="{Binding Image_path, UpdateSourceTrigger=PropertyChanged}" Name="_Image"/>
-                            </DockPanel>
-                        </Border>
-
-
-
-                        <StackPanel VerticalAlignment="Center" Grid.Column="1"  >
-                            <TextBox Text="{Binding Image_path, UpdateSourceTrigger=PropertyChanged}" Name="_My_path"></TextBox>
-                            <Button  Command="{Binding Button_Click_Open}" Name="_Open_image" Width="100" HorizontalAlignment="Right">Открыть</Button>
-                        </StackPanel>
-                    </Grid>
-
-                    <Grid Grid.Row="2" Grid.RowSpan="2">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="20"/>
-                                <RowDefinition/>
-                                <RowDefinition  Height="40"/>
-                                <RowDefinition  Height="20"/>
-                                <RowDefinition Height="20"/>
-                            </Grid.RowDefinitions>
-                            <Border Margin="0,0,0.3,0" BorderBrush="#FFABADB3" BorderThickness="0.7">
-                                <TextBlock  Grid.Row="0" TextAlignment="Center" >
+                    <Border Margin="0,0,0.3,0" BorderBrush="#FFABADB3" BorderThickness="0.7">
+                        <TextBlock  Grid.Row="0" TextAlignment="Center" >
                     Список продуктов
-                                </TextBlock>
-                            </Border>
+                        </TextBlock>
+                    </Border>
 
-                            <ListBox ItemsSource="{Binding List_ingridient, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" >
+                    <!--<ContentControl  Grid.Row="1"  Grid.Column="0" Content="{Binding Food}">
+                        <ContentControl.ContentTemplate>
+                            <DataTemplate >-->
+                                <ListBox SelectedIndex="{Binding Select_Item, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding List_ingridient, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="1" >
 
-                            </ListBox >
-                            <TextBox Height="Auto" Text="{Binding Item_foodingridient, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2"></TextBox>
-                            <Button Grid.Row="3">Добавить</Button>
-                            <Button Grid.Row="4">Удалить</Button>
-                        </Grid>
+                                </ListBox >
+                            <!--</DataTemplate>
+                        </ContentControl.ContentTemplate>
+                    </ContentControl>-->
+                    
+                    <!--<ContentControl  Grid.Row="2"  Grid.Column="0" Content="{Binding Food}">
+                        <ContentControl.ContentTemplate>
+                            <DataTemplate >-->
+                    <TextBox Height="Auto" Text="{Binding Item_food_ingridient, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2"></TextBox>
+                            <!--</DataTemplate>
+                        </ContentControl.ContentTemplate>
+                    </ContentControl>-->
+
+                    <Button  Command="{Binding Button_Click_Add}" Grid.Row="3">Добавить</Button>
+                    <Button   Command="{Binding Button_Click_Del}" Grid.Row="4">Удалить</Button>
+                </Grid>
 
 
 
-                    </Grid>
+            </Grid>
 
-                    <Grid Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition/>
+            <Grid Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
 
-                        </Grid.RowDefinitions>
-                        <Border Margin="0,0,0.3,0" BorderBrush="#FFABADB3" BorderThickness="0.7">
-                            <TextBlock  Grid.Row="0" TextAlignment="Center" >
+                </Grid.RowDefinitions>
+                <Border Margin="0,0,0.3,0" BorderBrush="#FFABADB3" BorderThickness="0.7">
+                    <TextBlock  Grid.Row="0" TextAlignment="Center" >
                    Информация о продукте
-                            </TextBlock>
-                        </Border>
+                    </TextBlock>
+                </Border>
 
-                        <TextBox Text="{Binding Info_food, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" TextWrapping="Wrap"
+                <ContentControl  Grid.Row="1"  Grid.Column="1" Content="{Binding Food}">
+                    <ContentControl.ContentTemplate>
+                        <DataTemplate >
+                            <TextBox Text="{Binding Info_food, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" TextWrapping="Wrap"
 VerticalScrollBarVisibility="Visible"
 AcceptsReturn="True"  VerticalContentAlignment="Top" Height="Auto"   IsUndoEnabled="True" />
+                        </DataTemplate>
+                    </ContentControl.ContentTemplate>
+                </ContentControl>
 
+            </Grid>
 
-                    </Grid>
+            <Grid Grid.Row="4" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-                    <Grid Grid.Row="4" Grid.ColumnSpan="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
+                <Button Command="{Binding Button_Click_Cansel}"  Grid.Column="0" Margin="1" Content="Отменить"/>
+                <Button Command="{Binding Button_Click_Ok}" Grid.Column="1" Margin="1" Content="Создать"/>
+            </Grid>
 
-                        <Button Grid.Column="0" Margin="1" Content="Отменить"/>
-                        <Button Grid.Column="1" Margin="1" Content="Создать"/>
-                    </Grid>
+        </Grid>
 
-                </Grid>
-            </DataTemplate>
-        </ContentControl.ContentTemplate>
-    </ContentControl>
+        <!--</DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>-->
     </Grid>
 </Window>
