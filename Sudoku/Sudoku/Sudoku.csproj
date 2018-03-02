@@ -54,6 +54,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -69,6 +71,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Conteiner.cs" />
+    <Compile Include="Model\Info.cs" />
+    <Compile Include="Model\ISerializer.cs" />
+    <Compile Include="Model\XMLSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -96,8 +102,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfese\" />
-    <Folder Include="Model\" />
-    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2.mp4" />
+    <Content Include="test.mpg" />
+    <Content Include="test.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

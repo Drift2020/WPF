@@ -20,6 +20,7 @@ namespace Sudoku
     /// </summary>
     public partial class MainWindow : Window
     {
+        Button _start,_load;
         public void Start_Menu()
         {
 
@@ -27,6 +28,23 @@ namespace Sudoku
         public MainWindow()
         {
             InitializeComponent();
+          
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+          
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            video.Position = TimeSpan.Zero;
+            video.Play();
+        }
+
+        void Start()
+        {
+            
         }
     }
 }

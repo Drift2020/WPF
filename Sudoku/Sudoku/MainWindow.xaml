@@ -6,7 +6,52 @@
         xmlns:local="clr-namespace:Sudoku"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="500">
-    <Grid>
-        
+
+    <Window.Resources>
+        <ControlTemplate x:Key="MenuItemTemplate" TargetType="{x:Type MenuItem}">
+            <Border BorderBrush="Orange" BorderThickness="3" CornerRadius="10" Background="White" TextBlock.Foreground="White" Name="Border">
+                <Grid>
+                    <RadioButton Content="{TemplateBinding Header}" GroupName="Levl"></RadioButton>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
+
+    <Grid Name="Main">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="Game">
+                <MenuItem Header="Start Game...">
+                    <MenuItem Header="Easily" Name="_levl_1" Template="{StaticResource MenuItemTemplate}">
+
+                    </MenuItem>
+                    <MenuItem Header="Normal" Name="_levl_2" Template="{StaticResource MenuItemTemplate}">
+
+                    </MenuItem>
+                    <MenuItem Header="Hard" Name="_levl_3" Template="{StaticResource MenuItemTemplate}">
+
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Load" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Save"></MenuItem>
+            </MenuItem>
+
+        </Menu>
+
+        <Grid Grid.Row="1" Loaded="Grid_Loaded">
+
+
+            <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="2">
+                <MediaElement x:Name="video" Source="2.mp4" LoadedBehavior="Play" Stretch="Fill"></MediaElement>
+            </Border>
+
+        </Grid>
+
+
     </Grid>
 </Window>
