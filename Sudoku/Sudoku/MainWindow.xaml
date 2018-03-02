@@ -43,12 +43,26 @@
 
         </Menu>
 
-        <Grid Grid.Row="1" Loaded="Grid_Loaded">
+        <Grid Grid.Row="1" Name="Pole" Loaded="Grid_Loaded">
+            
+            <MediaElement Name="myMediaElement"   Stretch="Fill">
+                <MediaElement.Triggers>
+                    <EventTrigger RoutedEvent="MediaElement.Loaded">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <MediaTimeline  x:Name="video" Source="2.mp4"  Storyboard.TargetName="myMediaElement"  
+                 RepeatBehavior="Forever" ></MediaTimeline>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </MediaElement.Triggers>
+            </MediaElement>
 
-
-            <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="2">
+            <!--<Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="2">
                 <MediaElement x:Name="video" Source="2.mp4" LoadedBehavior="Play" Stretch="Fill"></MediaElement>
-            </Border>
+            </Border>-->
 
         </Grid>
 
