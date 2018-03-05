@@ -39,7 +39,7 @@ namespace Sudoku
                 _start_pole.ColumnDefinitions.Add(colDef2);
 
             }
-            for (int y = 0; y < _row; y++)
+            for (int y = 0; y < _row + 1; y++)
             {
                 RowDefinition rowDef1 = new RowDefinition();
                 _start_pole.RowDefinitions.Add(rowDef1);
@@ -58,7 +58,10 @@ namespace Sudoku
         {
             Start();
         }
-
+        private void MenuItem_Click_Stop(object sender, RoutedEventArgs e)
+        {
+            Stop();
+        }
         private void OnKeyDown(object obj, TextCompositionEventArgs e)
         {
             try
@@ -79,9 +82,15 @@ namespace Sudoku
             }
         }
 
+        void Stop()
+        {
+            _start_pole.Visibility = Visibility.Hidden;
+            myMediaElement.Visibility = Visibility.Visible;
+        }
         void Start()
         {
-       
+            myMediaElement.Visibility = Visibility.Hidden;
+            _start_pole.Visibility = Visibility.Visible;
             _start_pole.Children.Clear();
             Grid.SetRow(_start_pole, 1);
 
@@ -103,6 +112,13 @@ namespace Sudoku
                    
                     temp.PreviewTextInput += new TextCompositionEventHandler(OnKeyDown);
 
+                    Binding bind = new Binding();
+                    bind.ElementName = temp.Name;
+                    //bind.Source = ;
+                    bind.Mode = BindingMode.TwoWay;
+
+                  //  temp.SetBinding(TextBox.TextProperty, bind);
+
                     Grid.SetRow(temp_Rect, y);
                     Grid.SetColumn(temp_Rect, x);
                     Grid.SetRow(temp, y);
@@ -111,10 +127,15 @@ namespace Sudoku
                     _start_pole.Children.Add(temp);
 
 
+
                 }
             }
 
-            
+            Button is_true = new Button();
+            is_true.Content = "Is true?";
+            Grid.SetRow(is_true, _row);
+            Grid.SetColumn(is_true, _coll/2);
+            _start_pole.Children.Add(is_true);
         }
     }
 }

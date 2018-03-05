@@ -33,7 +33,7 @@
                
                 <MenuItem Header="New food" Command="{Binding ButtonClick_New_Food }"></MenuItem>
 
-                <MenuItem Header="Edit food"   Command="{Binding ButtonClick_Edit_Food }"></MenuItem>
+                <MenuItem Header="Edit food"  s></MenuItem>
                 <MenuItem Header="Delete food" Command="{Binding ButtonClick_New_Delete }">
                    
                 </MenuItem>

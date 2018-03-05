@@ -26,8 +26,8 @@
 
         <Menu Grid.Row="0">
             <MenuItem Header="Game">
-                <MenuItem Header="Start Game...">
-                    <MenuItem Header="Easily" Name="_levl_1" Template="{StaticResource MenuItemTemplate}">
+                <MenuItem Header="Levl...">
+                    <MenuItem Header="Easily" Name="_levl_1" Template="{StaticResource MenuItemTemplate}" >
 
                     </MenuItem>
                     <MenuItem Header="Normal" Name="_levl_2" Template="{StaticResource MenuItemTemplate}">
@@ -37,8 +37,13 @@
 
                     </MenuItem>
                 </MenuItem>
-                <MenuItem Header="Load" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Start" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Stop" Click="MenuItem_Click_Stop"></MenuItem>
+              
+                <MenuItem Header="Load" ></MenuItem>
                 <MenuItem Header="Save"></MenuItem>
+                
+                <MenuItem Header="Exit"></MenuItem>
             </MenuItem>
 
         </Menu>

@@ -15,20 +15,20 @@ namespace Sudoku
 
         List<List<int>> pole;
 
-        private int levl_pos;
+      
 
-        public Info(int Levl, List<List<int>> Pole, int Levl_pos)
+        public Info(int Levl, List<List<int>> Pole)
         {       
             levl = Levl;
             pole = Pole;
-            levl_pos = Levl_pos;
+           
         }
         public Info()
         {
            
         }
         public List<List<int>> Pole { get { return pole; } set { pole = value; } }
-        public int Levl_pos { get { return levl_pos; } set { levl_pos = value; } }
+    
         public int Levl { get { return levl; } set { levl = value; } }
     }
 }
