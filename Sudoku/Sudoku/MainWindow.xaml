@@ -11,10 +11,14 @@
         <ControlTemplate x:Key="MenuItemTemplate" TargetType="{x:Type MenuItem}">
             <Border BorderBrush="Orange" BorderThickness="3" CornerRadius="10" Background="White" TextBlock.Foreground="White" Name="Border">
                 <Grid>
-                    <RadioButton Content="{TemplateBinding Header}" GroupName="Levl"></RadioButton>
+                    <RadioButton Command="{TemplateBinding Command}"  Content="{TemplateBinding Header}" GroupName="Levl"></RadioButton>
                 </Grid>
             </Border>
         </ControlTemplate>
+
+
+        <!--<local:Info x:Key="Game_pole" Levl="1" Poles="{x:Null}" />-->
+
     </Window.Resources>
 
     <Grid Name="Main">
@@ -27,29 +31,29 @@
         <Menu Grid.Row="0">
             <MenuItem Header="Game">
                 <MenuItem Header="Levl...">
-                    <MenuItem Header="Easily" Name="_levl_1" Template="{StaticResource MenuItemTemplate}" >
+                    <MenuItem Header="Easily" Name="_levl_1" Template="{StaticResource MenuItemTemplate}" Command="{Binding ButtonClick_1}" >
 
                     </MenuItem>
-                    <MenuItem Header="Normal" Name="_levl_2" Template="{StaticResource MenuItemTemplate}">
+                    <MenuItem Header="Normal" Name="_levl_2" Template="{StaticResource MenuItemTemplate}" Command="{Binding ButtonClick_2}" >
 
                     </MenuItem>
-                    <MenuItem Header="Hard" Name="_levl_3" Template="{StaticResource MenuItemTemplate}">
+                    <MenuItem Header="Hard" Name="_levl_3" Template="{StaticResource MenuItemTemplate}" Command="{Binding ButtonClick_3}" >
 
                     </MenuItem>
                 </MenuItem>
-                <MenuItem Header="Start" Click="MenuItem_Click"></MenuItem>
-                <MenuItem Header="Stop" Click="MenuItem_Click_Stop"></MenuItem>
-              
+                <MenuItem Header="Start" Click="MenuItem_Click" Command="{Binding ButtonClick_Start_Game}"></MenuItem>
+                <MenuItem Header="Stop" Command="{Binding ButtonClick_Stop_Game}"></MenuItem>
+
                 <MenuItem Header="Load" ></MenuItem>
                 <MenuItem Header="Save"></MenuItem>
-                
+
                 <MenuItem Header="Exit"></MenuItem>
             </MenuItem>
 
         </Menu>
 
-        <Grid Grid.Row="1" Name="Pole" Loaded="Grid_Loaded">
-            
+        <Grid Grid.Row="1" Name="Pole">
+
             <MediaElement Name="myMediaElement"   Stretch="Fill">
                 <MediaElement.Triggers>
                     <EventTrigger RoutedEvent="MediaElement.Loaded">
@@ -65,9 +69,138 @@
                 </MediaElement.Triggers>
             </MediaElement>
 
-            <!--<Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="2">
-                <MediaElement x:Name="video" Source="2.mp4" LoadedBehavior="Play" Stretch="Fill"></MediaElement>
-            </Border>-->
+
+            <!--<ContentControl Name="My_game" Grid.Row="1"  Content="{Binding InfoViewModel}">
+                <ContentControl.ContentTemplate>
+                    <DataTemplate >-->
+           
+            <Grid  Name="My_game">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Text="{Binding El00, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown"  TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="0" Grid.Row="0" ></TextBox>
+                <TextBox Text="{Binding El01, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="0"></TextBox>
+                <TextBox Text="{Binding El02, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="2" Grid.Row="0" Background="White"/>
+                <TextBox Text="{Binding El03, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown"  TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="3" Grid.Row="0"></TextBox>
+                <TextBox Text="{Binding El04, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown"  TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="4" Grid.Row="0"></TextBox>
+                <TextBox Text="{Binding El05, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown"  TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="5" Grid.Row="0"></TextBox>
+                <TextBox Text="{Binding El06, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="6" Grid.Row="0"></TextBox>
+                <TextBox Text="{Binding El07, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="7" Grid.Row="0"></TextBox>
+                <TextBox Text="{Binding El08, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="8" Grid.Row="0"></TextBox>
+                <TextBox Text="{Binding El10, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="0" Grid.Row="1"></TextBox>
+                <TextBox Text="{Binding El11, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="1" Grid.Row="1"></TextBox>
+                <TextBox Text="{Binding El12, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="2" Grid.Row="1"></TextBox>
+                <TextBox Text="{Binding El13, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="3" Grid.Row="1"></TextBox>
+                <TextBox Text="{Binding El14, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="4" Grid.Row="1"></TextBox>
+                <TextBox Text="{Binding El15, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="5" Grid.Row="1"></TextBox>
+                <TextBox Text="{Binding El16, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="6" Grid.Row="1"></TextBox>
+                <TextBox Text="{Binding El17, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="7" Grid.Row="1"></TextBox>
+                <TextBox Text="{Binding El18, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="8" Grid.Row="1"></TextBox>
+                <TextBox Text="{Binding El20, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="0" Grid.Row="2"></TextBox>
+                <TextBox Text="{Binding El21, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="1" Grid.Row="2"></TextBox>
+                <TextBox Text="{Binding El22, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="2" Grid.Row="2"></TextBox>
+                <TextBox Text="{Binding El23, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="3" Grid.Row="2"></TextBox>
+                <TextBox Text="{Binding El24, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="4" Grid.Row="2"></TextBox>
+                <TextBox Text="{Binding El25, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="5" Grid.Row="2"></TextBox>
+                <TextBox Text="{Binding El26, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="6" Grid.Row="2"></TextBox>
+                <TextBox Text="{Binding El27, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="7" Grid.Row="2"></TextBox>
+                <TextBox Text="{Binding El28, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="8" Grid.Row="2"></TextBox>
+                <TextBox Text="{Binding El30, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="0" Grid.Row="3"></TextBox>
+                <TextBox Text="{Binding El31, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="1" Grid.Row="3"></TextBox>
+                <TextBox Text="{Binding El32, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="2" Grid.Row="3"></TextBox>
+                <TextBox Text="{Binding El33, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="3" Grid.Row="3"></TextBox>
+                <TextBox Text="{Binding El34, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="4" Grid.Row="3"></TextBox>
+                <TextBox Text="{Binding El35, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="5" Grid.Row="3"></TextBox>
+                <TextBox Text="{Binding El36, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="6" Grid.Row="3"></TextBox>
+                <TextBox Text="{Binding El37, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="7" Grid.Row="3"></TextBox>
+                <TextBox Text="{Binding El38, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="8" Grid.Row="3"></TextBox>
+                <TextBox Text="{Binding El40, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="0" Grid.Row="4"></TextBox>
+                <TextBox Text="{Binding El41, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="1" Grid.Row="4"></TextBox>
+                <TextBox Text="{Binding El42, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="2" Grid.Row="4"></TextBox>
+                <TextBox Text="{Binding El43, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="3" Grid.Row="4"></TextBox>
+                <TextBox Text="{Binding El44, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="4" Grid.Row="4"></TextBox>
+                <TextBox Text="{Binding El45, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="5" Grid.Row="4"></TextBox>
+                <TextBox Text="{Binding El46, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="6" Grid.Row="4"></TextBox>
+                <TextBox Text="{Binding El47, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="7" Grid.Row="4"></TextBox>
+                <TextBox Text="{Binding El48, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="8" Grid.Row="4"></TextBox>
+                <TextBox Text="{Binding El50, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="0" Grid.Row="5"></TextBox>
+                <TextBox Text="{Binding El51, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="1" Grid.Row="5"></TextBox>
+                <TextBox Text="{Binding El52, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="2" Grid.Row="5"></TextBox>
+                <TextBox Text="{Binding El53, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="3" Grid.Row="5"></TextBox>
+                <TextBox Text="{Binding El54, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="4" Grid.Row="5"></TextBox>
+                <TextBox Text="{Binding El55, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="5" Grid.Row="5"></TextBox>
+                <TextBox Text="{Binding El56, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="6" Grid.Row="5"></TextBox>
+                <TextBox Text="{Binding El57, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="7" Grid.Row="5"></TextBox>
+                <TextBox Text="{Binding El58, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="8" Grid.Row="5"></TextBox>
+
+                <TextBox Text="{Binding El60, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="0" Grid.Row="6"></TextBox>
+                <TextBox Text="{Binding El61, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="1" Grid.Row="6"></TextBox>
+                <TextBox Text="{Binding El62, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="2" Grid.Row="6"></TextBox>
+                <TextBox Text="{Binding El63, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="3" Grid.Row="6"></TextBox>
+                <TextBox Text="{Binding El64, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="4" Grid.Row="6"></TextBox>
+                <TextBox Text="{Binding El65, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="5" Grid.Row="6"></TextBox>
+                <TextBox Text="{Binding El66, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="6" Grid.Row="6"></TextBox>
+                <TextBox Text="{Binding El67, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="7" Grid.Row="6"></TextBox>
+                <TextBox Text="{Binding El68, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="8" Grid.Row="6"></TextBox>
+
+                <TextBox Text="{Binding El70, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="0" Grid.Row="7"></TextBox>
+                <TextBox Text="{Binding El71, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="1" Grid.Row="7"></TextBox>
+                <TextBox Text="{Binding El72, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="2" Grid.Row="7"></TextBox>
+                <TextBox Text="{Binding El73, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="3" Grid.Row="7"></TextBox>
+                <TextBox Text="{Binding El74, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="4" Grid.Row="7"></TextBox>
+                <TextBox Text="{Binding El75, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="5" Grid.Row="7"></TextBox>
+                <TextBox Text="{Binding El76, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="6" Grid.Row="7"></TextBox>
+                <TextBox Text="{Binding El77, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="7" Grid.Row="7"></TextBox>
+                <TextBox Text="{Binding El78, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="8" Grid.Row="7"></TextBox>
+
+                <TextBox Text="{Binding El80, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="0" Grid.Row="8"></TextBox>
+                <TextBox Text="{Binding El81, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="1" Grid.Row="8"></TextBox>
+                <TextBox Text="{Binding El82, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="2" Grid.Row="8"></TextBox>
+                <TextBox Text="{Binding El83, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="3" Grid.Row="8"></TextBox>
+                <TextBox Text="{Binding El84, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="4" Grid.Row="8"></TextBox>
+                <TextBox Text="{Binding El85, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="5" Grid.Row="8"></TextBox>
+                <TextBox Text="{Binding El86, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="6" Grid.Row="8"></TextBox>
+                <TextBox Text="{Binding El87, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="7" Grid.Row="8"></TextBox>
+                <TextBox Text="{Binding El88, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="OnKeyDown" TextAlignment="Center" VerticalContentAlignment="Center"  Grid.Column="8" Grid.Row="8"></TextBox>
+
+                <Rectangle Grid.Column="0"  Grid.ColumnSpan="3" Grid.RowSpan="3"  Grid.Row="0" Stroke="Black" StrokeThickness="3"/>
+                <Rectangle Grid.Column="3"  Grid.ColumnSpan="3" Grid.RowSpan="3"  Grid.Row="0" Stroke="Black" StrokeThickness="3"/>
+                <Rectangle Grid.Column="6"  Grid.ColumnSpan="3" Grid.RowSpan="3"  Grid.Row="0" Stroke="Black" StrokeThickness="3"/>
+                <Rectangle Grid.Column="0"  Grid.ColumnSpan="3" Grid.RowSpan="3"  Grid.Row="3" Stroke="Black" StrokeThickness="3"/>
+                <Rectangle Grid.Column="3"  Grid.ColumnSpan="3" Grid.RowSpan="3"  Grid.Row="3" Stroke="Black" StrokeThickness="3"/>
+                <Rectangle Grid.Column="6"  Grid.ColumnSpan="3" Grid.RowSpan="3"  Grid.Row="3" Stroke="Black" StrokeThickness="3"/>
+                <Rectangle Grid.Column="0"  Grid.ColumnSpan="3" Grid.RowSpan="3"  Grid.Row="6" Stroke="Black" StrokeThickness="3"/>
+                <Rectangle Grid.Column="3"  Grid.ColumnSpan="3" Grid.RowSpan="3"  Grid.Row="6" Stroke="Black" StrokeThickness="3"/>
+                <Rectangle Grid.Column="6"  Grid.ColumnSpan="3" Grid.RowSpan="3"  Grid.Row="6" Stroke="Black" StrokeThickness="3"/>
+
+                <Button Grid.Column="4" Grid.Row="9" Command="{Binding ButtonClick_is_true}"> Is true? </Button>
+            </Grid>
+           
+
+            <!--</DataTemplate>
+                </ContentControl.ContentTemplate>
+            </ContentControl>-->
 
         </Grid>
 

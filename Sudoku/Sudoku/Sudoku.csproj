@@ -54,7 +54,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MessegBoxs.xaml.cs">
+      <DependentUpon>MessegBoxs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\InfoViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MessegeViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -69,9 +74,12 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MessegBoxs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Conteiner.cs" />
     <Compile Include="Model\Info.cs" />
     <Compile Include="Model\ISerializer.cs" />
     <Compile Include="Model\XMLSerializer.cs" />
@@ -108,8 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="2.mp4" />
-    <Content Include="test.mpg" />
-    <Content Include="test.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
