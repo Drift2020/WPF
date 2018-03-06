@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 namespace Sudoku
 {
     [Serializable(), XmlInclude(typeof(InfoViewModel))]
-    class InfoViewModel : ViewModelBase
+    public class InfoViewModel : ViewModelBase
     {
 
 

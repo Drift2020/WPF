@@ -22,8 +22,10 @@ namespace Sudoku
             MainViewModel viewModel = new MainViewModel();
             view.DataContext = viewModel;
 
+            if (viewModel.Exit == null)
+                viewModel.Exit = new Action(view.Close);
 
-             if (viewModel.Show_M == null)
+            if (viewModel.Show_M == null)
                 viewModel.Show_M = new Action(view.Show_M);
 
             if (viewModel.Stop == null)

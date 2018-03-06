@@ -2,10 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
+using System.Xml.Serialization;
 
 namespace Sudoku
 {
@@ -22,6 +25,7 @@ namespace Sudoku
         public Action Show_M { get; set; }
         public Action Stop { get; set; }
         public Action Start { get; set; }
+        public Action Exit { get; set; }
 
         private InfoViewModel temp_game = new InfoViewModel();
       
@@ -66,10 +70,88 @@ namespace Sudoku
             }
         }
 
+        float size = 1;
+        public float Sizes
+        {
+            get { return size * (height /100*25/10*2f); }
+            set
+            {
+                size = value;
+                OnPropertyChanged(nameof(Sizes));
+            }
+        }
+
+        float height = 500;
+        public float Height_
+        {
+            get { return height; }
+            set
+            {
+                height = value;
+                OnPropertyChanged(nameof(Height_));
+                OnPropertyChanged(nameof(Sizes));
+            }
+        }
+
+        float width = 500;
+        public float Width_
+        {
+            get { return width; }
+            set
+            {
+                width = value;
+                OnPropertyChanged(nameof(Width_));
+                OnPropertyChanged(nameof(Sizes));
+            }
+        }
+
 
         #endregion Pole
-
+       
         #region ProgramLogic
+        FileStream stream = null;
+        XmlSerializer serializer = null;
+        public void Save()
+        {
+            try
+            {
+                stream = new FileStream("../../list.xml", FileMode.Create);
+                serializer = new XmlSerializer(typeof(InfoViewModel));
+                serializer.Serialize(stream, temp_game);
+                stream.Close();
+            }
+            catch (Exception ex)
+            {
+
+                if (stream != null)
+                    stream.Close();
+            };
+
+        }
+        public void Load()
+        {
+
+            try
+            {
+                stream = new FileStream("../../list.xml", FileMode.Open);
+                serializer = new XmlSerializer(typeof(InfoViewModel));
+                temp_game = (InfoViewModel)serializer.Deserialize(stream);
+
+
+                stream.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                if (stream != null)
+                    stream.Close();
+                stream = null;
+            };
+
+
+        }
 
         void Value_IQ()
         {
@@ -226,7 +308,98 @@ namespace Sudoku
 
         #region Command 
 
-        
+        private DelegateCommand _Command_Load;
+        public ICommand ButtonClick_Load_Game
+        {
+            get
+            {
+                if (_Command_Load == null)
+                {
+                    _Command_Load = new DelegateCommand(Execute_Load, CanExecute_Load);
+                }
+                return _Command_Load;
+            }
+        }
+        private void Execute_Load(object o)
+        {
+
+
+            MessegBoxs view = new MessegBoxs();
+
+            MessegeViewModel viewModel = new MessegeViewModel(System.Windows.Visibility.Visible, System.Windows.Visibility.Visible, System.Windows.Visibility.Hidden);
+            view.DataContext = viewModel;
+
+            if (viewModel._OK == null)
+                viewModel._OK = new Action(view.Close);
+            if (viewModel._NO == null)
+                viewModel._NO = new Action(view.Close);
+
+            view.ShowDialog();
+            if (viewModel.is_ok)
+            {
+                Load();
+                if (stream != null)
+                {
+                    _is_start = false;
+                    Value_IQ();
+                    Output_List();
+                    Update();
+                    Start();
+                }
+            }
+        }
+        private bool CanExecute_Load(object o)
+        {
+            if (_is_start)
+                return true;
+            else
+                return false;
+
+        }
+
+        private DelegateCommand _Command_Save;
+        public ICommand ButtonClick_Save_Game
+        {
+            get
+            {
+                if (_Command_Save == null)
+                {
+                    _Command_Save = new DelegateCommand(Execute_Save, CanExecute_Save);
+                }
+                return _Command_Save;
+            }
+        }
+        private void Execute_Save(object o)
+        {
+
+
+            MessegBoxs view = new MessegBoxs();
+
+            MessegeViewModel viewModel = new MessegeViewModel(System.Windows.Visibility.Visible, System.Windows.Visibility.Visible, System.Windows.Visibility.Hidden);
+            view.DataContext = viewModel;
+
+            if (viewModel._OK == null)
+                viewModel._OK = new Action(view.Close);
+            if (viewModel._NO == null)
+                viewModel._NO = new Action(view.Close);
+
+            view.ShowDialog();
+            if (viewModel.is_ok)
+            {
+                Save();
+               
+            }
+        }
+        private bool CanExecute_Save(object o)
+        {
+            if (!_is_start)
+                return true;
+            else
+                return false;
+
+        }
+
+
         private DelegateCommand _Command_Stop;
         public ICommand ButtonClick_Stop_Game
         {
@@ -269,6 +442,8 @@ namespace Sudoku
 
         }
 
+
+
         private DelegateCommand _Command_Start;
         public ICommand ButtonClick_Start_Game
         {
@@ -290,6 +465,7 @@ namespace Sudoku
             Input_List();
             Output_List();
             Update();
+            Start();
         }
         private bool CanExecute_Start(object o)
         {
@@ -354,8 +530,48 @@ namespace Sudoku
            
         }
 
-      
 
+
+        private DelegateCommand _Command_Exit;
+        public ICommand ButtonClick_Exit_Game
+        {
+            get
+            {
+                if (_Command_Exit == null)
+                {
+                    _Command_Exit = new DelegateCommand(Execute_Exit, CanExecute_Exit);
+                }
+                return _Command_Exit;
+            }
+        }
+        private void Execute_Exit(object o)
+        {
+
+
+            MessegBoxs view = new MessegBoxs();
+
+            MessegeViewModel viewModel = new MessegeViewModel(System.Windows.Visibility.Visible, System.Windows.Visibility.Visible, System.Windows.Visibility.Hidden);
+            view.DataContext = viewModel;
+
+            if (viewModel._OK == null)
+                viewModel._OK = new Action(view.Close);
+            if (viewModel._NO == null)
+                viewModel._NO = new Action(view.Close);
+
+            view.ShowDialog();
+            if (viewModel.is_ok)
+            {
+              
+                Exit();
+            }
+        }
+        private bool CanExecute_Exit(object o)
+        {
+          
+                return true;
+          
+
+        }
 
 
 

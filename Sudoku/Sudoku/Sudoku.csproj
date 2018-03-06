@@ -61,6 +61,18 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MessegeViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Page Include="Brushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Core.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,8 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Info.cs" />
-    <Compile Include="Model\ISerializer.cs" />
-    <Compile Include="Model\XMLSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -110,9 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfese\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="1.gif" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="2.mp4" />
