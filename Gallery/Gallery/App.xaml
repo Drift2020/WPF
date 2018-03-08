@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:Gallery"
              StartupUri="Indecs.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Brushes.xaml"/>
+                <ResourceDictionary Source="Core.xaml"/>
+                <ResourceDictionary Source="Icons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
