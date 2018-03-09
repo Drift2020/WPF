@@ -21,6 +21,8 @@ namespace Gallery
     {
         public Indecs()
         {
+       
+
             InitializeComponent();
             DefaultStyle();
         }

@@ -20,6 +20,7 @@
                 <Grid>
                     <Rectangle Name="FocusCue" Visibility="Hidden" Stroke="Black"
            StrokeThickness="1" StrokeDashArray="1 2"></Rectangle>
+                    
                     <ContentPresenter RecognizesAccessKey="True"
          Margin="{TemplateBinding Padding}"></ContentPresenter>
                 </Grid>

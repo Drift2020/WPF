@@ -6,6 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="BubbleCreme.xaml"/>-->
                 <ResourceDictionary Source="Brushes.xaml"/>
                 <ResourceDictionary Source="Core.xaml"/>
                 <ResourceDictionary Source="Icons.xaml"/>
