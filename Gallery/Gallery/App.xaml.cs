@@ -19,20 +19,20 @@ namespace Gallery
 
             MainWindow view = new MainWindow();
 
-            LoginViewModel viewModel = new MainViewModel();
+            LoginViewModel viewModel = new LoginViewModel();
             view.DataContext = viewModel;
-            if (viewModel.Not_Element == null)
-                viewModel.Not_Element = new Action(view.Show_Sellect_Item);
+            //if (viewModel.Not_Element == null)
+            //    viewModel.Not_Element = new Action(view.Show_Sellect_Item);
 
-            if (viewModel.Exit == null)
-                viewModel.Exit = new Action(view.Close);
+            //if (viewModel.Exit == null)
+            //    viewModel.Exit = new Action(view.Close);
 
-            if (viewModel.Question == null)
-                viewModel.Question = new Action(view.Question);
+            //if (viewModel.Question == null)
+            //    viewModel.Question = new Action(view.Question);
 
 
-            view.Closing += viewModel.OnWindowClosing;
-            view.Show();
+            //view.Closing += viewModel.OnWindowClosing;
+            view.ShowDialog();
         }
     }
 

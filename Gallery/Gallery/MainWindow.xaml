@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
         xmlns:local="clr-namespace:Gallery"
         mc:Ignorable="d"
         Title="MainWindow" Height="266" Width="259.211">
@@ -28,12 +29,13 @@
 
         <TextBlock Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center">  Image Gallery Entrance</TextBlock>
         <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Bottom" HorizontalAlignment="Center">Login</TextBlock>
-        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4"/>
+        <TextBox Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4"/>
 
         <TextBlock Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Center">Password</TextBlock>
-        <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4"></TextBox>
+        
+        <PasswordBox  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" x:Name="PasswordBox"  local:PasswordBoxAssistant.BindPassword="true"  local:PasswordBoxAssistant.BoundPassword="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Button  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5"></Button>
-        <Button Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2"  Margin="5"></Button>
+        <Button Command="{Binding Button_clik_ok}" CommandParameter="{Binding ElementName=PasswordBox}" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5"> Ok</Button>
+        <Button Command="{Binding Button_clik_no}" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2"  Margin="5"> Cancel</Button>
     </Grid>
 </Window>

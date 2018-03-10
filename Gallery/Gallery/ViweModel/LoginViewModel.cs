@@ -1,13 +1,52 @@
-﻿using System;
+﻿using BookFood.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Gallery
 {
-    class LoginViewModel
+    class LoginViewModel : ViewModelBase
     {
+
+
+        #region Pole 
+        List<Model.Users> my_users;
+
+
+        string login;
+        public string Login
+        {
+            get
+            {
+                return login;
+            }
+            set
+            {
+                login = value;
+                OnPropertyChanged(nameof(Login));
+            }
+        }
+
+        string password;
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+            set
+            {
+                password = value;
+                OnPropertyChanged(nameof(Password));
+            }
+        }
+
+        #endregion Pole 
+
+
 
         #region Command_button
 
@@ -25,17 +64,30 @@ namespace Gallery
         }
         private void Execute_ok(object o)
         {
+            foreach (Model.Users e in my_users)
+            {
+                if(e.login==login && e.password == password)
+                {
+                    is_ok = true;
+                    _OK();
+                }
+            }
 
-            is_ok = true;
-            _OK();
+            is_none_user = true;
+            _NONE_USER();         
         }
         private bool CanExecute_ok(object o)
         {
 
+            if((login!=null&& login!="")&& (password != null && password != ""))
             return true;
-
+            return false;
 
         }
+
+     
+
+
 
         private DelegateCommand _Command_no;
         public ICommand Button_clik_no
@@ -63,37 +115,17 @@ namespace Gallery
 
         }
 
-        private DelegateCommand _Command_cancel;
-        public ICommand Button_clik_cancel
-        {
-            get
-            {
-                if (_Command_cancel == null)
-                {
-                    _Command_cancel = new DelegateCommand(Execute_cancel, CanExecute_cancel);
-                }
-                return _Command_cancel;
-            }
-        }
-        private void Execute_cancel(object o)
-        {
-
-            is_cancel = true;
-            _CANCEL();
-        }
-        private bool CanExecute_cancel(object o)
-        {
-
-            return true;
-
-
-        }
-
+       
         #endregion Command_button
 
 
         public bool is_ok;
+        public bool is_none_user;
         public bool is_no;
-        public bool is_cancel;
+
+
+        public Action _OK { get; set; }
+        public Action _NO { get; set; }
+        public Action _NONE_USER { get; set; }
     }
 }
