@@ -40,5 +40,11 @@ namespace Gallery
             Application.Current.Resources.MergedDictionaries.Add(ic);
 
         }
+
+        public void Ok()
+        {
+          
+            Close();
+        }
     }
 }

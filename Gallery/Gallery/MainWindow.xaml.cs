@@ -41,5 +41,31 @@ namespace Gallery
             Application.Current.Resources.MergedDictionaries.Add(ic);
 
         }
+
+        public void None_user()
+        {
+            MessageBox.Show("No user, register a new user.");
+          //  Close();
+        }
+
+        public void Ok()
+        {
+            MessageBox.Show("Welcome to home.");
+           // Close();
+        }
+
+        public void Visibility_off()
+        {
+            Visibility = Visibility.Hidden;
+        }
+        public void Visibility_on()
+        {
+            Visibility = Visibility.Visible;
+        }
+
+        public void No()
+        {       
+            Close();
+        }
     }
 }

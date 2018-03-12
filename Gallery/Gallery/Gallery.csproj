@@ -66,14 +66,30 @@
     <Compile Include="Indecs.xaml.cs">
       <DependentUpon>Indecs.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Conteiner.cs" />
+    <Compile Include="Model\Conteiner_Photo.cs" />
+    <Compile Include="Model\ISerializer.cs" />
     <Compile Include="Model\Photos.cs" />
     <Compile Include="Model\Users.cs" />
+    <Compile Include="Model\XMLSerializer.cs" />
     <Compile Include="Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources_\RadioButtonConverter.cs" />
+    <Compile Include="SerchImageView.xaml.cs">
+      <DependentUpon>SerchImageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViweModel\AddViewModel.cs" />
+    <Compile Include="ViweModel\IndecsViewModel.cs" />
     <Compile Include="ViweModel\LoginViewModel.cs" />
+    <Compile Include="ViweModel\MessegeViewModel.cs" />
+    <Compile Include="ViweModel\PhotoViewModel.cs" />
     <Compile Include="ViweModel\RegistrationViewModel.cs" />
+    <Compile Include="ViweModel\SelectViewModel.cs" />
     <Compile Include="ViweModel\ViewModelBase.cs" />
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
     <Page Include="Add_Image.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -114,6 +130,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="SerchImageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -141,6 +165,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources_\Gakuseisean-Aire-BMP-File.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

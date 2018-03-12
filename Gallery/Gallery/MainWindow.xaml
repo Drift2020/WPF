@@ -6,7 +6,7 @@
 
         xmlns:local="clr-namespace:Gallery"
         mc:Ignorable="d"
-        Title="MainWindow" Height="266" Width="259.211">
+        Title="Log in Gallery" Height="266" Width="259.211" Icon="Resources_/Gakuseisean-Aire-BMP-File.ico"  WindowStyle="ToolWindow">
     <Grid>
 
         <Grid.ColumnDefinitions>

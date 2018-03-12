@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ArrayOfPhotoViewModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PhotoViewModel>
+    <Name>_h29BQbYDoQ.jpg</Name>
+    <Date>12.03.2018 19:21:52</Date>
+    <Autor>sasha</Autor>
+    <Path>E:\Program\GitHub\WPF\Gallery\Gallery\bin\Debug\warf\_h29BQbYDoQ.jpg</Path>
+    <Mark>1</Mark>
+  </PhotoViewModel>
+</ArrayOfPhotoViewModel>

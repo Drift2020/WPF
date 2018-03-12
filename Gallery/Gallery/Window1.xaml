@@ -1,0 +1,29 @@
+﻿<Window x:Class="Gallery.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gallery"
+        mc:Ignorable="d"
+        Title="{Binding Messeg_Titel}" Height="170.693" Width="300" MinHeight="170.693" MinWidth="300" MaxWidth="300" MaxHeight="170.693" WindowStyle="ToolWindow" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Messege}"></TextBlock>
+        <Button Grid.Row="3" Grid.Column="1" Margin="3" Content="{Binding OK}" Visibility="{Binding Visibility_ok}" Command="{Binding Button_clik_ok}"></Button>
+        <Button Grid.Row="3" Grid.Column="2" Margin="3" Content="{Binding NO}" Visibility="{Binding Visibility_no}" Command="{Binding Button_clik_no}"></Button>
+        <Button Grid.Row="3" Grid.Column="3" Margin="3" Content="{Binding CANCEL}" Visibility="{Binding Visibility_cancel}" Command="{Binding Button_clik_cancel}"></Button>
+    </Grid>
+</Window>

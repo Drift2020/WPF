@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Gallery
 {
     /// <summary>
-    /// Interaction logic for Add_Image.xaml
+    /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Add_Image : Window
+    public partial class Window1 : Window
     {
-        public Add_Image()
+        public Window1()
         {
             InitializeComponent();
             DefaultStyle();
@@ -41,5 +41,10 @@ namespace Gallery
 
         }
 
+        public void Ok()
+        {
+
+            Close();
+        }
     }
 }

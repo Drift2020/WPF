@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Gallery.Model
+namespace Gallery
 {
     [Serializable(), XmlInclude(typeof(Users))]
-    class Users : ICloneable
+    public class Users : ICloneable
     {
         public object Clone()
         {
@@ -26,6 +26,10 @@ namespace Gallery.Model
 
         public Users()
         {
+            name = "";
+            surname = "";
+            login = "";
+            password = "";
 
         }
 

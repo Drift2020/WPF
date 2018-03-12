@@ -5,136 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gallery"
         mc:Ignorable="d"
-        Title="Indecs" Height="588.243" Width="728.432">
+        Title="Gallery" Icon="Resources_/Gakuseisean-Aire-BMP-File.ico" Height="588.243" Width="728.432">
 
     <Window.Resources>
         <Style x:Key="Button ">
-            
+
         </Style>
-        
-        <!--<GeometryGroup>
-                                <LineGeometry StartPoint="10,10" EndPoint="15,0" />
-                                <LineGeometry StartPoint="15,0" EndPoint="20,10" />
-                                <LineGeometry StartPoint="20,10" EndPoint="30,10" />
-                                <LineGeometry StartPoint="30,10" EndPoint="24,20" />
-                                <LineGeometry StartPoint="24,20" EndPoint="25,30" />
-                                <LineGeometry StartPoint="25,30" EndPoint="15,25"/>
-                                <LineGeometry StartPoint="15,25" EndPoint="5,30"/>
-                                <LineGeometry StartPoint="5,30" EndPoint="7,20"/>
-                                <LineGeometry StartPoint="7,20" EndPoint="0,10"/>
-                                <LineGeometry StartPoint="0,10" EndPoint="10,10"/>
-                            </GeometryGroup>-->
 
-
-        <!--<ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type RadioButton}" >
-            <Path Name="Border" Stroke="Orange" StrokeThickness="1" Stretch="Fill">
-                <Path.Fill>
-                    <RadialGradientBrush
-                   RadiusX="1" RadiusY="1" GradientOrigin="0.7,0.3" >
-                        <GradientStop Color="White" Offset="0" />
-                        <GradientStop Color="Blue" Offset="1" />
-                    </RadialGradientBrush>
-                </Path.Fill>
-                <Path.Data>
-
-                    
-                    
-                    
-                    <CombinedGeometry GeometryCombineMode="Exclude">
-                        <CombinedGeometry.Geometry1>
-
-                            <EllipseGeometry Center="50 50" RadiusX="50" RadiusY="50"></EllipseGeometry>
-                        </CombinedGeometry.Geometry1>
-
-                        <CombinedGeometry.Geometry2>
-                            <CombinedGeometry >
-                                <CombinedGeometry.Geometry1>
-                                    <RectangleGeometry RadiusX="3" RadiusY="3" Rect="-10 -5 30 50">
-                                        <RectangleGeometry.Transform>
-                                            <RotateTransform  Angle="40" CenterX="50" CenterY="50"/>
-                                        </RectangleGeometry.Transform>
-                                    </RectangleGeometry>
-                                </CombinedGeometry.Geometry1>
-                                <CombinedGeometry.Geometry2>
-                                    <CombinedGeometry >
-                                        <CombinedGeometry.Geometry1>
-                                            <RectangleGeometry  Rect="-40 -5 30 50">
-                                                <RectangleGeometry.Transform>
-                                                    <RotateTransform  Angle="140" CenterX="25" CenterY="25"/>
-                                                </RectangleGeometry.Transform>
-                                            </RectangleGeometry>
-                                        </CombinedGeometry.Geometry1>
-                                        <CombinedGeometry.Geometry2>
-                                            <CombinedGeometry>
-
-                                                <CombinedGeometry.Geometry1>
-                                                    <RectangleGeometry  Rect="0 -5 30 30">
-                                                       
-                                                    </RectangleGeometry>
-                                                </CombinedGeometry.Geometry1>
-                                                <CombinedGeometry.Geometry2>
-                                                    <CombinedGeometry>
-                                                        <CombinedGeometry.Geometry1>
-                                                            <RectangleGeometry  Rect="70 -25 30 50">
-
-                                                            </RectangleGeometry>
-                                                        </CombinedGeometry.Geometry1>
-                                                        <CombinedGeometry.Geometry2>
-                                                            <CombinedGeometry>
-                                                                <CombinedGeometry.Geometry1>
-                                                                    <RectangleGeometry  Rect="65 70 30 30">
-                                                                        <RectangleGeometry.Transform>
-                                                                            <RotateTransform  Angle="135" CenterX="50" CenterY="50"/>
-                                                                        </RectangleGeometry.Transform>
-                                                                    </RectangleGeometry>
-                                                                </CombinedGeometry.Geometry1>
-                                                                <CombinedGeometry.Geometry2>
-                                                                    <CombinedGeometry>
-                                                                        <CombinedGeometry.Geometry1>
-                                                                            <RectangleGeometry  Rect="55 70 30 30">
-                                                                                <RectangleGeometry.Transform>
-                                                                                    <RotateTransform  Angle="7-" CenterX="50" CenterY="50"/>
-                                                                                </RectangleGeometry.Transform>
-                                                                            </RectangleGeometry>
-                                                                        </CombinedGeometry.Geometry1>
-                                                                    </CombinedGeometry>
-                                                                </CombinedGeometry.Geometry2>
-                                                            </CombinedGeometry>
-                                                        </CombinedGeometry.Geometry2>
-                                                    </CombinedGeometry>
-                                                </CombinedGeometry.Geometry2>
-                                            </CombinedGeometry>
-                                        </CombinedGeometry.Geometry2>
-                                    </CombinedGeometry>
-                                </CombinedGeometry.Geometry2>
-                            </CombinedGeometry>
-                        </CombinedGeometry.Geometry2>
-                    </CombinedGeometry>
-                    
-
-                </Path.Data>
-            </Path>
-
-
-            -->
-        <!--<ControlTemplate.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter TargetName="Border" Property="Fill" Value="DarkRed" />
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter TargetName="Border" Property="Fill" Value="IndianRed" />
-                    <Setter TargetName="Border" Property="Stroke" Value="DarkKhaki" />
-                </Trigger>
-                <Trigger Property="IsKeyboardFocused" Value="True">
-                    <Setter TargetName="FocusCue" Property="Visibility" Value="Visible"></Setter>
-                </Trigger>
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter TargetName="Content" Property="TextBlock.Foreground" Value="Gray"></Setter>
-                    <Setter TargetName="Border" Property="Fill" Value="MistyRose"></Setter>
-                </Trigger>
-            </ControlTemplate.Triggers>-->
-        <!--
-        </ControlTemplate>-->
+     
 
         <ControlTemplate  x:Key="ButtonTemplate" TargetType="{x:Type Button}" >
             <Path Fill="Yellow" Stroke="Blue">
@@ -180,88 +58,137 @@
 
         <Grid.ColumnDefinitions>
 
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="190*"/>
+            <ColumnDefinition Width="51*"/>
+            
+            <ColumnDefinition Width="224*"/>
+            <ColumnDefinition Width="256.766"/>
 
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="19"/>
-            <RowDefinition Height="4*"/>
             <RowDefinition/>
-            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="94.721"/>
+            <RowDefinition Height="66.028"/>
         </Grid.RowDefinitions>
 
-        <Menu  VerticalAlignment="Top"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+        <Menu  VerticalAlignment="Top"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Height="19">
             <MenuItem Header="Menu">
 
-                <MenuItem Header="Add image..."></MenuItem>
-                <MenuItem Header="Delete image..."></MenuItem>
-                <Separator />
-                <MenuItem Header="Log on..."></MenuItem>
+                <MenuItem Header="Add image..." Command="{Binding Button_clik_add}"></MenuItem>
+                <MenuItem Header="Delete image" Command="{Binding Button_clik_del}"></MenuItem>
                 <Separator />
 
                 <MenuItem Header="Exit" Command="{Binding ButtonClick_Exit}"></MenuItem>
             </MenuItem>
         </Menu>
 
-        <Image Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" ></Image>
+        <!--<Image Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Source="{Binding Path}" Margin="0,0,-0.001,0"></Image>-->
+        <ContentControl Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Content="{Binding my_photo}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <ContentControl.ContentTemplate>
+                <DataTemplate >
+                    
+                    <Image Name="_Image" HorizontalAlignment="Center"  VerticalAlignment="Center" Source="{Binding Path, UpdateSourceTrigger=PropertyChanged}">
 
 
-        <ListBox  Grid.Column="2" Grid.Row="1" Grid.RowSpan="3">
+                    </Image>
+
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
 
 
+
+
+        <ListBox  ItemsSource="{Binding my_photo}"  SelectedItem="{Binding Select_Item, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" IsSynchronizedWithCurrentItem="True"  Grid.Column="3" Grid.Row="1" Grid.RowSpan="3" >
+
+            <ListBox.ItemTemplate>
+                <DataTemplate >
+                    <Border BorderBrush="Bisque" BorderThickness="1" Height="150" Width="233" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <DockPanel  HorizontalAlignment ="Center" VerticalAlignment="Center" >
+                          
+                            <Image Source="{Binding Path,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+                        </DockPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
 
 
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="80.333"/>
+                <ColumnDefinition Width="80.333"/>
+                <ColumnDefinition Width="80.334"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="47.36"/>
+                <RowDefinition Height="47.361"/>
             </Grid.RowDefinitions>
-            <Button Grid.Column="0" Grid.Row="0" Margin="3">Back</Button>
-            <Button  Grid.Column="1" Grid.Row="0" Margin="3" ></Button>
-            <Button Grid.Column="2"   Grid.Row="0"  Margin="3"> Next</Button>
+            <Button Command="{Binding Button_clik_back}" Grid.Column="0" Grid.Row="0" Margin="3">Back</Button>
+            <Button Command="{Binding Button_clik_specific}"  Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Margin="3"  >
+                <TextBlock TextWrapping="Wrap"> Specific image...</TextBlock>
+            </Button>
+            <Button Command="{Binding Button_clik_next}" Grid.Column="2"   Grid.Row="0"  Margin="3">Next</Button>
 
-            <Button Grid.Column="0" Grid.Row="1"  Margin="3">Start</Button>
-            <Button Grid.Column="1" Grid.Row="1"  Margin="3"></Button>
-            <Button Grid.Column="2" Grid.Row="1"  Margin="3">End</Button>
+            <Button Command="{Binding Button_clik_start}" Grid.Column="0" Grid.Row="1"  Margin="3">Start</Button>
+
+            <Button Command="{Binding Button_clik_end}" Grid.Column="2" Grid.Row="1"  Margin="3">End</Button>
         </Grid>
-        <Grid Grid.Row="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <RadioButton GroupName="Rate" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></RadioButton>
-            <RadioButton GroupName="Rate" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center"></RadioButton>
-            <RadioButton GroupName="Rate" Grid.Column="2"  VerticalAlignment="Center" HorizontalAlignment="Center"></RadioButton>
-            <RadioButton GroupName="Rate" Grid.Column="3"  VerticalAlignment="Center" HorizontalAlignment="Center"></RadioButton>
-            <RadioButton GroupName="Rate" Grid.Column="4"  VerticalAlignment="Center" HorizontalAlignment="Center"></RadioButton>
+
+        <!--<ContentControl  Grid.Row="3" Grid.ColumnSpan="2"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">-->
+            <!--<ContentControl.ContentTemplate>-->
+                <!--<DataTemplate >-->
+        <Grid  Grid.Row="3" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="48.2"/>
+                            <ColumnDefinition Width="48.2"/>
+                            <ColumnDefinition Width="48.2"/>
+                            <ColumnDefinition Width="48.2"/>
+                            <ColumnDefinition Width="48.2"/>
+                        </Grid.ColumnDefinitions>
+            <RadioButton   Command="{Binding Button_clik_marc1}" IsChecked="{Binding M1, UpdateSourceTrigger=PropertyChanged}" GroupName="Rate" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">1</RadioButton>
+            <RadioButton  Command="{Binding Button_clik_marc2}"  Name="radioButton2"  IsChecked="{Binding M2, UpdateSourceTrigger=PropertyChanged}" GroupName="Rate" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center">2</RadioButton>
+            <RadioButton  Command="{Binding Button_clik_marc3}"  Name="radioButton3"  IsChecked="{Binding M3, UpdateSourceTrigger=PropertyChanged}" GroupName="Rate" Grid.Column="2"  VerticalAlignment="Center" HorizontalAlignment="Center">3</RadioButton>
+            <RadioButton   Command="{Binding Button_clik_marc4}" Name="radioButton4"  IsChecked="{Binding M4, UpdateSourceTrigger=PropertyChanged}" GroupName="Rate" Grid.Column="3"  VerticalAlignment="Center" HorizontalAlignment="Center">4</RadioButton>
+            <RadioButton  Command="{Binding Button_clik_marc5}"  Name="radioButton5"  IsChecked="{Binding M5, UpdateSourceTrigger=PropertyChanged}" GroupName="Rate" Grid.Column="4"  VerticalAlignment="Center" HorizontalAlignment="Center">5</RadioButton>
         </Grid>
-        <Grid Grid.Row="2" Grid.RowSpan="2" Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top"  Text="Image information"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text=""/>
-            <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text=""/>
-            <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text=""/>
-        </Grid>
+                <!--</DataTemplate>-->
+            <!--</ContentControl.ContentTemplate>-->
+        <!--</ContentControl>-->
+
+
+        <ContentControl  Grid.Row="2" Grid.RowSpan="2" Grid.Column="2" Content="{Binding my_photo}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <ContentControl.ContentTemplate>
+                <DataTemplate >
+                    
+                    <Grid  >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="38"/>
+                            <RowDefinition Height="38"/>
+                            <RowDefinition Height="38"/>
+                            <RowDefinition Height="38"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="107.502"/>
+                            <ColumnDefinition Width="107.502"/>
+                        </Grid.ColumnDefinitions>
+                        <Border  Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="2"  BorderBrush="Bisque" BorderThickness="3"  Background="#FF2A3939"></Border>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top"  Text="Image information" Foreground="White" FontSize="22"/>
+
+                        <TextBlock Text="Name:" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" FontSize="18" />
+                        <TextBlock  Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="Date:" Foreground="White" FontSize="18"/>
+                        <TextBlock  Grid.Row="3" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="Autor:" Foreground="White" FontSize="18"/>
+
+                        <TextBlock TextWrapping="Wrap" Margin="2" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" Foreground="White" />
+                        <TextBlock TextWrapping="Wrap" Margin="2" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="{Binding Date, UpdateSourceTrigger=PropertyChanged}" FontSize="12" Foreground="White"/>
+                        <TextBlock TextWrapping="Wrap" Margin="2"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="{Binding Autor , UpdateSourceTrigger=PropertyChanged}" Foreground="White" FontSize="14"/>
+
+                    </Grid>
+                   
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
     </Grid>
 </Window>

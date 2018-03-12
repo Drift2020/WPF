@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Gallery.Model
+namespace Gallery
 {
     [Serializable(), XmlInclude(typeof(Photos))]
-    class Photos : ICloneable
+  public   class Photos : ICloneable
     {
         public object Clone()
         {
@@ -16,7 +16,11 @@ namespace Gallery.Model
         }
         public Photos()
         {
-
+            name = "";
+            path = "";
+            date = "";
+            author = "";
+            mark = 0;
         }
 
         public Photos(string _name, string _path, string _date, string _author, int _mark)

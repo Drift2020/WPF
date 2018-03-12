@@ -42,5 +42,7 @@ namespace Gallery
             Application.Current.Resources.MergedDictionaries.Add(ic);
 
         }
+
+        
     }
 }

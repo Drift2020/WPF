@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ArrayOfUsers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Users>
+    <name>sasha</name>
+    <surname>buzhenko</surname>
+    <login>drift</login>
+    <password>123</password>
+  </Users>
+  <Users>
+    <name>jojo</name>
+    <surname>joster</surname>
+    <login>admin</login>
+    <password>1234</password>
+  </Users>
+</ArrayOfUsers>

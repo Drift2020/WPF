@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Gallery
 {
     /// <summary>
-    /// Interaction logic for Add_Image.xaml
+    /// Interaction logic for SerchImageView.xaml
     /// </summary>
-    public partial class Add_Image : Window
+    public partial class SerchImageView : Window
     {
-        public Add_Image()
+        public SerchImageView()
         {
             InitializeComponent();
             DefaultStyle();
@@ -39,6 +39,12 @@ namespace Gallery
             Application.Current.Resources.MergedDictionaries.Add(bru);
             Application.Current.Resources.MergedDictionaries.Add(ic);
 
+        }
+
+        public void Ok()
+        {
+
+            Close();
         }
 
     }

@@ -13,7 +13,14 @@ namespace Gallery
 
 
         #region Pole 
-        List<Model.Users> my_users;
+        СontainerUser my_users;
+
+        public LoginViewModel ()
+        {
+            my_users = new СontainerUser();
+            my_users.SetSerializer(new XMLSerializer());
+            my_users.Load("user");
+        }
 
 
         string login;
@@ -46,7 +53,20 @@ namespace Gallery
 
         #endregion Pole 
 
+        void OpenMessege(string s, string title)
+        {
+            Window1 messege = new Window1();
+            MessegeViewModel messege_view_Model = new MessegeViewModel(System.Windows.Visibility.Visible, System.Windows.Visibility.Hidden, System.Windows.Visibility.Hidden);
 
+            if (messege_view_Model._OK == null)
+                messege_view_Model._OK = new Action(messege.Close);
+
+
+            messege.DataContext = messege_view_Model;
+            messege_view_Model.Messege = s;
+            messege_view_Model.Messeg_Titel = title;
+            messege.ShowDialog();
+        }
 
         #region Command_button
 
@@ -64,17 +84,30 @@ namespace Gallery
         }
         private void Execute_ok(object o)
         {
-            foreach (Model.Users e in my_users)
+            for (int i=0;i<my_users.Count();i++ )
             {
-                if(e.login==login && e.password == password)
+                if(my_users.Element(i).login==login && my_users.Element(i).password == password)
                 {
+
                     is_ok = true;
                     _OK();
+                    Now_Registr(my_users.Element(i).name);
+                    return;
+                }
+                else if(my_users.Element(i).login == login && my_users.Element(i).password != password)
+                {
+                    OpenMessege("Password or login is not correct.", "Error");
+                    return;
                 }
             }
 
-            is_none_user = true;
-            _NONE_USER();         
+            if (!is_ok)
+            {
+                is_none_user = true;
+                _NONE_USER();
+            }
+
+            Now_Registr(null);
         }
         private bool CanExecute_ok(object o)
         {
@@ -115,15 +148,69 @@ namespace Gallery
 
         }
 
-       
+
         #endregion Command_button
+
+        #region
+
+        void Now_Registr(string autor)
+        {
+            _Visibility_off();
+            Login = "";
+            Password = "";
+
+            if (is_ok)
+            {
+
+
+                Indecs MainWindows = new Indecs();
+
+                IndecsViewModel viewModelIndex = new IndecsViewModel(autor);
+
+
+
+                MainWindows.DataContext = viewModelIndex;
+
+                MainWindows.ShowDialog();
+                viewModelIndex.Save();
+
+            }
+            else if (is_no)
+            {
+
+            }
+            else if (is_none_user)
+            {
+                Registration view_registration = new Registration();
+
+                RegistrationViewModel View_model_reg = new RegistrationViewModel();
+
+                if (View_model_reg._OK == null)
+                    View_model_reg._OK = new Action(view_registration.Ok);
+
+                view_registration.DataContext = View_model_reg;
+
+                view_registration.ShowDialog();
+
+            }
+            my_users.Load("user");
+
+            _Visibility_on();
+
+
+        }
+        #endregion
+
+
 
 
         public bool is_ok;
         public bool is_none_user;
         public bool is_no;
 
-
+        public Action _Visibility_on { get; set; }
+        public Action _Visibility_off { get; set; }
+       
         public Action _OK { get; set; }
         public Action _NO { get; set; }
         public Action _NONE_USER { get; set; }

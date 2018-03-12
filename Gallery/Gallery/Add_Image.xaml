@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gallery"
         mc:Ignorable="d"
-        Title="Add image" Height="300" Width="300">
+        Title="Add image" Height="300" Width="300" Icon="Resources_/Gakuseisean-Aire-BMP-File.ico"  WindowStyle="ToolWindow">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"/>
@@ -26,11 +26,11 @@
         </Grid.RowDefinitions>
 
 
-        <Image Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="1"></Image>
+        <Image Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="1" Source="{Binding Path}"></Image>
 
-        <TextBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2"/>
-        <Button Grid.Column="1" Grid.Row="3" Margin="4" Content="Cancel" />
-        <Button Grid.Column="2" Grid.Row="3" Margin="4" Content="Add"/>
-        <Button Grid.Column="3" Grid.Row="3" Margin="4" Content="Open"/>
+        <TextBox Text="{Binding Path,  UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2"/>
+
+        <Button  Command="{Binding Button_clik_add}" Grid.Column="2" Grid.Row="3" Margin="4" Content="Add"/>
+        <Button Command="{Binding Button_clik_open}" Grid.Column="3" Grid.Row="3" Margin="4" Content="Open..."/>
     </Grid>
 </Window>
