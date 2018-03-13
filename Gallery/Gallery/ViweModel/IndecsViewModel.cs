@@ -220,7 +220,9 @@ namespace Gallery
         {
             get
             {
+                if(_select_Item!=null)
                 return _select_Item.Mark;
+                return 0;
             }
             set
             {
@@ -530,7 +532,7 @@ namespace Gallery
                     }
                     else
                     {
-                        Select_Item = new PhotoViewModel();
+                        Select_Item = null;
                     }
                     return;
                 }

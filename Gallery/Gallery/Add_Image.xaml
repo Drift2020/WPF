@@ -8,27 +8,29 @@
         Title="Add image" Height="300" Width="300" Icon="Resources_/Gakuseisean-Aire-BMP-File.ico"  WindowStyle="ToolWindow">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.2*"/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="86*"/>
+            <ColumnDefinition Width="85.882"/>
+            <ColumnDefinition Width="86.049"/>
+            <ColumnDefinition Width="17*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.2*"/>
-           
-           
             <RowDefinition Height="3*"/>
-            <RowDefinition  Height="0.5*"/>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.2*"/>
+
+
+            <RowDefinition Height="46*"/>
+            <RowDefinition  Height="30.682"/>
+            <RowDefinition Height="31.041"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
 
 
         <Image Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="1" Source="{Binding Path}"></Image>
 
-        <TextBox Text="{Binding Path,  UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2"/>
+        <Grid  Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" >
+            <TextBox Text="{Binding Path,  UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" />
+        </Grid>
 
         <Button  Command="{Binding Button_clik_add}" Grid.Column="2" Grid.Row="3" Margin="4" Content="Add"/>
         <Button Command="{Binding Button_clik_open}" Grid.Column="3" Grid.Row="3" Margin="4" Content="Open..."/>

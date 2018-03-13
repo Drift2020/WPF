@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gallery"
         mc:Ignorable="d"
-        Title="{Binding Messeg_Titel}" Height="170.693" Width="300" MinHeight="170.693" MinWidth="300" MaxWidth="300" MaxHeight="170.693" WindowStyle="ToolWindow" >
+        Title="{Binding Messeg_Titel}" Height="170.693" Width="298" MinHeight="170.693" MinWidth="300" MaxWidth="300" MaxHeight="170.693" WindowStyle="ToolWindow" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

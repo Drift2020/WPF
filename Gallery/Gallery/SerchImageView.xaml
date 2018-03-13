@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gallery"
         mc:Ignorable="d"
-        Title="Search" Height="204.723" Width="336.55" Icon="Resources_/Gakuseisean-Aire-BMP-File.ico"  WindowStyle="ToolWindow">
+        Title="Search" Height="204.723" Width="336.55" Icon="Resources_/Gakuseisean-Aire-BMP-File.ico"  WindowStyle="ToolWindow" MinWidth="336.55" MinHeight="204.723" MaxWidth="336.55" MaxHeight="204.723">
     <Grid>
         <Grid.RowDefinitions>
 

@@ -108,7 +108,7 @@ namespace Gallery
         private bool CanExecute_add(object o)
         {
 
-            if(Path!=null || Path != "")
+            if(Path!=null && Path != "")
             return true;
             return false;
 

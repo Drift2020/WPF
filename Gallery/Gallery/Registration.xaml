@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gallery"
         mc:Ignorable="d"
-        Title="Registration" Height="431.5" Width="295" Icon="Resources_/Gakuseisean-Aire-BMP-File.ico"  WindowStyle="ToolWindow">
+        Title="Registration" Height="431.5" Width="295" Icon="Resources_/Gakuseisean-Aire-BMP-File.ico"  WindowStyle="ToolWindow" MinWidth="295" MinHeight="431.5" MaxWidth="295" MaxHeight="431.5">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
