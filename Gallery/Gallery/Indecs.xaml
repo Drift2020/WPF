@@ -107,8 +107,8 @@
                 <DataTemplate >
                     <Border BorderBrush="Bisque" BorderThickness="1" Height="150" Width="233" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <DockPanel  HorizontalAlignment ="Center" VerticalAlignment="Center" >
-                          
-                            <Image Source="{Binding Path,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+                            
+                                <Image Source="{Binding Path,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
                         </DockPanel>
                     </Border>
                 </DataTemplate>

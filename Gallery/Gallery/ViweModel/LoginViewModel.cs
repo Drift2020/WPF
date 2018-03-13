@@ -86,7 +86,10 @@ namespace Gallery
         {
             for (int i=0;i<my_users.Count();i++ )
             {
-                if(my_users.Element(i).login==login && my_users.Element(i).password == password)
+                if( password.IndexOf(':')!=-1 && password.IndexOf(' ') != -1 && password.IndexOf('-') != -1 && login.IndexOf(' ')!=-1)
+                    return;
+
+                if (my_users.Element(i).login==login && my_users.Element(i).password == password)
                 {
 
                     is_ok = true;
