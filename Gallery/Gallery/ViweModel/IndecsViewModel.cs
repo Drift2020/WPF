@@ -600,9 +600,9 @@ namespace Gallery
         private bool CanExecute_marc1(object o)
         {
 
-
+            if(_select_Item!=null)
             return true;
-
+            return false;
 
         }
 
@@ -628,7 +628,9 @@ namespace Gallery
         {
 
 
-            return true;
+            if (_select_Item != null)
+                return true;
+            return false;
 
 
         }
@@ -655,7 +657,9 @@ namespace Gallery
         {
 
 
-            return true;
+            if (_select_Item != null)
+                return true;
+            return false;
 
 
         }
@@ -682,7 +686,9 @@ namespace Gallery
         {
 
 
-            return true;
+            if (_select_Item != null)
+                return true;
+            return false;
 
 
         }
@@ -708,8 +714,9 @@ namespace Gallery
         private bool CanExecute_marc5(object o)
         {
 
-
-            return true;
+            if (_select_Item != null)
+                return true;
+            return false;
 
 
         }

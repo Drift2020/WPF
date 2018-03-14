@@ -132,7 +132,7 @@ namespace Gallery
         }
         private void Execute_ok(object o)
         {
-            if(password!=password2)
+            if(password!=password2 || password.Length <= 3)
             {
                 OpenMessege("Passwords do not match, the minimum length is 4 characters.", "Error");
                 return;

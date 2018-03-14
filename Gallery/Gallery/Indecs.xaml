@@ -78,9 +78,7 @@
 
                 <MenuItem Header="Add image..." Command="{Binding Button_clik_add}"></MenuItem>
                 <MenuItem Header="Delete image" Command="{Binding Button_clik_del}"></MenuItem>
-                <Separator />
-
-                <MenuItem Header="Exit" Command="{Binding ButtonClick_Exit}"></MenuItem>
+                
             </MenuItem>
         </Menu>
 

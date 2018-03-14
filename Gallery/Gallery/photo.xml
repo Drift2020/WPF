@@ -1,24 +1,31 @@
 <?xml version="1.0"?>
 <ArrayOfPhotoViewModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <PhotoViewModel>
-    <Name>5RNilC3D2dM.jpg</Name>
-    <Date>13.03.2018 13:48:00</Date>
-    <Autor>sasha</Autor>
-    <Path>C:\Users\Buje_jy89\Desktop\Gallery\Gallery\Gallery\bin\Debug\warf\5RNilC3D2dM.jpg</Path>
+    <Name>images (1).jpg</Name>
+    <Date>14.03.2018 15:02:23</Date>
+    <Autor>Kih</Autor>
+    <Path>C:\Users\Buje_jy89\Desktop\images (1).jpg</Path>
+    <Mark>4</Mark>
+  </PhotoViewModel>
+  <PhotoViewModel>
+    <Name>images.jpg</Name>
+    <Date>14.03.2018 15:02:49</Date>
+    <Autor>Kih</Autor>
+    <Path>C:\Users\Buje_jy89\Desktop\images.jpg</Path>
     <Mark>1</Mark>
   </PhotoViewModel>
   <PhotoViewModel>
-    <Name>9HH6VzGeJCs.jpg</Name>
-    <Date>13.03.2018 13:48:12</Date>
-    <Autor>sasha</Autor>
-    <Path>C:\Users\Buje_jy89\Desktop\Gallery\Gallery\Gallery\bin\Debug\warf\9HH6VzGeJCs.jpg</Path>
-    <Mark>3</Mark>
+    <Name>Без названия.jpg</Name>
+    <Date>14.03.2018 15:02:57</Date>
+    <Autor>Kih</Autor>
+    <Path>C:\Users\Buje_jy89\Desktop\Без названия.jpg</Path>
+    <Mark>1</Mark>
   </PhotoViewModel>
   <PhotoViewModel>
-    <Name>fxdSpS4e2j4.jpg</Name>
-    <Date>13.03.2018 13:49:52</Date>
+    <Name>Без названия (1).jpg</Name>
+    <Date>14.03.2018 15:05:27</Date>
     <Autor>sasha</Autor>
-    <Path>C:\Users\Buje_jy89\Desktop\Gallery\Gallery\Gallery\bin\Debug\warf\fxdSpS4e2j4.jpg</Path>
+    <Path>C:\Users\Buje_jy89\Desktop\Без названия (1).jpg</Path>
     <Mark>1</Mark>
   </PhotoViewModel>
 </ArrayOfPhotoViewModel>

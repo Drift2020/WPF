@@ -12,4 +12,40 @@
     <login>admin</login>
     <password>1234</password>
   </Users>
+  <Users>
+    <name>Fox</name>
+    <surname>Fox</surname>
+    <login>foxy</login>
+    <password>1</password>
+  </Users>
+  <Users>
+    <name>f</name>
+    <surname>f</surname>
+    <login>Fox</login>
+    <password>1</password>
+  </Users>
+  <Users>
+    <name>a</name>
+    <surname>a</surname>
+    <login>lok</login>
+    <password>123</password>
+  </Users>
+  <Users>
+    <name>a</name>
+    <surname>a</surname>
+    <login>Hok</login>
+    <password>123</password>
+  </Users>
+  <Users>
+    <name>q</name>
+    <surname>q</surname>
+    <login>jol</login>
+    <password>1234</password>
+  </Users>
+  <Users>
+    <name>Kih</name>
+    <surname>none</surname>
+    <login>Kih</login>
+    <password>1234</password>
+  </Users>
 </ArrayOfUsers>
